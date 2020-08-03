@@ -25,4 +25,12 @@ public class DashBordController {
         mainStage.setScene(scene);
         mainStage.centerOnScreen();
     }
+
+    public void BatchOnMouseClicked(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/lk/ijse/studentmanagementsystem/view/BatchForm.fxml"));
+        Scene scene = new Scene(root);
+        Stage mainStage = (Stage)(rootpane.getScene().getWindow());
+        mainStage.setScene(scene);
+        mainStage.centerOnScreen();
+    }
 }
