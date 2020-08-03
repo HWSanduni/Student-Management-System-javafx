@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class BatchController {
+public class SubjectController {
 
     public AnchorPane root;
 
