@@ -1,0 +1,10 @@
+#btnSave:hover{
+
+    -fx-background-color:#157DEC;
+    -fx-text-fill:white;
+}
+#btnCancel:hover{
+
+    -fx-background-color:#157DEC;
+    -fx-text-fill:white;
+}

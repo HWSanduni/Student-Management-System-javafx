@@ -1,21 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.RegistrationController">
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" stylesheets="@style/registerform.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.RegistrationController">
     <children>
-        <AnchorPane prefHeight="578.0" prefWidth="671.0" style="-fx-background-color: white;">
+        <AnchorPane layoutX="-14.0" prefHeight="578.0" prefWidth="671.0" style="-fx-background-color: white;">
             <children>
-                <AnchorPane prefHeight="578.0" prefWidth="219.0" style="-fx-background-color:white;">
+                <AnchorPane prefHeight="578.0" prefWidth="219.0" style="-fx-background-color: #0041C2;">
                     <children>
-                        <ImageView fitHeight="229.0" fitWidth="187.0" layoutX="18.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="229.0" fitWidth="187.0" layoutX="18.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../asset/register-icon.jpg" />
+                                <Image url="@../asset/RegisterIcon.png" />
                             </image>
                         </ImageView>
+                  <Label contentDisplay="CENTER" layoutX="22.0" layoutY="305.0" prefHeight="47.0" prefWidth="187.0" text="  Registration " textFill="#eeecec">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
                     </children></AnchorPane>
+            <Button id="btnAddNewStudent" layoutX="240.0" layoutY="47.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Student" textFill="#fcf8f8" />
+            <TextField id="txtStudentId" layoutX="403.0" layoutY="52.0" prefHeight="25.0" prefWidth="253.0" promptText="Student ID" />
+            <TextField id="txtFirstName" layoutX="247.0" layoutY="119.0" prefHeight="25.0" prefWidth="406.0" promptText="Student First Name" />
+            <TextField id="txtLastName" layoutX="247.0" layoutY="166.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Last Name" />
+            <TextField id="txtAddress" layoutX="247.0" layoutY="213.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Address" />
+            <TextField id="txtNic" layoutX="247.0" layoutY="346.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Nic" />
+            <TextField id="txtDateOfBirth" layoutX="247.0" layoutY="396.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Date Of Birth" />
+            <TextField id="txtEmail" layoutX="247.0" layoutY="303.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Email" />
+            <RadioButton layoutX="564.0" layoutY="461.0" mnemonicParsing="false" text="Female" textFill="#cdc6c6" />
+            <RadioButton layoutX="426.0" layoutY="461.0" mnemonicParsing="false" text="Male" textFill="#aba4a4" />
+            <Label layoutX="253.0" layoutY="457.0" prefHeight="25.0" prefWidth="122.0" text="Gendar" textFill="#bcb8b8" />
+            <TextField id="txtTel" layoutX="247.0" layoutY="255.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Tel" />
+            <Button id="btnSave" layoutX="282.0" layoutY="517.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save" textFill="#096de8">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button id="btnCancel" layoutX="488.0" layoutY="517.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Cancel" textFill="#096de8">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
     </children>
