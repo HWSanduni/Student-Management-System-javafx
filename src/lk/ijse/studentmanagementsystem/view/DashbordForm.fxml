@@ -13,7 +13,7 @@
         <AnchorPane id="sidebar" layoutY="-1.0" prefHeight="612.0" prefWidth="200.0">
             <children>
                 <Button layoutX="19.0" layoutY="243.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="172.0" text="Student" />
-                <Button layoutX="14.0" layoutY="519.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="172.0" text="Subject" />
+                <Button layoutX="14.0" layoutY="519.0" mnemonicParsing="false" onAction="#SubjectOnMouseClicked" prefHeight="55.0" prefWidth="172.0" text="Subject" />
                 <Button layoutX="14.0" layoutY="455.0" mnemonicParsing="false" onAction="#BatchOnMouseClicked" prefHeight="55.0" prefWidth="172.0" text="Batch" />
                 <Button layoutX="14.0" layoutY="384.0" mnemonicParsing="false" onAction="#CourseOnMouseClicked" prefHeight="55.0" prefWidth="172.0" text="Course" />
                 <Button layoutX="14.0" layoutY="318.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="172.0" text="Exam" />
