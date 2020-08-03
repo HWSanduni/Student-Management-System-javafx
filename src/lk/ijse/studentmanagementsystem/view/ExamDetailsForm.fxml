@@ -44,7 +44,7 @@
                         <TableColumn prefWidth="113.0" text="Course Name" />
                     </columns>
                 </TableView>
-                <Label layoutX="234.0" layoutY="565.0" prefHeight="17.0" prefWidth="171.0" text="Subject Details" textFill="#0916c9">
+                <Label layoutX="234.0" layoutY="565.0" prefHeight="17.0" prefWidth="171.0" text="Exam Attendance" textFill="#0916c9">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -61,17 +61,17 @@
                         <Image url="@../asset/search4.png" />
                     </image>
                 </ImageView>
-                <Label layoutX="244.0" layoutY="14.0" prefHeight="17.0" prefWidth="171.0" text="All Registar Student" textFill="#0916c9">
+                <Label layoutX="244.0" layoutY="14.0" prefHeight="17.0" prefWidth="171.0" text="Exam Result" textFill="#0916c9">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="245.0" layoutY="112.0" prefHeight="25.0" prefWidth="256.0" text="All Pull Payment Sucsses Student" textFill="#0916c9">
+                <Label layoutX="245.0" layoutY="112.0" prefHeight="25.0" prefWidth="256.0" text="Exam Pass Student " textFill="#0916c9">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="245.0" layoutY="356.0" prefHeight="25.0" prefWidth="223.0" text="Not Pull Payment Student" textFill="#0916c9">
+                <Label layoutX="245.0" layoutY="356.0" prefHeight="25.0" prefWidth="223.0" text="Exam Fail Student" textFill="#0916c9">
                     <font>
                         <Font size="16.0" />
                     </font>

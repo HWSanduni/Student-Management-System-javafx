@@ -50,7 +50,7 @@
                         <TableColumn prefWidth="87.0" text="Course Name" />
                     </columns>
                 </TableView>
-                <Label layoutX="251.0" layoutY="377.0" prefHeight="17.0" prefWidth="171.0" text="Subject Details" textFill="#0916c9">
+                <Label layoutX="251.0" layoutY="377.0" prefHeight="17.0" prefWidth="171.0" text="Student Details" textFill="#0916c9">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -77,12 +77,12 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="244.0" layoutY="153.0" prefHeight="25.0" prefWidth="256.0" text="All Pull Payment Sucsses Student" textFill="#0916c9">
+            <Label layoutX="244.0" layoutY="153.0" prefHeight="25.0" prefWidth="256.0" text="Already Payment Complete Student" textFill="#0916c9">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="244.0" layoutY="270.0" prefHeight="25.0" prefWidth="223.0" text="Not Pull Payment Student" textFill="#0916c9">
+            <Label layoutX="244.0" layoutY="270.0" prefHeight="25.0" prefWidth="354.0" text="Registered Student But Not Complete Payment" textFill="#0916c9">
                <font>
                   <Font size="16.0" />
                </font>
