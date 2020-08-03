@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="736.0" prefWidth="669.0" stylesheets="@style/batchform.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.CourseController">
+<AnchorPane fx:id="root" prefHeight="736.0" prefWidth="669.0" stylesheets="@style/batchform.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.StudentController">
     <children>
         <AnchorPane layoutX="-14.0" prefHeight="658.0" prefWidth="671.0" style="-fx-background-color: white;">
             <children>
@@ -27,9 +27,9 @@
                                 <Font size="25.0" />
                             </font>
                         </Label>
-                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" onMouseEntered="#BackOnActionCliced" onMouseExited="#BackOnActionCliced" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../asset/Home.png" />
+                                <Image url="@../asset/result1.png" />
                             </image>
                         </ImageView>
                     </children></AnchorPane>
@@ -101,7 +101,7 @@
                   <TableColumn prefWidth="106.0" text="Course Name" />
                </columns>
             </TableView>
-            <Button layoutX="334.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="243.0" style="-fx-background-color: #8467D7;" text="Add Exam Result" textFill="#fcf8f8">
+            <Button id="btnAddExamResult" layoutX="334.0" layoutY="52.0" mnemonicParsing="false" onAction="#AddExamREsultOnActionCliced" prefHeight="25.0" prefWidth="243.0" style="-fx-background-color: #8467D7;" text="Add Exam Result" textFill="#fcf8f8">
                <font>
                   <Font size="15.0" />
                </font>

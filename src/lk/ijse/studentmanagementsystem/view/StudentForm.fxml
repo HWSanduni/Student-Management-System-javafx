@@ -30,22 +30,22 @@
                   </ImageView>
                </children></AnchorPane>
             <Label id="lblCourseId" layoutX="427.0" layoutY="402.0" prefHeight="17.0" prefWidth="200.0" />
-            <Button id="btnCoursePayment" layoutX="278.0" layoutY="62.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: #8467D7;" text="Course Payment" textFill="#fff8f8">
+            <Button id="btnCoursePayment" layoutX="278.0" layoutY="62.0" mnemonicParsing="false" onAction="#CoursePaymentOnActionClicked" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: #8467D7;" text="Course Payment" textFill="#fff8f8">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button id="btnCoursePaymentDetails" layoutX="278.0" layoutY="176.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: #8467D7;" text="Course Payment Details" textFill="#fff8f8">
+            <Button id="btnCoursePaymentDetails" layoutX="278.0" layoutY="176.0" mnemonicParsing="false" onAction="#CoursePaymentDetailsOnActionClicked" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: #8467D7;" text="Course Payment Details" textFill="#fff8f8">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button id="btnExamDetails" layoutX="278.0" layoutY="285.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: #8467D7;" text="Exam Details" textFill="#fff8f8">
+            <Button id="btnExamDetails" layoutX="278.0" layoutY="285.0" mnemonicParsing="false" onAction="#ExamDetailsOnActionClicked" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: #8467D7;" text="Exam Details" textFill="#fff8f8">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button id="btnBatchAndCourseDetails" layoutX="278.0" layoutY="411.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: #8467D7;" text="Batch And Course Details" textFill="#fff8f8">
+            <Button id="btnBatchAndCourseDetails" layoutX="278.0" layoutY="411.0" mnemonicParsing="false" onAction="#BatchAndCourseOnActionClicked" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: #8467D7;" text="Batch And Course Details" textFill="#fff8f8">
                <font>
                   <Font size="16.0" />
                </font>
