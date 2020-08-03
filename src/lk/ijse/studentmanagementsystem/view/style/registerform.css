@@ -1,10 +1,23 @@
+#btnSave{
+
+    -fx-background-color:white;
+    -fx-text-fill:#157DEC;
+    -fx-border-color:#157DEC;
+}
 #btnSave:hover{
 
     -fx-background-color:#157DEC;
     -fx-text-fill:white;
 }
+#btnCancel{
+
+    -fx-background-color:white;
+    -fx-text-fill:#157DEC;
+    -fx-border-color:#157DEC;
+}
 #btnCancel:hover{
 
     -fx-background-color:#157DEC;
     -fx-text-fill:white;
+
 }
