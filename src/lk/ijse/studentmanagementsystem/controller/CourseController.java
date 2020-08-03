@@ -9,7 +9,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class RegistrationController {
+public class CourseController {
+
     public AnchorPane root;
 
     public void HomeOnActionCliced(MouseEvent mouseEvent) throws IOException {

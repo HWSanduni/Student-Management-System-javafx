@@ -9,10 +9,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class RegistrationController {
+public class SubjectController {
+
     public AnchorPane root;
 
     public void HomeOnActionCliced(MouseEvent mouseEvent) throws IOException {
+
         Parent root = FXMLLoader.load(getClass().getResource("/lk/ijse/studentmanagementsystem/view/DashbordForm.fxml"));
         Scene scene = new Scene(root);
         Stage mainStage = (Stage)(this.root.getScene().getWindow());

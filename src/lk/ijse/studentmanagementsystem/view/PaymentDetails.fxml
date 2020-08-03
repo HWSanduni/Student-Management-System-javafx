@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="651.0" prefWidth="657.0" stylesheets="@style/batchform.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.StudentController">
+    <children>
+        <AnchorPane layoutX="-14.0" prefHeight="658.0" prefWidth="671.0" style="-fx-background-color: white;">
+            <children>
+                <AnchorPane prefHeight="658.0" prefWidth="219.0" style="-fx-background-color: #0041C2;">
+                    <children>
+                        <ImageView fitHeight="229.0" fitWidth="187.0" layoutX="25.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../asset/subject.jpg" />
+                            </image>
+                        </ImageView>
+                        <Label contentDisplay="CENTER" layoutX="16.0" layoutY="378.0" prefHeight="47.0" prefWidth="187.0" text="  Payment And " textFill="#eeecec">
+                            <font>
+                                <Font size="25.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" onMouseEntered="#BackOnActionCliced" onMouseExited="#BackOnActionCliced" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../asset/result1.png" />
+                            </image>
+                        </ImageView>
+                  <Label layoutX="23.0" layoutY="425.0" prefHeight="47.0" prefWidth="187.0" text=" Student Detalis" textFill="#f5efef">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                    </children></AnchorPane>
+                <TextField id="txtRegStatus" layoutX="247.0" layoutY="76.0" prefHeight="25.0" prefWidth="253.0" promptText="Status" />
+                <TextField id="txtSubjectName" layoutX="244.0" layoutY="195.0" prefHeight="25.0" prefWidth="259.0" promptText="Status" />
+                <TextField id="txtDescription" layoutX="244.0" layoutY="312.0" prefHeight="25.0" prefWidth="259.0" promptText="Status" />
+                <Separator layoutX="221.0" layoutY="253.0" prefHeight="4.0" prefWidth="452.0" />
+                <TableView layoutX="236.0" layoutY="429.0" prefHeight="200.0" prefWidth="428.0">
+                    <columns>
+                        <TableColumn prefWidth="71.0" text="Student ID" />
+                        <TableColumn prefWidth="109.0" text="Student Name" />
+                        <TableColumn prefWidth="83.0" text="Student Tel" />
+                        <TableColumn prefWidth="77.0" text="Batch Name" />
+                        <TableColumn prefWidth="87.0" text="Course Name" />
+                    </columns>
+                </TableView>
+                <Label layoutX="251.0" layoutY="377.0" prefHeight="17.0" prefWidth="171.0" text="Student Details" textFill="#0916c9">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label id="lblCourseId" layoutX="427.0" layoutY="402.0" prefHeight="17.0" prefWidth="200.0" />
+            <Separator layoutX="219.0" layoutY="142.0" prefHeight="4.0" prefWidth="452.0" />
+            <ImageView id="imAllPaymentSearch" fitHeight="35.0" fitWidth="48.0" layoutX="562.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/search4.png" />
+               </image>
+            </ImageView>
+            <ImageView id="imRegSearch" fitHeight="35.0" fitWidth="48.0" layoutX="562.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/search4.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="569.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/search4.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="251.0" layoutY="25.0" prefHeight="17.0" prefWidth="171.0" text="All Registar Student" textFill="#0916c9">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="244.0" layoutY="153.0" prefHeight="25.0" prefWidth="256.0" text="Already Payment Complete Student" textFill="#0916c9">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="244.0" layoutY="270.0" prefHeight="25.0" prefWidth="354.0" text="Registered Student But Not Complete Payment" textFill="#0916c9">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="219.0" layoutY="358.0" prefHeight="4.0" prefWidth="452.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
