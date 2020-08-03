@@ -15,7 +15,7 @@
                 <Button layoutX="19.0" layoutY="243.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="172.0" text="Student" />
                 <Button layoutX="14.0" layoutY="519.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="172.0" text="Subject" />
                 <Button layoutX="14.0" layoutY="455.0" mnemonicParsing="false" onAction="#BatchOnMouseClicked" prefHeight="55.0" prefWidth="172.0" text="Batch" />
-                <Button layoutX="14.0" layoutY="384.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="172.0" text="Course" />
+                <Button layoutX="14.0" layoutY="384.0" mnemonicParsing="false" onAction="#CourseOnMouseClicked" prefHeight="55.0" prefWidth="172.0" text="Course" />
                 <Button layoutX="14.0" layoutY="318.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="172.0" text="Exam" />
                 <Button layoutX="19.0" layoutY="149.0" mnemonicParsing="false" onAction="#RegistraionOnMouseClicked" prefHeight="55.0" prefWidth="172.0" text="Registraion" />
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" >
