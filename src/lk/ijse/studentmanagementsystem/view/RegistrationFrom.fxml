@@ -62,10 +62,9 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <ComboBox id="cmbBatchName" layoutX="248.0" layoutY="506.0" prefHeight="25.0" prefWidth="406.0" promptText="Batch Name" />
-            <TextField id="txtCourseName" layoutX="255.0" layoutY="545.0" prefHeight="25.0" prefWidth="174.0" promptText="Course Name" />
-            <TextField id="txtCourseFee" layoutX="461.0" layoutY="545.0" prefHeight="25.0" prefWidth="196.0" promptText="Course Fee" />
-            <TextField id="txtRegistraionFee" layoutX="254.0" layoutY="590.0" prefHeight="25.0" prefWidth="399.0" promptText="Registration Fee" />
+            <ComboBox id="cmbBatchName" layoutX="248.0" layoutY="530.0" prefHeight="25.0" prefWidth="406.0" promptText="Batch Name" />
+            <TextField id="txtCourseName" layoutX="249.0" layoutY="583.0" prefHeight="25.0" prefWidth="174.0" promptText="Course Name" />
+            <TextField id="txtCourseFee" layoutX="456.0" layoutY="583.0" prefHeight="25.0" prefWidth="196.0" promptText="Course Fee" />
             <Label id="lblBatchId" layoutX="514.0" layoutY="476.0" prefHeight="17.0" prefWidth="135.0" text="BatchId" textFill="#bcb1b1" />
             </children>
         </AnchorPane>

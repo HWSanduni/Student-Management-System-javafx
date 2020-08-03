@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="583.0" prefWidth="657.0" stylesheets="@style/examform.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.RegistrationController">
+    <children>
+        <AnchorPane layoutX="-14.0" prefHeight="580.0" prefWidth="671.0" style="-fx-background-color: white;">
+            <children>
+                <AnchorPane prefHeight="583.0" prefWidth="219.0" style="-fx-background-color: #0041C2;">
+                    <children>
+                        <ImageView fitHeight="229.0" fitWidth="187.0" layoutX="16.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../asset/exam1.jpg" />
+                            </image>
+                        </ImageView>
+                        <Label contentDisplay="CENTER" layoutX="19.0" layoutY="358.0" prefHeight="47.0" prefWidth="187.0" text="      Exam" textFill="#eeecec">
+                            <font>
+                                <Font size="27.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../asset/Home.png" />
+                            </image>
+                        </ImageView>
+                    </children></AnchorPane>
+                <Button id="btnAddNewStudent" layoutX="241.0" layoutY="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Exam" textFill="#fcf8f8" />
+                <TextField id="txtExamId" layoutX="403.0" layoutY="40.0" prefHeight="25.0" prefWidth="253.0" promptText="Exam ID" />
+                <TextField id="txtExamName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Name" />
+                <TextField id="txtDate" layoutX="247.0" layoutY="131.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Data" />
+                <TextField id="txtTime" layoutX="247.0" layoutY="170.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Time" />
+                <Button id="btnSave" layoutX="268.0" layoutY="520.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Button>
+                <Button id="btnCancel" layoutX="521.0" layoutY="520.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Cancel">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Button>
+            <ComboBox id="cmbCourseName" layoutX="247.0" layoutY="252.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Name" />
+            <ComboBox id="cmbSubjectName" layoutX="247.0" layoutY="300.0" prefHeight="25.0" prefWidth="406.0" promptText="Subject Name" />
+            <TextField id="txtTime" layoutX="248.0" layoutY="209.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Time" />
+            <Label id="lblCourseId" layoutX="254.0" layoutY="356.0" prefHeight="17.0" prefWidth="94.0" />
+            <Label id="lblSubId" layoutX="502.0" layoutY="356.0" prefHeight="17.0" prefWidth="94.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
