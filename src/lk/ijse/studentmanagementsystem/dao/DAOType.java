@@ -2,5 +2,5 @@ package lk.ijse.studentmanagementsystem.dao;
 
 public enum DAOType {
 
-    COURSE,SUBJECT,BATCH,STUDENT;
+    COURSE,SUBJECT,BATCH,STUDENT,EXAM;
 }
