@@ -16,6 +16,7 @@ public class CourseBOImpl implements CourseBO {
     CourseDAO courseDAO = DAOFactroy.getInstance().getDAO(DAOType.COURSE);
 
 
+
     @Override
     public List<CourseTM> getAllCourse() throws Exception {
 
@@ -27,6 +28,13 @@ public class CourseBOImpl implements CourseBO {
         }
 
         return courseTMS;
+    }
+
+    @Override
+    public Course findSubject(String id) throws Exception {
+
+        Course course = courseDAO.find(id);
+        return course;
     }
 
     @Override

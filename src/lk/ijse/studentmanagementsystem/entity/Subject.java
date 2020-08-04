@@ -1,16 +1,16 @@
 package lk.ijse.studentmanagementsystem.entity;
 
-public class Subject {
+public class Subject implements SuperEntity{
 
     private String subId;
-    private Course courseId;
+    private String courseId;
     private String name;
     private String type;
 
     public Subject() {
     }
 
-    public Subject(String subId, Course courseId, String name, String type) {
+    public Subject(String subId, String courseId, String name, String type) {
         this.subId = subId;
         this.courseId = courseId;
         this.name = name;
@@ -25,11 +25,11 @@ public class Subject {
         this.subId = subId;
     }
 
-    public Course getCourseId() {
+    public String getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(Course courseId) {
+    public void setCourseId(String courseId) {
         this.courseId = courseId;
     }
 
@@ -53,7 +53,7 @@ public class Subject {
     public String toString() {
         return "Subject{" +
                 "subId='" + subId + '\'' +
-                ", courseId=" + courseId +
+                ", courseId='" + courseId + '\'' +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 '}';
