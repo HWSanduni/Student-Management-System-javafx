@@ -1,5 +1,5 @@
 package lk.ijse.studentmanagementsystem.business;
 
 public enum BOType {
-    COURSE;
+    COURSE,SUBJECT;
 }

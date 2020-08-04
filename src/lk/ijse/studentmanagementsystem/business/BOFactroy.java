@@ -1,6 +1,7 @@
 package lk.ijse.studentmanagementsystem.business;
 
 import lk.ijse.studentmanagementsystem.business.custom.impl.CourseBOImpl;
+import lk.ijse.studentmanagementsystem.business.custom.impl.SubjectBOImpl;
 
 public class BOFactroy {
 
@@ -19,6 +20,8 @@ public class BOFactroy {
         switch (boType){
             case COURSE:
                 return (T) new CourseBOImpl();
+            case SUBJECT:
+                return (T) new SubjectBOImpl();
                 default:
                     return null;
         }
