@@ -20,6 +20,14 @@ public class Course implements SuperEntity{
         this.description = description;
     }
 
+    public Course(String name, BigDecimal courseFee, String description,String cid) {
+        this.name = name;
+        this.courseFee = courseFee;
+        this.description = description;
+        Cid = cid;
+
+    }
+
     public String getCid() {
         return Cid;
     }
