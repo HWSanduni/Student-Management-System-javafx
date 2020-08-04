@@ -1,9 +1,6 @@
 package lk.ijse.studentmanagementsystem.business;
 
-import lk.ijse.studentmanagementsystem.business.custom.impl.BatchBOImpl;
-import lk.ijse.studentmanagementsystem.business.custom.impl.CourseBOImpl;
-import lk.ijse.studentmanagementsystem.business.custom.impl.StudentBOImpl;
-import lk.ijse.studentmanagementsystem.business.custom.impl.SubjectBOImpl;
+import lk.ijse.studentmanagementsystem.business.custom.impl.*;
 
 public class BOFactroy {
 
@@ -28,6 +25,8 @@ public class BOFactroy {
                 return (T) new BatchBOImpl();
             case STUDENT:
                 return (T) new StudentBOImpl();
+            case EXAM:
+                return (T) new ExamBOImpl();
                 default:
                     return null;
         }
