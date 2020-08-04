@@ -4,16 +4,33 @@ import lk.ijse.studentmanagementsystem.dao.CrudUtil;
 import lk.ijse.studentmanagementsystem.dao.custom.CourseDAO;
 import lk.ijse.studentmanagementsystem.entity.Course;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CourseDAOImpl implements CourseDAO {
     @Override
     public List<Course> findAll() throws Exception {
-        return null;
+        ResultSet rst = CrudUtil.execute("SELECT * FROM course");
+        List<Course> courses = new ArrayList<>();
+        while (rst.next()) {
+            courses.add(new Course(rst.getString(1),
+                    rst.getString(2),
+                    rst.getBigDecimal(3),
+                    rst.getString(4)));
+        }
+        return courses;
     }
 
     @Override
     public Course find(String key) throws Exception {
+        ResultSet rst = CrudUtil.execute("SELECT * FROM course WHERE id=?",key);
+        if (rst.next()) {
+            return new Course(rst.getString(1),
+                    rst.getString(2),
+                    rst.getBigDecimal(3),
+                    rst.getString(4));
+        }
         return null;
     }
 
@@ -23,12 +40,24 @@ public class CourseDAOImpl implements CourseDAO {
     }
 
     @Override
-    public boolean update(Course entity) throws Exception {
-        return false;
+    public boolean update(Course course) throws Exception {
+
+
+        return CrudUtil.execute("UPDATE course SET name=?,courseFee=?, description=? WHERE Cid=?",course.getName(),course.getCourseFee(),course.getDescription(),course.getCid());
     }
 
     @Override
     public boolean delete(String key) throws Exception {
-        return false;
+        return CrudUtil.execute("DELETE FROM course WHERE id=?",key);
+    }
+
+    @Override
+    public String getLastCourseId() throws Exception {
+        ResultSet rst = CrudUtil.execute("SELECT * FROM course ORDER BY id DESC LIMIT 1");
+        if (!rst.next()) {
+            return null;
+        } else {
+            return rst.getString(1);
+        }
     }
 }
