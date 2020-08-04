@@ -22,6 +22,15 @@ public class Exam implements SuperEntity {
         this.passMarks = passMarks;
         this.status = status;
     }
+    public Exam( String name, Date date, String time, int passMarks, String status,String eid) {
+
+        this.name = name;
+        this.date = date;
+        this.time = time;
+        this.passMarks = passMarks;
+        this.status = status;
+        this.eid = eid;
+    }
 
     public String getEid() {
         return eid;
