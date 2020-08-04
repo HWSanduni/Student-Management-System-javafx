@@ -57,17 +57,17 @@ public class SubjectBOImpl implements SubjectBO {
         lastSubjectId = subjectDAO.getLastSubjectId();
 
         if(lastSubjectId == null){
-            return "S001";
+            return "SUB001";
         }else{
-            int maxId = Integer.parseInt(lastSubjectId.replace("S", ""));
+            int maxId = Integer.parseInt(lastSubjectId.replace("SUB", ""));
             maxId = maxId + 1;
             String id = "";
             if (maxId < 10) {
-                id = "S00" + maxId;
+                id = "SUB00" + maxId;
             } else if (maxId < 100) {
-                id = "S0" + maxId;
+                id = "SUB0" + maxId;
             } else {
-                id = "S" + maxId;
+                id = "SUB" + maxId;
             }
             return id;
         }

@@ -2,6 +2,7 @@ package lk.ijse.studentmanagementsystem.business;
 
 import lk.ijse.studentmanagementsystem.business.custom.impl.BatchBOImpl;
 import lk.ijse.studentmanagementsystem.business.custom.impl.CourseBOImpl;
+import lk.ijse.studentmanagementsystem.business.custom.impl.StudentBOImpl;
 import lk.ijse.studentmanagementsystem.business.custom.impl.SubjectBOImpl;
 
 public class BOFactroy {
@@ -25,6 +26,8 @@ public class BOFactroy {
                 return (T) new SubjectBOImpl();
             case BATCH:
                 return (T) new BatchBOImpl();
+            case STUDENT:
+                return (T) new StudentBOImpl();
                 default:
                     return null;
         }

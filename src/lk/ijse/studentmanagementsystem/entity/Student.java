@@ -24,6 +24,17 @@ public class Student implements SuperEntity {
         this.age = age;
         this.mail = mail;
     }
+    public Student(String firstName, String lastName, String address, int tel, String nic, int age, String mail,String sid) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.tel = tel;
+        this.nic = nic;
+        this.age = age;
+        this.mail = mail;
+        Sid = sid;
+    }
 
     public String getSid() {
         return Sid;

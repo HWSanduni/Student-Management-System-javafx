@@ -5,5 +5,5 @@ import lk.ijse.studentmanagementsystem.entity.Student;
 
 public interface StudentDAO extends CrudDAO<Student,String> {
 
-    String getLastBatchId()throws Exception;
+    String getLastStudntId()throws Exception;
 }

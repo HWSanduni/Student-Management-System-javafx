@@ -59,7 +59,7 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public String getLastBatchId() throws Exception {
+    public String getLastStudntId() throws Exception {
         ResultSet rst = CrudUtil.execute("SELECT * FROM student ORDER BY Sid DESC LIMIT 1");
         if (!rst.next()) {
             return null;
