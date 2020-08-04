@@ -23,6 +23,16 @@ public class Batch implements SuperEntity {
         this.startDate = startDate;
         this.endDate = endDate;
     }
+    public Batch( String courseId, String name, String type, int year, Date startDate, Date endDate,String bid) {
+
+        this.courseId = courseId;
+        this.name = name;
+        this.type = type;
+        this.year = year;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        Bid = bid;
+    }
 
     public String getBid() {
         return Bid;
