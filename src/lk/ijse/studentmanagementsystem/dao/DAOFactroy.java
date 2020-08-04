@@ -2,6 +2,7 @@ package lk.ijse.studentmanagementsystem.dao;
 
 import lk.ijse.studentmanagementsystem.dao.custom.impl.BatchDAOImpl;
 import lk.ijse.studentmanagementsystem.dao.custom.impl.CourseDAOImpl;
+import lk.ijse.studentmanagementsystem.dao.custom.impl.StudentDAOImpl;
 import lk.ijse.studentmanagementsystem.dao.custom.impl.SubjectDAOImpl;
 
 public class DAOFactroy {
@@ -24,6 +25,8 @@ public class DAOFactroy {
                 return (T) new SubjectDAOImpl();
             case BATCH:
                 return (T) new BatchDAOImpl();
+            case STUDENT:
+                return (T) new StudentDAOImpl();
              default:
                  return null;
         }
