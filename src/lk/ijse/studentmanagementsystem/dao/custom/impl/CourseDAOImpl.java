@@ -1,5 +1,6 @@
 package lk.ijse.studentmanagementsystem.dao.custom.impl;
 
+import lk.ijse.studentmanagementsystem.dao.CrudUtil;
 import lk.ijse.studentmanagementsystem.dao.custom.CourseDAO;
 import lk.ijse.studentmanagementsystem.entity.Course;
 
@@ -17,8 +18,8 @@ public class CourseDAOImpl implements CourseDAO {
     }
 
     @Override
-    public boolean save(Course entity) throws Exception {
-        return false;
+    public boolean save(Course course) throws Exception {
+        return CrudUtil.execute("INSERT INTO course VALUES (?,?,?,?)",course.getCid(),course.getName(),course.getCourseFee(),course.getDescription());
     }
 
     @Override

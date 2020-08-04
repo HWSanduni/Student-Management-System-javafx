@@ -166,4 +166,14 @@
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
   </component>
+  <component name="libraryTable">
+    <library name="jfoenix-8.0.10">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../Layerd/01/git pos/04/lib/jfoenix-8.0.10.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../Layerd/01/git pos/04/lib/mysql-connector-java-8.0.20.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+  </component>
 </project>

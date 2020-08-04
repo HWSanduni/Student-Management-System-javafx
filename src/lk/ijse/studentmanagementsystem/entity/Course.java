@@ -6,17 +6,18 @@ public class Course implements SuperEntity{
 
     private String Cid;
     private String name;
-    private String description;
     private BigDecimal courseFee;
+    private String description;
+
 
     public Course() {
     }
 
-    public Course(String cid, String name, String description, BigDecimal courseFee) {
+    public Course(String cid, String name, BigDecimal courseFee, String description) {
         Cid = cid;
         this.name = name;
-        this.description = description;
         this.courseFee = courseFee;
+        this.description = description;
     }
 
     public String getCid() {
