@@ -1,6 +1,6 @@
 package lk.ijse.studentmanagementsystem.entity;
 
-public class RegistationPK {
+public class RegistationPK implements SuperEntity{
 
     private String batchId;
     private String studentId;

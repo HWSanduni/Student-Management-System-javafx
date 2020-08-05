@@ -36,6 +36,13 @@ public class Registation implements SuperEntity {
     }
 
 
+    public RegistationPK getRegistationPK() {
+        return registationPK;
+    }
+
+    public void setRegistationPK(RegistationPK registationPK) {
+        this.registationPK = registationPK;
+    }
 
     public BigDecimal getRegistartionFee() {
         return registartionFee;
