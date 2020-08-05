@@ -24,7 +24,7 @@ public class CourseBOImpl implements CourseBO {
 
         List<CourseTM> courseTMS = new ArrayList<>();
         for (Course course:courses) {
-            courseTMS.add(new CourseTM(course.getCid(),course.getName(),course.getCourseFee(),course.getDescription()));
+            courseTMS.add(new CourseTM(course.getCid(),course.getName(),course.getCourseFee().doubleValue(),course.getDescription()));
         }
 
         return courseTMS;
@@ -38,10 +38,10 @@ public class CourseBOImpl implements CourseBO {
     }
 
     @Override
-    public boolean saveCourse(String id, String name, BigDecimal fee, String description) throws Exception {
+    public boolean saveCourse(String id, String name, double fee, String description) throws Exception {
 
 
-        return courseDAO.save(new Course(id,name,fee,description));
+        return courseDAO.save(new Course(id,name,BigDecimal.valueOf(fee),description));
     }
 
     @Override
@@ -50,8 +50,8 @@ public class CourseBOImpl implements CourseBO {
     }
 
     @Override
-    public boolean updateCourse(String name, BigDecimal fee, String description, String id) throws Exception {
-        return courseDAO.update(new Course(name,fee,description,id));
+    public boolean updateCourse(String name, double fee, String description, String id) throws Exception {
+        return courseDAO.update(new Course(name,BigDecimal.valueOf(fee),description,id));
     }
 
     @Override

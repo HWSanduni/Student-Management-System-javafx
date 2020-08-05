@@ -15,7 +15,7 @@
     <children>
         <AnchorPane layoutX="-14.0" prefHeight="650.0" prefWidth="671.0" style="-fx-background-color: white;">
             <children>
-                <AnchorPane prefHeight="650.0" prefWidth="219.0" style="-fx-background-color: #0041C2;">
+                <AnchorPane prefHeight="651.0" prefWidth="219.0" style="-fx-background-color: #0041C2;">
                     <children>
                         <ImageView fitHeight="229.0" fitWidth="187.0" layoutX="19.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -27,39 +27,37 @@
                                 <Font size="25.0" />
                             </font>
                         </Label>
-                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" onMouseClicked="#HomeOnActionCliced" onMouseEntered="#HomeOnActionCliced" onMouseExited="#HomeOnActionCliced"  pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" onMouseClicked="#HomeOnActionCliced" onMouseEntered="#HomeOnActionCliced" onMouseExited="#HomeOnActionCliced" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../asset/Home.png" />
                             </image>
                         </ImageView>
                     </children></AnchorPane>
-                <Button id="btnAddNewCourse" layoutX="241.0" layoutY="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Course" textFill="#fcf8f8" />
-                <TextField id="txtCourseId" layoutX="403.0" layoutY="40.0" prefHeight="25.0" prefWidth="253.0" promptText="Course ID" />
-                <TextField id="txtCourseName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Name" />
-                <TextField id="txtType" layoutX="248.0" layoutY="190.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Type" />
-                <TextField id="txtCourseFee" layoutX="248.0" layoutY="238.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Fee" />
-                <TextField id="txtDescription" layoutX="248.0" layoutY="142.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Description" />
-                <Button id="btnSave" layoutX="279.0" layoutY="296.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
+                <Button fx:id="btnAddNewCourse" layoutX="241.0" layoutY="35.0" mnemonicParsing="false" onAction="#btnAddNew_OnAction" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Course" textFill="#fcf8f8" />
+                <TextField fx:id="txtCourseId" layoutX="403.0" layoutY="40.0" prefHeight="25.0" prefWidth="245.0" promptText="Course ID" />
+                <TextField fx:id="txtCourseName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Name" />
+                <TextField fx:id="txtCourseFee" layoutX="252.0" layoutY="189.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Fee" />
+                <TextField fx:id="txtDescription" layoutX="248.0" layoutY="142.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Description" />
+                <Button fx:id="btnSave" layoutX="286.0" layoutY="243.0" onAction="#btnSave_OnAction" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button id="btnRemove" layoutX="501.0" layoutY="296.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Remove">
+                <Button fx:id="btnRemove" layoutX="497.0" layoutY="243.0" onAction="#btnDelete_OnAction" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Remove">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Separator layoutX="251.0" layoutY="368.0" prefHeight="4.0" prefWidth="399.0" />
-                <TableView layoutX="252.0" layoutY="428.0" prefHeight="200.0" prefWidth="399.0">
+                <Separator layoutX="219.0" layoutY="323.0" prefHeight="4.0" prefWidth="451.0" />
+                <TableView fx:id="tblCourse" layoutX="251.0" layoutY="380.0" prefHeight="248.0" prefWidth="399.0">
                     <columns>
                         <TableColumn prefWidth="71.0" text="Course ID" />
-                        <TableColumn prefWidth="75.0" text="Course Name" />
-                        <TableColumn prefWidth="81.0" text="Course Description" />
-                        <TableColumn prefWidth="86.0" text="Course Type" />
-                  <TableColumn prefWidth="85.0" text="Course Fee" />
+                        <TableColumn prefWidth="113.0" text="Course Name" />
+                        <TableColumn prefWidth="88.0" text="Course  Fee" />
+                  <TableColumn prefWidth="126.0" text="Course Description" />
                     </columns>
                 </TableView>
-                <Label layoutX="250.0" layoutY="388.0" prefHeight="17.0" prefWidth="171.0" text="Course Details" textFill="#0916c9">
+                <Label layoutX="250.0" layoutY="343.0" prefHeight="17.0" prefWidth="171.0" text="Course Details" textFill="#0916c9">
                     <font>
                         <Font size="16.0" />
                     </font>

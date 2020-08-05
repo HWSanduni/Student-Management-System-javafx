@@ -4,15 +4,24 @@ import lk.ijse.studentmanagementsystem.dao.custom.CourseDAO;
 import lk.ijse.studentmanagementsystem.entity.Course;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class CourseDAOImpl {
 
     public static void main (String [] args) throws Exception {
 
      CourseDAO courseDAO = DAOFactroy.getInstance().getDAO(DAOType.COURSE);
-        BigDecimal bigDecimal = new BigDecimal("1200000");
-        boolean save = courseDAO.save(new Course("C001", "GDSE",  bigDecimal,"Deploma"));
-        System.out.println(save);
+//        BigDecimal bigDecimal = new BigDecimal("1200000");
+//        boolean save = courseDAO.save(new Course("C001", "GDSE",  bigDecimal,"Deploma"));
+//        System.out.println(save);
+
+
+        List<Course> all = courseDAO.findAll();
+
+        for (Course c:
+             all) {
+            System.out.println(c);
+        }
 
     }
 

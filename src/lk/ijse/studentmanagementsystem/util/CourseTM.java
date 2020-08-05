@@ -5,21 +5,20 @@ import java.math.BigDecimal;
 public class CourseTM {
 
     private String Cid;
-    private String name;
-    private BigDecimal courseFee;
-    private String description;
+    private String Name;
+    private double CourseFee;
+    private String Description;
 
 
     public CourseTM() {
     }
 
-    public CourseTM(String cid, String name, BigDecimal courseFee, String description) {
+    public CourseTM(String cid, String name, double courseFee, String description) {
         Cid = cid;
-        this.name = name;
-        this.courseFee = courseFee;
-        this.description = description;
+        Name = name;
+        CourseFee = courseFee;
+        Description = description;
     }
-
 
     public String getCid() {
         return Cid;
@@ -30,36 +29,36 @@ public class CourseTM {
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Name = name;
     }
 
-    public BigDecimal getCourseFee() {
-        return courseFee;
+    public double getCourseFee() {
+        return CourseFee;
     }
 
-    public void setCourseFee(BigDecimal courseFee) {
-        this.courseFee = courseFee;
+    public void setCourseFee(double courseFee) {
+        CourseFee = courseFee;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        Description = description;
     }
 
     @Override
     public String toString() {
         return "CourseTM{" +
                 "Cid='" + Cid + '\'' +
-                ", name='" + name + '\'' +
-                ", courseFee=" + courseFee +
-                ", description='" + description + '\'' +
+                ", Name='" + Name + '\'' +
+                ", CourseFee=" + CourseFee +
+                ", Description='" + Description + '\'' +
                 '}';
     }
 }
