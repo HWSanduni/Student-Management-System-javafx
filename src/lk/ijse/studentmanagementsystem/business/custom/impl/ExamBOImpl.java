@@ -4,16 +4,22 @@ import lk.ijse.studentmanagementsystem.business.custom.ExamBO;
 import lk.ijse.studentmanagementsystem.dao.DAOFactroy;
 import lk.ijse.studentmanagementsystem.dao.DAOType;
 import lk.ijse.studentmanagementsystem.dao.custom.ExamDAO;
+import lk.ijse.studentmanagementsystem.dao.custom.ExamDetailsDAO;
+import lk.ijse.studentmanagementsystem.db.DBConnection;
 import lk.ijse.studentmanagementsystem.entity.Exam;
+import lk.ijse.studentmanagementsystem.entity.ExamDetails;
 import lk.ijse.studentmanagementsystem.util.ExamTM;
 
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ExamBOImpl implements ExamBO {
 
     ExamDAO examDAO = DAOFactroy.getInstance().getDAO(DAOType.EXAM);
+    ExamDetailsDAO examDetailsDAO = DAOFactroy.getInstance().getDAO(DAOType.EXAMDETAILS);
 
     @Override
     public List<ExamTM> getAllExam() throws Exception {
@@ -34,11 +40,6 @@ public class ExamBOImpl implements ExamBO {
         Exam exam = examDAO.find(id);
 
         return exam;
-    }
-
-    @Override
-    public boolean saveExam(String id, String name, Date date, String time, int passmarks, String status) throws Exception {
-        return false;
     }
 
     @Override
@@ -71,6 +72,47 @@ public class ExamBOImpl implements ExamBO {
                 id = "E" + maxId;
             }
             return id;
+        }
+    }
+
+    @Override
+    public boolean save(String id, String courseId, String name, Date date, String time, int passmarks, String status) throws Exception {
+
+        Connection connection = DBConnection.getInstance().getConnection();
+
+        try{
+        connection.setAutoCommit(false);
+        boolean result = examDAO.save(new Exam(id,name,date,time,passmarks,status));
+
+        if (!result) {
+            connection.rollback();
+            return false;
+        }
+
+        result = examDetailsDAO.save(new ExamDetails(id,courseId,passmarks));
+
+        if (!result) {
+            connection.rollback();
+            return false;
+        }
+
+        connection.commit();
+        return true;
+        } catch (Throwable throwables) {
+            throwables.printStackTrace();
+            try {
+                connection.rollback();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return false;
+        } finally {
+            try {
+                connection.setAutoCommit(true);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+                return false;
+            }
         }
     }
 }
