@@ -27,6 +27,8 @@ public class BOFactroy {
                 return (T) new StudentBOImpl();
             case EXAM:
                 return (T) new ExamBOImpl();
+            case EXAMRESULT:
+                return (T) new ExamResultBOImpl();
                 default:
                     return null;
         }

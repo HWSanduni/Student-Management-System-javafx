@@ -30,6 +30,8 @@ public class DAOFactroy {
                 return (T) new RegistationDAOImpl();
             case EXAMDETAILS:
                 return (T) new ExamDAOImpl();
+            case EXAMRESULT:
+                return (T) new ExamResultDAOImpl();
              default:
                  return null;
         }

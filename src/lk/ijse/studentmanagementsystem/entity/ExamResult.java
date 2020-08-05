@@ -17,6 +17,13 @@ public class ExamResult implements SuperEntity {
         this.marks = marks;
     }
 
+    public ExamResult(String examId, String studentId, int marks,String id) {
+        this.examId = examId;
+        this.studentId = studentId;
+        this.marks = marks;
+        this.id = id;
+    }
+
     public String getId() {
         return id;
     }
