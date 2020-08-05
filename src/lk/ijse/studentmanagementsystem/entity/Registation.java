@@ -5,8 +5,8 @@ import java.sql.Date;
 
 public class Registation implements SuperEntity {
 
-    private String batchId;
-    private String studentId;
+
+    private RegistationPK registationPK;
     private BigDecimal registartionFee;
     private BigDecimal courseFee;
     private String status;
@@ -17,9 +17,8 @@ public class Registation implements SuperEntity {
     public Registation() {
     }
 
-    public Registation(String batchId, String studentId, BigDecimal registartionFee, BigDecimal courseFee, String status, Date reg_Date, Date courseFeeGi_Date) {
-        this.batchId = batchId;
-        this.studentId = studentId;
+    public Registation(RegistationPK registationPK, BigDecimal registartionFee, BigDecimal courseFee, String status, Date reg_Date, Date courseFeeGi_Date) {
+        this.registationPK = registationPK;
         this.registartionFee = registartionFee;
         this.courseFee = courseFee;
         this.status = status;
@@ -27,21 +26,16 @@ public class Registation implements SuperEntity {
         this.courseFeeGi_Date = courseFeeGi_Date;
     }
 
-    public String getBatchId() {
-        return batchId;
+    public Registation(String batchId, String studentId, BigDecimal registartionFee, BigDecimal courseFee, String status, Date reg_Date, Date courseFeeGi_Date) {
+        this.registationPK = new RegistationPK(batchId,studentId);
+        this.registartionFee = registartionFee;
+        this.courseFee = courseFee;
+        this.status = status;
+        this.reg_Date = reg_Date;
+        this.courseFeeGi_Date = courseFeeGi_Date;
     }
 
-    public void setBatchId(String batchId) {
-        this.batchId = batchId;
-    }
 
-    public String getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
 
     public BigDecimal getRegistartionFee() {
         return registartionFee;
@@ -86,8 +80,7 @@ public class Registation implements SuperEntity {
     @Override
     public String toString() {
         return "Registation{" +
-                "batchId='" + batchId + '\'' +
-                ", studentId='" + studentId + '\'' +
+                "registationPK=" + registationPK +
                 ", registartionFee=" + registartionFee +
                 ", courseFee=" + courseFee +
                 ", status='" + status + '\'' +
