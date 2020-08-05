@@ -1,6 +1,6 @@
 package lk.ijse.studentmanagementsystem.entity;
 
-public class ExamDetails {
+public class ExamDetails  implements SuperEntity{
 
     private ExamDetailsPK examDetailsPK;
     private int passMarks;

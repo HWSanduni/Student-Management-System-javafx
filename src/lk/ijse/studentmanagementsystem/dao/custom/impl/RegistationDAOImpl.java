@@ -33,7 +33,7 @@ public class RegistationDAOImpl implements RegistationDAO {
     public Registation find(RegistationPK key) throws Exception {
 
 
-        RegistationPK registationPK = null;
+        RegistationPK registationPK = key;
         ResultSet rst = CrudUtil.execute("SELECT * FROM `registation` WHERE batchId=? AND studentId=?",registationPK.getBatchId(),registationPK.getStudentId());
         if(rst.next()){
             return new Registation(rst.getString(1),
