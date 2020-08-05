@@ -24,7 +24,7 @@ public class CourseDAOImpl implements CourseDAO {
 
     @Override
     public Course find(String key) throws Exception {
-        ResultSet rst = CrudUtil.execute("SELECT * FROM course WHERE id=?",key);
+        ResultSet rst = CrudUtil.execute("SELECT * FROM course WHERE Cid=?",key);
         if (rst.next()) {
             return new Course(rst.getString(1),
                     rst.getString(2),
@@ -48,12 +48,12 @@ public class CourseDAOImpl implements CourseDAO {
 
     @Override
     public boolean delete(String key) throws Exception {
-        return CrudUtil.execute("DELETE FROM course WHERE id=?",key);
+        return CrudUtil.execute("DELETE FROM course WHERE Cid=?",key);
     }
 
     @Override
     public String getLastCourseId() throws Exception {
-        ResultSet rst = CrudUtil.execute("SELECT * FROM course ORDER BY id DESC LIMIT 1");
+        ResultSet rst = CrudUtil.execute("SELECT * FROM course ORDER BY Cid DESC LIMIT 1");
         if (!rst.next()) {
             return null;
         } else {
