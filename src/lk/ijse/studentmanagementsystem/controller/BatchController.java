@@ -2,6 +2,7 @@ package lk.ijse.studentmanagementsystem.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -70,6 +71,9 @@ public class BatchController {
     }
 
 
+
+
+
     public void HomeOnActionCliced(MouseEvent mouseEvent) throws IOException {
 
         Parent root = FXMLLoader.load(getClass().getResource("/lk/ijse/studentmanagementsystem/view/DashbordForm.fxml"));
@@ -77,5 +81,15 @@ public class BatchController {
         Stage mainStage = (Stage)(this.root.getScene().getWindow());
         mainStage.setScene(scene);
         mainStage.centerOnScreen();
+    }
+
+    public void btnAddNew_OnAction(ActionEvent actionEvent) {
+        try {
+            txtBatchId.clear();
+            txtBatchId.setText(batchBO.getNewBatchId());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

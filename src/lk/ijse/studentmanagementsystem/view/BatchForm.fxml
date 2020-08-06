@@ -36,7 +36,7 @@
                         </ImageView>
 
                     </children></AnchorPane>
-                <Button fx:id="btnAddNewBatch" layoutX="241.0" layoutY="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Batch" textFill="#fcf8f8" />
+                <Button fx:id="btnAddNewBatch" layoutX="241.0" layoutY="35.0" onAction="#btnAddNew_OnAction" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Batch" textFill="#fcf8f8" />
                 <TextField fx:id="txtBatchId" layoutX="403.0" layoutY="40.0" prefHeight="25.0" prefWidth="253.0" promptText="Batch ID" />
                 <TextField fx:id="txtBatchName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Batch Name" />
                 <TextField fx:id="txtCourseName" layoutX="247.0" layoutY="294.0" prefHeight="25.0" prefWidth="413.0" promptText="Course Name" />
