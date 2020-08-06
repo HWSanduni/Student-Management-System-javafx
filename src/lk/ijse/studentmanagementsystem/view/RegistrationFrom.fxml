@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
@@ -27,7 +28,7 @@
                         <Font size="27.0" />
                      </font>
                   </Label>
-                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" onMouseClicked="#HomeOnActionCliced" onMouseEntered="#HomeOnActionCliced" onMouseExited="#HomeOnActionCliced"  pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" onMouseClicked="#HomeOnActionCliced" onMouseEntered="#HomeOnActionCliced" onMouseExited="#HomeOnActionCliced" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../asset/Home.png" />
                             </image>
@@ -39,11 +40,11 @@
             <TextField id="txtLastName" layoutX="247.0" layoutY="131.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Last Name" />
             <TextField id="txtAddress" layoutX="247.0" layoutY="170.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Address" />
             <TextField id="txtNic" layoutX="247.0" layoutY="299.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Nic" />
-            <TextField id="txtDateOfBirth" layoutX="247.0" layoutY="339.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Date Of Birth" />
+            <TextField id="txtAge" layoutX="247.0" layoutY="376.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Age" />
             <TextField id="txtEmail" layoutX="247.0" layoutY="257.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Email" />
-            <RadioButton layoutX="554.0" layoutY="394.0" mnemonicParsing="false" text="Female" textFill="#cdc6c6" />
-            <RadioButton layoutX="389.0" layoutY="394.0" mnemonicParsing="false" text="Male" textFill="#aba4a4" />
-            <Label layoutX="248.0" layoutY="390.0" prefHeight="25.0" prefWidth="122.0" text="Gendar" textFill="#bcb8b8" />
+            <RadioButton id="rdFemale" layoutX="544.0" layoutY="415.0" mnemonicParsing="false" text="Female" textFill="#cdc6c6" />
+            <RadioButton id="rdMale" layoutX="389.0" layoutY="415.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="52.0" text="Male" textFill="#aba4a4" />
+            <Label layoutX="248.0" layoutY="411.0" prefHeight="25.0" prefWidth="122.0" text="Gendar" textFill="#bcb8b8" />
             <TextField layoutX="247.0" layoutY="214.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Tel" />
             <Button id="btnSave" layoutX="254.0" layoutY="657.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
                <font>
@@ -55,17 +56,18 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <TextField id="txtRegistrationFee" layoutX="247.0" layoutY="423.0" prefHeight="25.0" prefWidth="406.0" promptText="Registration Fee" />
-            <Separator layoutX="251.0" layoutY="462.0" prefHeight="4.0" prefWidth="399.0" />
-            <Label layoutX="250.0" layoutY="474.0" prefHeight="17.0" prefWidth="196.0" text="Batch Details" textFill="#064b65">
+            <TextField id="txtRegistrationFee" layoutX="247.0" layoutY="449.0" prefHeight="25.0" prefWidth="406.0" promptText="Registration Fee" />
+            <Separator layoutX="217.0" layoutY="490.0" prefHeight="3.0" prefWidth="455.0" />
+            <Label layoutX="248.0" layoutY="507.0" prefHeight="17.0" prefWidth="196.0" text="Batch Details" textFill="#064b65">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <ComboBox id="cmbBatchName" layoutX="248.0" layoutY="530.0" prefHeight="25.0" prefWidth="406.0" promptText="Batch Name" />
-            <TextField id="txtCourseName" layoutX="249.0" layoutY="583.0" prefHeight="25.0" prefWidth="174.0" promptText="Course Name" />
-            <TextField id="txtCourseFee" layoutX="456.0" layoutY="583.0" prefHeight="25.0" prefWidth="196.0" promptText="Course Fee" />
-            <Label id="lblBatchId" layoutX="514.0" layoutY="476.0" prefHeight="17.0" prefWidth="135.0" text="BatchId" textFill="#bcb1b1" />
+            <ComboBox id="cmbBatchId" layoutX="243.0" layoutY="555.0" prefHeight="25.0" prefWidth="219.0" promptText="Batch ID" />
+            <TextField id="txtCourseName" layoutX="243.0" layoutY="591.0" prefHeight="25.0" prefWidth="219.0" promptText="Course Name" />
+            <TextField id="txtCourseFee" layoutX="488.0" layoutY="591.0" prefHeight="25.0" prefWidth="170.0" promptText="Course Fee" />
+            <TextField id="txtBatchName" layoutX="492.0" layoutY="555.0" prefHeight="25.0" prefWidth="163.0" promptText="Batch Name" />
+            <DatePicker id="picDateOfBirth" layoutX="248.0" layoutY="337.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Date Of Birth" />
             </children>
         </AnchorPane>
     </children>
