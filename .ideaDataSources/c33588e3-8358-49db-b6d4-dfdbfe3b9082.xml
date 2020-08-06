@@ -1341,9 +1341,9 @@ studentId</ColNames>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="333" parent="276" name="Age">
+    <column id="333" parent="276" name="BirthDay">
       <Position>7</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="334" parent="276" name="Mail">
@@ -1356,43 +1356,48 @@ studentId</ColNames>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="336" parent="276" name="PRIMARY">
+    <column id="336" parent="276" name="Age">
+      <Position>10</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="337" parent="276" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Sid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="337" parent="277" name="Subid">
+    <column id="338" parent="277" name="Subid">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="338" parent="277" name="courseId">
+    <column id="339" parent="277" name="courseId">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="339" parent="277" name="Name">
+    <column id="340" parent="277" name="Name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="340" parent="277" name="Type">
+    <column id="341" parent="277" name="Type">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="341" parent="277" name="courseId">
+    <index id="342" parent="277" name="courseId">
       <ColNames>courseId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="342" parent="277" name="PRIMARY">
+    <key id="343" parent="277" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Subid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="343" parent="277" name="subject_ibfk_1">
+    <foreign-key id="344" parent="277" name="subject_ibfk_1">
       <ColNames>courseId</ColNames>
       <RefSchemaName>studentmanagementsystem</RefSchemaName>
       <RefTableName>course</RefTableName>

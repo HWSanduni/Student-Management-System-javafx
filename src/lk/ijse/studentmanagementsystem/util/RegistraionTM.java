@@ -1,14 +1,13 @@
 package lk.ijse.studentmanagementsystem.util;
 
-import java.math.BigDecimal;
 import java.sql.Date;
 
 public class RegistraionTM {
 
     private String batchId;
     private String studentId;
-    private BigDecimal registartionFee;
-    private BigDecimal courseFee;
+    private double registartionFee;
+    private double courseFee;
     private String status;
     private Date reg_Date;
     private Date courseFeeGi_Date;
@@ -18,7 +17,7 @@ public class RegistraionTM {
     }
 
 
-    public RegistraionTM(String batchId, String studentId, BigDecimal registartionFee, BigDecimal courseFee, String status, Date reg_Date, Date courseFeeGi_Date) {
+    public RegistraionTM(String batchId, String studentId, double registartionFee, double courseFee, String status, Date reg_Date, Date courseFeeGi_Date) {
         this.batchId = batchId;
         this.studentId = studentId;
         this.registartionFee = registartionFee;
@@ -44,19 +43,19 @@ public class RegistraionTM {
         this.studentId = studentId;
     }
 
-    public BigDecimal getRegistartionFee() {
+    public double getRegistartionFee() {
         return registartionFee;
     }
 
-    public void setRegistartionFee(BigDecimal registartionFee) {
+    public void setRegistartionFee(double registartionFee) {
         this.registartionFee = registartionFee;
     }
 
-    public BigDecimal getCourseFee() {
+    public double getCourseFee() {
         return courseFee;
     }
 
-    public void setCourseFee(BigDecimal courseFee) {
+    public void setCourseFee(double courseFee) {
         this.courseFee = courseFee;
     }
 

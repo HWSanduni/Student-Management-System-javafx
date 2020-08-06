@@ -11,6 +11,7 @@ import lk.ijse.studentmanagementsystem.entity.Student;
 import lk.ijse.studentmanagementsystem.util.RegistraionTM;
 import lk.ijse.studentmanagementsystem.util.StudentTM;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -32,18 +33,23 @@ public class RegistationBOImpl implements RegistationBO {
                     studentTM.getAddress(),
                     studentTM.getTel(),
                     studentTM.getNic(),
+                    studentTM.getBirthDay(),
                     studentTM.getAge(),
-                    studentTM.getMail()));
-
+                    studentTM.getMail(),
+                    studentTM.getGender()
+                    ));
+            System.out.println(studentTM);
             if (!result) {
                 connection.rollback();
                 return false;
             }
 
+            BigDecimal courseFee = BigDecimal.valueOf(registraionTM.getCourseFee());
+            BigDecimal regFee = BigDecimal.valueOf(registraionTM.getRegistartionFee());
             result = registationDAO.save(new Registation(registraionTM.getBatchId(),
                     registraionTM.getStudentId(),
-                    registraionTM.getRegistartionFee(),
-                    registraionTM.getCourseFee(),
+                    regFee,
+                    courseFee,
                     registraionTM.getStatus(),
                     registraionTM.getReg_Date(),
                     registraionTM.getCourseFeeGi_Date()));
