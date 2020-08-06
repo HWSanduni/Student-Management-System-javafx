@@ -47,7 +47,9 @@ public class SubjectBOImpl implements SubjectBO {
 
     @Override
     public boolean updateSubject(String courseId, String name, String type, String id) throws Exception {
-        return subjectDAO.update(new Subject(courseId,name,type,id));
+       // System.out.println("c"+courseId);
+       // System.out.println("Bo"+new Subject(courseId,name,type,id));
+        return subjectDAO.update(new Subject(id,courseId,name,type));
     }
 
     @Override
