@@ -1,5 +1,7 @@
 package lk.ijse.studentmanagementsystem.util;
 
+import java.sql.Date;
+
 public class StudentTM {
 
     private String Sid;
@@ -8,21 +10,25 @@ public class StudentTM {
     private String address;
     private int tel;
     private String nic;
+    private Date birthDay;
     private int age;
     private String mail;
+    private String gender;
 
     public StudentTM() {
     }
 
-    public StudentTM(String sid, String firstName, String lastName, String address, int tel, String nic, int age, String mail) {
+    public StudentTM(String sid, String firstName, String lastName, String address, int tel, String nic, Date birthDay, int age, String mail, String gender) {
         Sid = sid;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.tel = tel;
         this.nic = nic;
+        this.birthDay = birthDay;
         this.age = age;
         this.mail = mail;
+        this.gender = gender;
     }
 
     public String getSid() {
@@ -73,6 +79,14 @@ public class StudentTM {
         this.nic = nic;
     }
 
+    public Date getBirthDay() {
+        return birthDay;
+    }
+
+    public void setBirthDay(Date birthDay) {
+        this.birthDay = birthDay;
+    }
+
     public int getAge() {
         return age;
     }
@@ -89,6 +103,14 @@ public class StudentTM {
         this.mail = mail;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
         return "StudentTM{" +
@@ -98,8 +120,10 @@ public class StudentTM {
                 ", address='" + address + '\'' +
                 ", tel=" + tel +
                 ", nic='" + nic + '\'' +
+                ", birthDay=" + birthDay +
                 ", age=" + age +
                 ", mail='" + mail + '\'' +
+                ", gender='" + gender + '\'' +
                 '}';
     }
 }

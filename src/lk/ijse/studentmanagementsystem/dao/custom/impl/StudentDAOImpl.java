@@ -20,8 +20,10 @@ public class StudentDAOImpl implements StudentDAO {
                     rst.getString(4),
                     rst.getInt(5),
                     rst.getString(6),
-                    rst.getInt(7),
-                    rst.getString(8)));
+                    rst.getDate(7),
+                    rst.getInt(8),
+                    rst.getString(9),
+                    rst.getString(10)));
         }
         return students;
 
@@ -37,20 +39,22 @@ public class StudentDAOImpl implements StudentDAO {
                     rst.getString(4),
                     rst.getInt(5),
                     rst.getString(6),
-                    rst.getInt(7),
-                    rst.getString(8));
+                    rst.getDate(7),
+                    rst.getInt(8),
+                    rst.getString(9),
+                    rst.getString(10));
         }
         return null;
     }
 
     @Override
     public boolean save(Student student) throws Exception {
-        return CrudUtil.execute("INSERT INTO student VALUES (?,?,?,?,?,?,?,?)",student.getSid(),student.getFirstName(),student.getLastName(),student.getAddress(),student.getTel(),student.getNic(),student.getAge(),student.getMail());
+        return CrudUtil.execute("INSERT INTO student VALUES (?,?,?,?,?,?,?,?,?,?)",student.getSid(),student.getFirstName(),student.getLastName(),student.getAddress(),student.getTel(),student.getNic(),student.getBirthDay(),student.getMail(),student.getGender(),student.getAge());
     }
 
     @Override
     public boolean update(Student student) throws Exception {
-        return CrudUtil.execute("UPDATE student SET FirstName=?,LastName=?, Address=? Tel=?,Nic=?,Age=?,Mail=? WHERE Sid=?",student.getFirstName(),student.getLastName(),student.getAddress(),student.getTel(),student.getNic(),student.getAge(),student.getMail(),student.getSid());
+        return CrudUtil.execute("UPDATE student SET FirstName=?,LastName=?, Address=? Tel=?,Nic=?,BirthDay=?,Mail=?,Gender=?Age=? WHERE Sid=?",student.getFirstName(),student.getLastName(),student.getAddress(),student.getTel(),student.getNic(),student.getBirthDay(),student.getMail(),student.getGender(),student.getAge(),student.getSid());
     }
 
     @Override

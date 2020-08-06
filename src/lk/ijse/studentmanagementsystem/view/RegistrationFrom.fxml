@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
@@ -27,45 +28,46 @@
                         <Font size="27.0" />
                      </font>
                   </Label>
-                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" onMouseClicked="#HomeOnActionCliced" onMouseEntered="#HomeOnActionCliced" onMouseExited="#HomeOnActionCliced"  pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" onMouseClicked="#HomeOnActionCliced" onMouseEntered="#HomeOnActionCliced" onMouseExited="#HomeOnActionCliced" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../asset/Home.png" />
                             </image>
                         </ImageView>
                     </children></AnchorPane>
-            <Button id="btnAddNewStudent" layoutX="241.0" layoutY="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Student" textFill="#fcf8f8" />
-            <TextField id="txtStudentId" layoutX="403.0" layoutY="40.0" prefHeight="25.0" prefWidth="253.0" promptText="Student ID" />
-            <TextField id="txtFirstName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Student First Name" />
-            <TextField id="txtLastName" layoutX="247.0" layoutY="131.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Last Name" />
-            <TextField id="txtAddress" layoutX="247.0" layoutY="170.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Address" />
-            <TextField id="txtNic" layoutX="247.0" layoutY="299.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Nic" />
-            <TextField id="txtDateOfBirth" layoutX="247.0" layoutY="339.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Date Of Birth" />
-            <TextField id="txtEmail" layoutX="247.0" layoutY="257.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Email" />
-            <RadioButton layoutX="554.0" layoutY="394.0" mnemonicParsing="false" text="Female" textFill="#cdc6c6" />
-            <RadioButton layoutX="389.0" layoutY="394.0" mnemonicParsing="false" text="Male" textFill="#aba4a4" />
-            <Label layoutX="248.0" layoutY="390.0" prefHeight="25.0" prefWidth="122.0" text="Gendar" textFill="#bcb8b8" />
-            <TextField layoutX="247.0" layoutY="214.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Tel" />
-            <Button id="btnSave" layoutX="254.0" layoutY="657.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
+            <Button fx:id="btnAddNewStudent" onAction="#btnAddNew_OnAction" layoutX="241.0" layoutY="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Student" textFill="#fcf8f8" />
+            <TextField fx:id="txtStudentId" layoutX="403.0" layoutY="40.0" prefHeight="25.0" prefWidth="253.0" promptText="Student ID" />
+            <TextField fx:id="txtFirstName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Student First Name" />
+            <TextField fx:id="txtLastName" layoutX="247.0" layoutY="131.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Last Name" />
+            <TextField fx:id="txtAddress" layoutX="247.0" layoutY="170.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Address" />
+            <TextField fx:id="txtNic" layoutX="247.0" layoutY="299.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Nic" />
+            <TextField fx:id="txtAge" layoutX="247.0" layoutY="376.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Age" />
+            <TextField fx:id="txtEmail" layoutX="247.0" layoutY="257.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Email" />
+                <RadioButton fx:id="rdFemale" onAction="#btnGender_OnAction" layoutX="544.0" layoutY="415.0" mnemonicParsing="false" text="Female" textFill="#cdc6c6" />
+            <RadioButton fx:id="rdMale"  onAction="#btnGender_OnAction" layoutX="389.0" layoutY="415.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="52.0" text="Male" textFill="#aba4a4" />
+            <Label layoutX="248.0" layoutY="411.0" prefHeight="25.0" prefWidth="122.0" text="Gendar" textFill="#bcb8b8" />
+            <TextField fx:id="txtTel" layoutX="247.0" layoutY="214.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Tel" />
+            <Button fx:id="btnSave" onAction="#btnSave_OnAction" layoutX="254.0" layoutY="657.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button id="btnCancel" layoutX="516.0" layoutY="657.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Cancel">
+            <Button fx:id="btnCancel" layoutX="516.0" layoutY="657.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Cancel">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <TextField id="txtRegistrationFee" layoutX="247.0" layoutY="423.0" prefHeight="25.0" prefWidth="406.0" promptText="Registration Fee" />
-            <Separator layoutX="251.0" layoutY="462.0" prefHeight="4.0" prefWidth="399.0" />
-            <Label layoutX="250.0" layoutY="474.0" prefHeight="17.0" prefWidth="196.0" text="Batch Details" textFill="#064b65">
+            <TextField fx:id="txtRegistrationFee" layoutX="247.0" layoutY="449.0" prefHeight="25.0" prefWidth="406.0" promptText="Registration Fee" />
+            <Separator layoutX="220.0" layoutY="493.0" prefHeight="0.0" prefWidth="452.0" />
+            <Label layoutX="248.0" layoutY="507.0" prefHeight="17.0" prefWidth="196.0" text="Batch Details" textFill="#064b65">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <ComboBox id="cmbBatchName" layoutX="248.0" layoutY="530.0" prefHeight="25.0" prefWidth="406.0" promptText="Batch Name" />
-            <TextField id="txtCourseName" layoutX="249.0" layoutY="583.0" prefHeight="25.0" prefWidth="174.0" promptText="Course Name" />
-            <TextField id="txtCourseFee" layoutX="456.0" layoutY="583.0" prefHeight="25.0" prefWidth="196.0" promptText="Course Fee" />
-            <Label id="lblBatchId" layoutX="514.0" layoutY="476.0" prefHeight="17.0" prefWidth="135.0" text="BatchId" textFill="#bcb1b1" />
+            <ComboBox fx:id="cmbBatchId" layoutX="243.0" layoutY="555.0" prefHeight="25.0" prefWidth="219.0" promptText="Batch ID" />
+            <TextField fx:id="txtCourseName" layoutX="243.0" layoutY="591.0" prefHeight="25.0" prefWidth="219.0" promptText="Course Name" />
+            <TextField fx:id="txtCourseFee" layoutX="488.0" layoutY="591.0" prefHeight="25.0" prefWidth="170.0" promptText="Course Fee" />
+            <TextField fx:id="txtBatchName" layoutX="492.0" layoutY="555.0" prefHeight="25.0" prefWidth="163.0" promptText="Batch Name" />
+            <DatePicker fx:id="picDateOfBirth" layoutX="248.0" layoutY="337.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Date Of Birth" />
             </children>
         </AnchorPane>
     </children>

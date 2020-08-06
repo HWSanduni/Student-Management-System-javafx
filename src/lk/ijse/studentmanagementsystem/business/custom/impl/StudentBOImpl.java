@@ -7,6 +7,7 @@ import lk.ijse.studentmanagementsystem.dao.custom.StudentDAO;
 import lk.ijse.studentmanagementsystem.entity.Student;
 import lk.ijse.studentmanagementsystem.util.StudentTM;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class StudentBOImpl implements StudentBO {
         List<Student> students = studentDAO.findAll();
         List<StudentTM> studentTMS = new ArrayList<>();
         for (Student student: students) {
-            studentTMS.add(new StudentTM(student.getSid(),student.getFirstName(),student.getLastName(),student.getAddress(),student.getTel(),student.getNic(),student.getAge(),student.getMail()));
+            studentTMS.add(new StudentTM(student.getSid(),student.getFirstName(),student.getLastName(),student.getAddress(),student.getTel(),student.getNic(),student.getBirthDay(),student.getAge(),student.getMail(),student.getGender()));
         }
 
         return studentTMS;
@@ -34,8 +35,8 @@ public class StudentBOImpl implements StudentBO {
     }
 
     @Override
-    public boolean saveStudent(String id, String fName, String lName, String address, int tel, String nic, int age, String mail) throws Exception {
-        return studentDAO.save(new Student(id,fName,lName,address,tel,nic,age,mail));
+    public boolean saveStudent(String id, String fName, String lName, String address, int tel, String nic,Date birthday ,int age, String mail,String gender) throws Exception {
+        return studentDAO.save(new Student(id,fName,lName,address,tel,nic,birthday,age,mail,gender));
     }
 
     @Override
@@ -44,8 +45,8 @@ public class StudentBOImpl implements StudentBO {
     }
 
     @Override
-    public boolean updateStudent(String fName, String lName, String address, int tel, String nic, int age, String mail, String id) throws Exception {
-        return studentDAO.update(new Student(fName,lName,address,tel,nic,age,mail,id));
+    public boolean updateStudent(String fName, String lName, String address, int tel, String nic, Date birthday, int age, String mail, String gender, String id) throws Exception {
+        return studentDAO.update(new Student(fName,lName,address,tel,nic,birthday,age,mail,gender,id));
     }
 
     @Override
