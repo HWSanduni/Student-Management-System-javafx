@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -28,38 +29,38 @@
                                 <Font size="27.0" />
                             </font>
                         </Label>
-                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" onMouseClicked="#HomeOnActionCliced" onMouseEntered="#HomeOnActionCliced" onMouseExited="#HomeOnActionCliced"  pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="19.0" layoutY="7.0" onMouseClicked="#HomeOnActionCliced" onMouseEntered="#HomeOnActionCliced" onMouseExited="#HomeOnActionCliced" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../asset/Home.png" />
                             </image>
                         </ImageView>
 
                     </children></AnchorPane>
-                <Button id="btnAddNewBatch" layoutX="241.0" layoutY="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Batch" textFill="#fcf8f8" />
-                <TextField id="txtBatchId" layoutX="403.0" layoutY="40.0" prefHeight="25.0" prefWidth="253.0" promptText="Batch ID" />
-                <TextField id="txtBatchName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Batch Name" />
-                <TextField id="txtEndDate" layoutX="248.0" layoutY="259.0" prefHeight="25.0" prefWidth="406.0" promptText="Course End date" />
-                <TextField id="txtCourseFee" layoutX="248.0" layoutY="298.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Fee" />
-                <TextField id="txtStartDate" layoutX="248.0" layoutY="218.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Start Date" />
-                <Button id="btnSave" layoutX="268.0" layoutY="352.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
+                <Button fx:id="btnAddNewBatch" layoutX="241.0" layoutY="35.0" onAction="#btnAddNew_OnAction" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Batch" textFill="#fcf8f8" />
+                <TextField fx:id="txtBatchId" layoutX="403.0" layoutY="40.0" prefHeight="25.0" prefWidth="253.0" promptText="Batch ID" />
+                <TextField fx:id="txtBatchName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Batch Name" />
+                <TextField fx:id="txtCourseName" layoutX="247.0" layoutY="294.0" prefHeight="25.0" prefWidth="413.0" promptText="Course Name" />
+                <Button fx:id="btnSave"  onAction="#btnSave_OnAction" layoutX="268.0" layoutY="352.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button id="btnRemove" layoutX="479.0" layoutY="352.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Remove">
+                <Button fx:id="btnRemove" onAction="#btnDelete_OnAction" layoutX="479.0" layoutY="352.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Remove">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Separator layoutX="251.0" layoutY="411.0" prefHeight="4.0" prefWidth="399.0" />
-                <ComboBox id="cmbSubjectName" layoutX="248.0" layoutY="176.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Subject" />
-            <ComboBox layoutX="247.0" layoutY="130.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Name" />
-            <TableView layoutX="251.0" layoutY="471.0" prefHeight="200.0" prefWidth="399.0">
+                <Separator layoutX="217.0" layoutY="414.0" prefHeight="4.0" prefWidth="458.0" />
+            <ComboBox fx:id="cmbCourseId" layoutX="247.0" layoutY="247.0" prefHeight="25.0" prefWidth="413.0" promptText="Course ID" />
+            <TableView fx:id="tblBatch" layoutX="237.0" layoutY="470.0" prefHeight="200.0" prefWidth="426.0">
               <columns>
-                <TableColumn prefWidth="100.0" text="Batch ID" />
-                <TableColumn prefWidth="99.0" text="Batch Name" />
-                  <TableColumn prefWidth="99.0" text="Course ID" />
-                  <TableColumn prefWidth="100.0" text="Course Name" />
+                <TableColumn prefWidth="59.0" text="Batch ID" />
+                <TableColumn prefWidth="67.0" text="Batch Name" />
+                  <TableColumn prefWidth="70.0" text="Batch Type" />
+                  <TableColumn prefWidth="48.0" text="Year" />
+                  <TableColumn prefWidth="62.0" text="StartDate" />
+                  <TableColumn prefWidth="54.0" text="EndDate" />
+                  <TableColumn prefWidth="65.0" text="Course ID" />
               </columns>
             </TableView>
             <Label layoutX="254.0" layoutY="423.0" prefHeight="17.0" prefWidth="171.0" text="Batch Details" textFill="#0916c9">
@@ -67,6 +68,10 @@
                   <Font size="16.0" />
                </font>
             </Label>
+            <TextField fx:id="txtBatchType" layoutX="247.0" layoutY="130.0" prefHeight="25.0" prefWidth="406.0" promptText="Btach Type" />
+            <TextField fx:id="txtYear" layoutX="249.0" layoutY="170.0" prefHeight="25.0" prefWidth="406.0" promptText="Batch Year" />
+            <DatePicker fx:id="picStartDate" layoutX="249.0" layoutY="209.0" prefHeight="25.0" prefWidth="187.0" promptText="Start Date" />
+            <DatePicker fx:id="picEndDate" layoutX="460.0" layoutY="209.0" prefHeight="25.0" prefWidth="194.0" promptText="End Date" />
             </children>
         </AnchorPane>
     </children>

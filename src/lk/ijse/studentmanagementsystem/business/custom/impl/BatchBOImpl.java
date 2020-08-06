@@ -51,7 +51,7 @@ public class BatchBOImpl implements BatchBO {
 
     @Override
     public boolean updateBatch(String courseId, String name, String type, int year, Date startDate, Date endDate, String id) throws Exception {
-        return batchDAO.update(new Batch(courseId,name,type,year,startDate,endDate,id));
+        return batchDAO.update(new Batch(id,courseId,name,type,year,startDate,endDate));
     }
 
     @Override
