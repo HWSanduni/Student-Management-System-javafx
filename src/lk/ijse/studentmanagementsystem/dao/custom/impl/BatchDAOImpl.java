@@ -48,6 +48,7 @@ public class BatchDAOImpl implements BatchDAO {
 
     @Override
     public boolean update(Batch batch) throws Exception {
+        System.out.println(batch);
         return CrudUtil.execute("UPDATE batch SET courseId=?,Name=?, Type=?,Year=?,StartDate=?,EndDate=? WHERE Bid=?",batch.getCourseId(),batch.getName(),batch.getType(),batch.getYear(),batch.getStartDate(),batch.getEndDate(),batch.getBid());
     }
 

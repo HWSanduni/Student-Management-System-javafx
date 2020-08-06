@@ -156,7 +156,7 @@ public class SubjectController {
     public void btnSave_OnAction(ActionEvent actionEvent) {
 
         if (cmbCourseId.getSelectionModel().getSelectedIndex() == -1) {
-            new Alert(Alert.AlertType.ERROR, "You need to select a customer", ButtonType.OK).show();
+            new Alert(Alert.AlertType.ERROR, "You need to select a Course", ButtonType.OK).show();
             cmbCourseId.requestFocus();
             return;
         }
@@ -192,7 +192,7 @@ public class SubjectController {
 
             try {
                 System.out.println("upadte");
-                result = subjectBO.updateSubject(cmbCourseId.getValue().getCid(),txtSubjectName.getText(),txtType.getText(),txtSubjectId.getText());
+                result = subjectBO.updateSubject(cmbCourseId.getValue().getCid(),txtSubjectName.getText(),txtType.getText(),subjectTM.getSubId());
 
                // System.out.println(cmbCourseId);
 
