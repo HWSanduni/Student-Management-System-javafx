@@ -157,6 +157,7 @@ public class CourseController {
                 txtCourseFee.clear();
                 txtDescription.clear();
                 txtCourseName.clear();
+
                 Alert alert = new Alert(Alert.AlertType.INFORMATION, "Successfully Added Course!");
                 alert.show();
             } catch (Exception e) {

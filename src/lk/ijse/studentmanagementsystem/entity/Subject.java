@@ -17,6 +17,7 @@ public class Subject implements SuperEntity{
         this.type = type;
     }
 
+
     public String getSubId() {
         return subId;
     }

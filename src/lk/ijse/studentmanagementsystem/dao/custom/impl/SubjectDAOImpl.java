@@ -52,11 +52,13 @@ public class SubjectDAOImpl implements SubjectDAO {
 
     @Override
     public boolean update(Subject subject) throws Exception {
+       // System.out.println("---------");
+       // System.out.println(subject);
         return CrudUtil.execute("UPDATE subject SET courseId=?,Name=?, Type=? WHERE Subid=?",subject.getCourseId(),subject.getName(),subject.getType(),subject.getSubId());
     }
 
     @Override
     public boolean delete(String key) throws Exception {
-        return CrudUtil.execute("DELETE FROM subject WHERE id=?",key);
+        return CrudUtil.execute("DELETE FROM subject WHERE Subid=?",key);
     }
 }

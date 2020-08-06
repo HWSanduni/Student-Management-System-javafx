@@ -12,7 +12,7 @@ public interface SubjectBO extends SuperBO {
     public Subject findSubject (String id) throws Exception;
     public  boolean saveSubject(String id, String courseId, String name, String type)throws Exception;
     public  boolean deleteSubject(String subId)throws Exception;
-    public  boolean updateSubject(String courseId, String name, String type,String id)throws Exception;
+    public  boolean updateSubject(String courseId, String name, String type,String subid)throws Exception;
     public  String getNewSubjectId()throws Exception;
 
 
