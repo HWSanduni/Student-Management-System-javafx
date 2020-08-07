@@ -4,14 +4,16 @@ public class ExamDetailsTM {
 
     private String examId;
     private String corseId;
+    private String subjectId;
     private int passMarks;
 
     public ExamDetailsTM() {
     }
 
-    public ExamDetailsTM(String examId, String corseId, int passMarks) {
+    public ExamDetailsTM(String examId, String corseId, String subjectId, int passMarks) {
         this.examId = examId;
         this.corseId = corseId;
+        this.subjectId = subjectId;
         this.passMarks = passMarks;
     }
 
@@ -31,6 +33,14 @@ public class ExamDetailsTM {
         this.corseId = corseId;
     }
 
+    public String getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(String subjectId) {
+        this.subjectId = subjectId;
+    }
+
     public int getPassMarks() {
         return passMarks;
     }
@@ -44,6 +54,7 @@ public class ExamDetailsTM {
         return "ExamDetailsTM{" +
                 "examId='" + examId + '\'' +
                 ", corseId='" + corseId + '\'' +
+                ", subjectId='" + subjectId + '\'' +
                 ", passMarks=" + passMarks +
                 '}';
     }

@@ -74,4 +74,16 @@ public class SubjectBOImpl implements SubjectBO {
             return id;
         }
     }
+
+    @Override
+    public List<SubjectTM> getFindAllSubject(String id) throws Exception {
+        List<Subject> subjects = subjectDAO.getFindAllSubject(id);
+        List<SubjectTM> subjectTMS = new ArrayList<>();
+
+        for (Subject subject:subjects) {
+            subjectTMS.add(new SubjectTM(subject.getSubId(),subject.getCourseId(),subject.getName(),subject.getType()));
+        }
+
+        return subjectTMS;
+    }
 }

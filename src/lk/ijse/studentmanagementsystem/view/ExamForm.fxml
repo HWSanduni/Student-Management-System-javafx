@@ -32,27 +32,26 @@
                             </image>
                         </ImageView>
                     </children></AnchorPane>
-                <Button id="btnAddNewStudent" layoutX="241.0" layoutY="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Exam" textFill="#fcf8f8" />
-                <TextField id="txtExamId" layoutX="403.0" layoutY="40.0" prefHeight="25.0" prefWidth="253.0" promptText="Exam ID" />
-                <TextField id="txtExamName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Name" />
-                <TextField id="txtTime" layoutX="248.0" layoutY="175.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Time" />
-                <Button id="btnSave" layoutX="268.0" layoutY="520.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
+                <Button fx:id="btnAddNewStudent" layoutX="241.0" layoutY="35.0" mnemonicParsing="false" onAction="#btnAddNew_OnAction" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Exam" textFill="#fcf8f8" />
+                <TextField fx:id="txtExamId" layoutX="403.0" layoutY="40.0" prefHeight="25.0" prefWidth="253.0" promptText="Exam ID" />
+                <TextField fx:id="txtExamName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Name" />
+                <TextField fx:id="txtTime" layoutX="248.0" layoutY="175.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Time" />
+                <Button fx:id="btnSave" layoutX="268.0" layoutY="520.0" mnemonicParsing="false" onAction="#btnSave_OnAction" prefHeight="35.0" prefWidth="135.0" text="Save">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button id="btnCancel" layoutX="521.0" layoutY="520.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Cancel">
+                <Button fx:id="btnCancel" layoutX="521.0" layoutY="520.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Cancel">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-            <ComboBox id="cmbCourseId" layoutX="248.0" layoutY="216.0" prefHeight="25.0" prefWidth="406.0" promptText="Course ID" />
-            <ComboBox id="cmbSubjectID" layoutX="247.0" layoutY="306.0" prefHeight="25.0" prefWidth="406.0" promptText="Subject ID" />
-            <Label id="lblCourseId" layoutX="254.0" layoutY="356.0" prefHeight="17.0" prefWidth="94.0" />
-            <Label id="lblSubId" layoutX="502.0" layoutY="356.0" prefHeight="17.0" prefWidth="94.0" />
-            <TextField id="txtSubjectName" layoutX="247.0" layoutY="352.0" prefHeight="25.0" prefWidth="406.0" promptText="Subject Name" />
-            <TextField id="txtCourseName" layoutX="248.0" layoutY="267.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Name" />
-            <DatePicker layoutX="249.0" layoutY="133.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Date" />
+            <ComboBox fx:id="cmbCourseId" layoutX="249.0" layoutY="273.0" prefHeight="25.0" prefWidth="406.0" promptText="Course ID" />
+            <ComboBox fx:id="cmbSubjectID" layoutX="247.0" layoutY="374.0" prefHeight="25.0" prefWidth="406.0" promptText="Subject ID" />
+            <TextField fx:id="txtSubjectName" layoutX="247.0" layoutY="420.0" prefHeight="25.0" prefWidth="406.0" promptText="Subject Name" />
+            <TextField fx:id="txtCourseName" layoutX="248.0" layoutY="324.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Name" />
+            <DatePicker fx:id="picExamDate" layoutX="249.0" layoutY="133.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Date" />
+            <TextField fx:id="txtPassMarks" layoutX="249.0" layoutY="220.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Pass Marks" />
             </children>
         </AnchorPane>
     </children>

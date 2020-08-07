@@ -19,7 +19,8 @@ public class ExamDetailsDAOImpl implements ExamDetailsDAO {
         while (rst.next()) {
             examDetails.add(new ExamDetails(rst.getString(1),
                     rst.getString(2),
-                    rst.getInt(3)));
+                    rst.getString(3),
+                    rst.getInt(4)));
         }
         return examDetails;
     }
@@ -31,7 +32,8 @@ public class ExamDetailsDAOImpl implements ExamDetailsDAO {
         if(rst.next()){
             return (new ExamDetails(rst.getString(1),
                     rst.getString(2),
-                    rst.getInt(3)));
+                    rst.getString(3),
+                    rst.getInt(4)));
         }
 
 
@@ -40,12 +42,12 @@ public class ExamDetailsDAOImpl implements ExamDetailsDAO {
 
     @Override
     public boolean save(ExamDetails examDetails) throws Exception {
-        return CrudUtil.execute("INSERT INTO `examdetails` VALUES (?,?,?)",examDetails.getExamDetailsPK().getExamId(),examDetails.getExamDetailsPK().getCoruseId(),examDetails.getPassMarks());
+        return CrudUtil.execute("INSERT INTO `examdetails` VALUES (?,?,?,?)",examDetails.getExamDetailsPK().getExamId(),examDetails.getExamDetailsPK().getCoruseId(),examDetails.getSubjectId(),examDetails.getPassMarks());
     }
 
     @Override
     public boolean update(ExamDetails examDetails) throws Exception {
-        return CrudUtil.execute("UPDATE examdetails SET passMarks=?,WHERE  examId=? AND coruseId=? ",examDetails.getPassMarks(),examDetails.getExamDetailsPK().getCoruseId(),examDetails.getExamDetailsPK().getExamId());
+        return CrudUtil.execute("UPDATE examdetails SET passMarks=?,subjectId=?WHERE  examId=? AND coruseId=? ",examDetails.getPassMarks(),examDetails.getSubjectId(),examDetails.getExamDetailsPK().getCoruseId(),examDetails.getExamDetailsPK().getExamId());
     }
 
     @Override

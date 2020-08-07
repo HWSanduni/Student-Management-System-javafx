@@ -76,7 +76,7 @@ public class ExamBOImpl implements ExamBO {
     }
 
     @Override
-    public boolean save(String id, String courseId, String name, Date date, String time, int passmarks, String status) throws Exception {
+    public boolean save(String id, String courseId, String name, Date date, String time,String subjectId, int passmarks, String status) throws Exception {
 
         Connection connection = DBConnection.getInstance().getConnection();
 
@@ -89,7 +89,7 @@ public class ExamBOImpl implements ExamBO {
             return false;
         }
 
-        result = examDetailsDAO.save(new ExamDetails(id,courseId,passmarks));
+        result = examDetailsDAO.save(new ExamDetails(id,courseId,subjectId,passmarks));
 
         if (!result) {
             connection.rollback();

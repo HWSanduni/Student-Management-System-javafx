@@ -16,7 +16,7 @@ public interface ExamBO extends SuperBO {
     public  boolean updateExam(String name , Date date, String time, int passmarks, String status,String id)throws Exception;
     public  String getNewExamId()throws Exception;
 
-    public  boolean save(String id, String courseId,String name , Date date, String time, int passmarks, String status)throws Exception;
+    public  boolean save(String id, String courseId,String name , Date date, String time,String subjectId, int passmarks, String status)throws Exception;
 
 
 }
