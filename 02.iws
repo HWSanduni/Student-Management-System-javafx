@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ca223b0-3c6d-4f6f-bb7e-728b553d3c9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.ideaDataSources/c33588e3-8358-49db-b6d4-dfdbfe3b9082.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.ideaDataSources/c33588e3-8358-49db-b6d4-dfdbfe3b9082.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/BOFactroy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/BOFactroy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/BOType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/BOType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/StudentBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/StudentBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/RegistationBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/RegistationBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/StudentBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/StudentBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/StudentDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/StudentDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/entity/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/util/RegistraionTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/util/RegistraionTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/util/StudentTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/util/StudentTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/RegistrationFrom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/RegistrationFrom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02.iws" beforeDir="false" afterPath="$PROJECT_DIR$/02.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamForm.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,10 +46,10 @@
     <session id="-65221895">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.5" value="1" />
@@ -72,7 +62,7 @@
           <entry key="project.open.time.9" value="1" />
           <entry key="project.open.time.98" value="1" />
           <entry key="project.open.time.99" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -80,7 +70,7 @@
           <entry key="batch" value="3" />
           <entry key="course" value="5" />
           <entry key="css" value="9" />
-          <entry key="fxml" value="71" />
+          <entry key="fxml" value="72" />
           <entry key="java" value="267" />
           <entry key="jpg" value="1" />
           <entry key="png" value="1" />
@@ -97,7 +87,7 @@
           <entry key="Image" value="2" />
           <entry key="JAVA" value="267" />
           <entry key="Scratch" value="5" />
-          <entry key="XML" value="71" />
+          <entry key="XML" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -106,7 +96,7 @@
           <entry key="css" value="46" />
           <entry key="dummy" value="3" />
           <entry key="fxml" value="352" />
-          <entry key="java" value="8859" />
+          <entry key="java" value="8879" />
           <entry key="sql" value="44" />
           <entry key="txt" value="47" />
         </counts>
@@ -114,7 +104,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="46" />
-          <entry key="JAVA" value="8859" />
+          <entry key="JAVA" value="8879" />
           <entry key="PLAIN_TEXT" value="50" />
           <entry key="SQL" value="6" />
           <entry key="Scratch" value="40" />
@@ -126,75 +116,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/RegistrationController.java">
+        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamForm.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="207" column="22" selection-start-line="207" selection-start-column="22" selection-end-line="207" selection-end-column="22" />
+            <state relative-caret-position="969">
+              <caret line="57" column="15" lean-forward="true" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/BatchController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="207" column="65" lean-forward="true" selection-start-line="207" selection-start-column="65" selection-end-line="207" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/CrudUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/StudentDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/SuperBO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/BOType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/BOFactroy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/RegistationBOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-            </state>
-          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -216,7 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/RegistrationDAO.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/RegistationDAO.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/entity/RegistationPK.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/entity/Registation.java" />
@@ -267,6 +194,7 @@
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/RegistationBOImpl.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/StudentDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/RegistrationController.java" />
+        <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamForm.fxml" />
       </list>
     </option>
   </component>
@@ -288,8 +216,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -309,82 +237,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -395,7 +247,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1596733749482" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1596734677026" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Layerd/01/git pos/04/lib/mysql-connector-java-8.0.20.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -494,18 +346,19 @@
       <workItem from="1596689180527" duration="6966000" />
       <workItem from="1596702552067" duration="297000" />
       <workItem from="1596704549260" duration="8750000" />
-      <workItem from="1596717051332" duration="13595000" />
+      <workItem from="1596717051332" duration="14486000" />
+      <workItem from="1596780010964" duration="1119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106715000" />
+    <option name="totallyTimeSpent" value="108725000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.301059" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30559757" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -573,13 +426,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/ExamResultDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/DAOType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -805,9 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
           <caret line="158" column="38" lean-forward="true" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -822,16 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="e#2158#2159#0" expanded="true" />
-            <element signature="e#2189#2190#0" expanded="true" />
-            <element signature="e#2235#2236#0" expanded="true" />
-            <element signature="e#2275#2276#0" expanded="true" />
-            <element signature="e#2253#2254#0" expanded="true" />
-            <element signature="e#2282#2283#0" expanded="true" />
-            <element signature="e#2326#2327#0" expanded="true" />
-            <element signature="e#2362#2363#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -839,16 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding>
-            <element signature="e#1687#1688#0" expanded="true" />
-            <element signature="e#1718#1719#0" expanded="true" />
-            <element signature="e#1764#1765#0" expanded="true" />
-            <element signature="e#1804#1805#0" expanded="true" />
-            <element signature="e#1836#1837#0" expanded="true" />
-            <element signature="e#1865#1866#0" expanded="true" />
-            <element signature="e#1909#1910#0" expanded="true" />
-            <element signature="e#1945#1946#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -945,17 +768,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/BatchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="207" column="65" lean-forward="true" selection-start-line="207" selection-start-column="65" selection-end-line="207" selection-end-column="65" />
+        <state relative-caret-position="394">
+          <caret line="209" column="29" lean-forward="true" selection-start-line="209" selection-start-column="29" selection-end-line="209" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/RegistrationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="207" column="22" selection-start-line="207" selection-start-column="22" selection-end-line="207" selection-end-column="22" />
+        <state relative-caret-position="45">
+          <caret line="163" column="40" lean-forward="true" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamForm.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="15" lean-forward="true" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
   </component>
   <component name="masterDetails">
