@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ca223b0-3c6d-4f6f-bb7e-728b553d3c9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.ideaDataSources/c33588e3-8358-49db-b6d4-dfdbfe3b9082.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.ideaDataSources/c33588e3-8358-49db-b6d4-dfdbfe3b9082.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02.iws" beforeDir="false" afterPath="$PROJECT_DIR$/02.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/ExamBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/ExamBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/SubjectBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/SubjectBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/ExamBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/ExamBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/SubjectBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/SubjectBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/ExamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/ExamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/DAOFactroy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/DAOFactroy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/SubjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/SubjectDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/ExamDetailsDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/ExamDetailsDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/SubjectDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/SubjectDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/entity/ExamDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/entity/ExamDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/util/ExamDetailsTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/util/ExamDetailsTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/CoursePaymentForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/CoursePaymentForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamDetailsForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamDetailsForm.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,6 +38,13 @@
         <item name="studentmanagementsystem@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="studentmanagementsystem: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="studentmanagementsystem@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="studentmanagementsystem: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="batch: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -86,24 +81,24 @@
           <entry key="css" value="9" />
           <entry key="exam" value="2" />
           <entry key="examdetails" value="3" />
-          <entry key="fxml" value="75" />
+          <entry key="fxml" value="78" />
           <entry key="java" value="306" />
           <entry key="jpg" value="1" />
           <entry key="png" value="1" />
-          <entry key="registation" value="1" />
-          <entry key="sql" value="8" />
-          <entry key="student" value="2" />
+          <entry key="registation" value="3" />
+          <entry key="sql" value="10" />
+          <entry key="student" value="3" />
           <entry key="subject" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="9" />
-          <entry key="Database Element" value="23" />
+          <entry key="Database Element" value="26" />
           <entry key="Image" value="2" />
           <entry key="JAVA" value="306" />
-          <entry key="Scratch" value="8" />
-          <entry key="XML" value="75" />
+          <entry key="Scratch" value="10" />
+          <entry key="XML" value="78" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -113,7 +108,7 @@
           <entry key="dummy" value="3" />
           <entry key="fxml" value="373" />
           <entry key="java" value="9625" />
-          <entry key="sql" value="110" />
+          <entry key="sql" value="221" />
           <entry key="txt" value="48" />
         </counts>
       </usages-collector>
@@ -123,39 +118,14 @@
           <entry key="JAVA" value="9625" />
           <entry key="PLAIN_TEXT" value="51" />
           <entry key="SQL" value="28" />
-          <entry key="Scratch" value="84" />
+          <entry key="Scratch" value="195" />
           <entry key="XML" value="373" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/ExamController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="156" column="29" lean-forward="true" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/BatchController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="239" column="25" lean-forward="true" selection-start-line="239" selection-start-column="25" selection-end-line="239" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -174,8 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/entity/Registation.java" />
-        <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/REgistationBOImpl.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/RegistationBO.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/ExamDetailsDAO.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/entity/ExamDetailsPK.java" />
@@ -215,7 +183,6 @@
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/entity/ExamDetails.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/util/ExamDetailsTM.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/ExamDetailsDAOImpl.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c33588e3-8358-49db-b6d4-dfdbfe3b9082/console.sql" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/SubjectDAO.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/SubjectDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/SubjectBO.java" />
@@ -225,6 +192,9 @@
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/DAOFactroy.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/ExamBOImpl.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/ExamController.java" />
+        <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamDetailsForm.fxml" />
+        <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/CoursePaymentForm.fxml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c33588e3-8358-49db-b6d4-dfdbfe3b9082/console.sql" />
       </list>
     </option>
   </component>
@@ -269,62 +239,7 @@
               <item name="02" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="custom" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="02" type="b2602c69:ProjectViewProjectNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="studentmanagementsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -339,7 +254,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1596791685842" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1596796366736" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Layerd/01/git pos/04/lib/mysql-connector-java-8.0.20.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -441,18 +356,17 @@
       <workItem from="1596717051332" duration="14486000" />
       <workItem from="1596780010964" duration="1744000" />
       <workItem from="1596782998735" duration="1136000" />
-      <workItem from="1596784164776" duration="7140000" />
+      <workItem from="1596784164776" duration="10884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117626000" />
+    <option name="totallyTimeSpent" value="121370000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19894099" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19894099" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -461,7 +375,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4935484" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4935484" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -478,7 +392,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="right" id="Database" order="5" visible="true" weight="0.2473525" />
+      <window_info anchor="right" id="Database" order="5" weight="0.2473525" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
@@ -523,27 +437,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://c33588e3-8358-49db-b6d4-dfdbfe3b9082/schema/studentmanagementsystem/table/batch">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/SubjectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="245" column="9" lean-forward="true" selection-start-line="245" selection-start-column="9" selection-end-line="245" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/BatchBOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="69" column="35" lean-forward="true" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/StudentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -634,20 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c33588e3-8358-49db-b6d4-dfdbfe3b9082/schema/studentmanagementsystem/table/registation">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c33588e3-8358-49db-b6d4-dfdbfe3b9082/schema/studentmanagementsystem/table/student">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -870,13 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c33588e3-8358-49db-b6d4-dfdbfe3b9082/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="43" selection-start-column="43" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/ExamBO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -903,11 +775,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/ExamController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="320">
           <caret line="156" column="29" lean-forward="true" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamResultForm.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamDetailsForm.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/CoursePaymentForm.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c33588e3-8358-49db-b6d4-dfdbfe3b9082/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c33588e3-8358-49db-b6d4-dfdbfe3b9082/schema/studentmanagementsystem/table/student">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c33588e3-8358-49db-b6d4-dfdbfe3b9082/schema/studentmanagementsystem/table/registation">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
