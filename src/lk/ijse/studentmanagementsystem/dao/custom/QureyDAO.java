@@ -5,5 +5,6 @@ import lk.ijse.studentmanagementsystem.entity.CustomEntity;
 
 public interface QureyDAO extends SuperDAO {
 
-    CustomEntity getStudentAllDetails(String key)throws Exception;
+    CustomEntity getStudentDetails(String key)throws Exception;
+
 }

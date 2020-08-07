@@ -56,7 +56,8 @@ public class RegistationDAOImpl implements RegistationDAO {
 
     @Override
     public boolean update(Registation registation) throws Exception {
-        return CrudUtil.execute("UPDATE registation SET RegistationFee=?, CourseFee=? Stastus=? Reg_Date=? CourseFeeGi_Date=? WHERE  batchId=? AND studentId=? ",registation.getRegistartionFee(),registation.getCourseFee(),registation.getStatus(),registation.getReg_Date(),registation.getCourseFeeGi_Date(),registation.getRegistationPK().getBatchId(),registation.getRegistationPK().getStudentId());
+        System.out.println("----"+registation);
+        return CrudUtil.execute("UPDATE registation SET RegistationFee=?, CourseFee=?,Stastus=?, Reg_Date=?, CourseFeeGi_Date=? WHERE  batchId=? AND studentId=? ",registation.getRegistartionFee(),registation.getCourseFee(),registation.getStatus(),registation.getReg_Date(),registation.getCourseFeeGi_Date(),registation.getRegistationPK().getBatchId(),registation.getRegistationPK().getStudentId());
     }
 
     @Override

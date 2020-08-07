@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="703.0" prefWidth="657.0" stylesheets="@style/registerform.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.StudentController">
+<AnchorPane fx:id="root" prefHeight="703.0" prefWidth="657.0" stylesheets="@style/registerform.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.CoursePaymentController">
     <children>
         <AnchorPane layoutX="-14.0" prefHeight="716.0" prefWidth="671.0" style="-fx-background-color: white;">
             <children>
@@ -31,42 +31,45 @@
                             </image>
                         </ImageView>
                     </children></AnchorPane>
-                <TextField id="txtStudentId" layoutX="244.0" layoutY="37.0" prefHeight="25.0" prefWidth="253.0" promptText="Student ID Or Student Name" />
-                <TextField id="txtFirstName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Student First Name" />
-                <TextField id="txtLastName" layoutX="247.0" layoutY="131.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Last Name" />
-                <TextField id="txtAddress" layoutX="247.0" layoutY="170.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Address" />
-                <TextField id="txtNic" layoutX="247.0" layoutY="299.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Nic" />
-                <TextField id="txtDateOfBirth" layoutX="247.0" layoutY="339.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Date Of Birth" />
-                <TextField id="txtEmail" layoutX="247.0" layoutY="257.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Email" />
-                <TextField layoutX="247.0" layoutY="214.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Tel" />
-                <Button id="btnSave" layoutX="254.0" layoutY="657.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
+                <TextField fx:id="txtStudentId" layoutX="244.0" layoutY="37.0" prefHeight="25.0" prefWidth="253.0" promptText="Student ID " />
+                <TextField fx:id="txtFirstName" layoutX="247.0" layoutY="91.0" prefHeight="25.0" prefWidth="406.0" promptText="Student First Name" />
+                <TextField fx:id="txtLastName" layoutX="247.0" layoutY="131.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Last Name" />
+                <TextField fx:id="txtAddress" layoutX="247.0" layoutY="170.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Address" />
+                <TextField fx:id="txtNic" layoutX="247.0" layoutY="299.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Nic" />
+                <TextField fx:id="txtDateOfBirth" layoutX="247.0" layoutY="339.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Date Of Birth" />
+                <TextField fx:id="txtMail" layoutX="247.0" layoutY="257.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Email" />
+                <TextField fx:id="txtTel" layoutX="247.0" layoutY="214.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Tel" />
+                <Button fx:id="btnSave" onAction="#btnSave_OnAction" layoutX="254.0" layoutY="657.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button id="btnCancel" layoutX="516.0" layoutY="657.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Cancel">
+                <Button fx:id="btnCancel" layoutX="516.0" layoutY="657.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Cancel">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <TextField id="txtRegistrationFee" layoutX="247.0" layoutY="423.0" prefHeight="25.0" prefWidth="187.0" promptText="Registration Fee" />
-                <Separator layoutX="220.0" layoutY="463.0" prefHeight="4.0" prefWidth="451.0" />
-                <Label layoutX="250.0" layoutY="474.0" prefHeight="17.0" prefWidth="196.0" text="Batch Details" textFill="#064b65">
+                <TextField fx:id="txtRegistrationFee" layoutX="247.0" layoutY="423.0" prefHeight="25.0" prefWidth="187.0" promptText="Registration Fee" />
+                <Separator layoutX="218.0" layoutY="471.0" prefHeight="4.0" prefWidth="451.0" />
+                <Label layoutX="247.0" layoutY="485.0" prefHeight="17.0" prefWidth="196.0" text="Batch Details" textFill="#064b65">
                     <font>
                         <Font size="15.0" />
                     </font>
                 </Label>
-                <TextField id="txtCourseName" layoutX="254.0" layoutY="550.0" prefHeight="25.0" prefWidth="174.0" promptText="Course Name" />
-                <TextField id="txtCourseFee" layoutX="456.0" layoutY="550.0" prefHeight="25.0" prefWidth="196.0" promptText="Course Fee" />
-            <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="564.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../asset/search4.png" />
-                </image>
-            </ImageView>
-            <TextField id="txtBatchName" layoutX="454.0" layoutY="505.0" prefHeight="25.0" prefWidth="196.0" promptText="Batch Name" />
-            <TextField id="txtBatchId" layoutX="254.0" layoutY="505.0" prefHeight="25.0" prefWidth="174.0" promptText="Batch ID" />
-            <TextField id="txtGender" layoutX="247.0" layoutY="381.0" prefHeight="25.0" prefWidth="406.0" promptText="Gender" />
-            <TextField id="txtRegDate" layoutX="468.0" layoutY="423.0" prefHeight="25.0" prefWidth="188.0" promptText="Registation Date" />
+                <TextField fx:id="txtCourseName" layoutX="249.0" layoutY="550.0" prefHeight="25.0" prefWidth="174.0" promptText="Course Name" />
+                <TextField fx:id="txtCourseFee" layoutX="464.0" layoutY="550.0" prefHeight="25.0" prefWidth="196.0" promptText="Course Fee" />
+
+            <TextField fx:id="txtBatchName" layoutX="464.0" layoutY="519.0" prefHeight="25.0" prefWidth="196.0" promptText="Batch Name" />
+            <TextField fx:id="txtBatchId" layoutX="249.0" layoutY="519.0" prefHeight="25.0" prefWidth="174.0" promptText="Batch ID" />
+            <TextField fx:id="txtGender" layoutX="468.0" layoutY="379.0" prefHeight="25.0" prefWidth="188.0" promptText="Gender" />
+            <TextField fx:id="txtRegDate" layoutX="468.0" layoutY="423.0" prefHeight="25.0" prefWidth="188.0" promptText="Registation Date" />
+            <Button fx:id="btnSearch" layoutX="522.0" layoutY="32.0" mnemonicParsing="false" onAction="#btnSearch_OnAction" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #008080;" text="Search" textFill="#f8f6f6">
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+            <TextField fx:id="txtAge" layoutX="247.0" layoutY="379.0" prefHeight="25.0" prefWidth="187.0" promptText="Age" />
+            <TextField fx:id="txtFee" layoutX="254.0" layoutY="611.0" prefHeight="25.0" prefWidth="406.0" style="-fx-background-color: #F1C40F;-fx-text-fill: black;" />
+            <Label layoutX="260.0" layoutY="575.0" prefHeight="25.0" prefWidth="123.0" text="Course Fee" />
             </children>
         </AnchorPane>
     </children>

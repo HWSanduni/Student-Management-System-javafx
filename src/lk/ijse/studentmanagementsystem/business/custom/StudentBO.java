@@ -2,6 +2,7 @@ package lk.ijse.studentmanagementsystem.business.custom;
 
 import lk.ijse.studentmanagementsystem.business.SuperBO;
 import lk.ijse.studentmanagementsystem.entity.Batch;
+import lk.ijse.studentmanagementsystem.entity.CustomEntity;
 import lk.ijse.studentmanagementsystem.entity.Student;
 import lk.ijse.studentmanagementsystem.util.BatchTM;
 import lk.ijse.studentmanagementsystem.util.CustomTM;
@@ -19,5 +20,5 @@ public interface StudentBO extends SuperBO {
     public  boolean updateStudent(String fName , String lName, String address, int tel,String nic,Date birthday,int age,String mail,String gender,String id)throws Exception;
     public  String getNewStudentId()throws Exception;
 
-    public CustomTM getAllStudentDetails(String key)throws Exception;
+    public CustomEntity getAllStudentDetails(String key)throws Exception;
 }

@@ -8,9 +8,14 @@ import java.sql.ResultSet;
 
 public class QueryDAOImpl implements QureyDAO {
     @Override
-    public CustomEntity getStudentAllDetails(String key) throws Exception {
+    public CustomEntity getStudentDetails(String key) throws Exception {
 
-        ResultSet rst = CrudUtil.execute("",key);
+        System.out.println("//////");
+        ResultSet rst = CrudUtil.execute("SELECT s.Sid,s.FirstName,s.LastName,s.Address,s.Tel,s.Nic,s.BirthDay,s.Mail,s.Gender,s.Age,r.batchId,r.Reg_Date,r.RegistationFee,b.Name,c.Name,c.CourseFee from student s INNER join registation r ON s.Sid = r.studentId INNER\n" +
+                "JOIN batch b on r.batchId = b.Bid INNER JOIN course c on b.courseId = c.Cid\n" +
+                "WHERE  s.Sid=?",key);
+        System.out.println("---------");
+        System.out.println("rst"+rst);
         if (rst.next()){
             return new CustomEntity(
              rst.getString(1),
@@ -30,10 +35,11 @@ public class QueryDAOImpl implements QureyDAO {
                     rst.getString(15),
                     rst.getBigDecimal(16)
 
-
             );
         }
 
         return null;
     }
+
+
 }

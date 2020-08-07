@@ -8,4 +8,7 @@ public interface RegistationBO extends SuperBO {
 
    // public  String getNewStudentId()throws Exception;
     public boolean registation (StudentTM studentTM, RegistraionTM registraionTM)throws Exception;
+
+    public boolean registationUpdate (RegistraionTM registraionTM)throws Exception;
+
 }
