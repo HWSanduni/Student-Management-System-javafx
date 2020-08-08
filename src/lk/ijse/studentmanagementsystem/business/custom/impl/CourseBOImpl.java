@@ -4,8 +4,10 @@ import lk.ijse.studentmanagementsystem.business.custom.CourseBO;
 import lk.ijse.studentmanagementsystem.dao.DAOFactroy;
 import lk.ijse.studentmanagementsystem.dao.DAOType;
 import lk.ijse.studentmanagementsystem.dao.custom.CourseDAO;
+import lk.ijse.studentmanagementsystem.dao.custom.QureyDAO;
 import lk.ijse.studentmanagementsystem.entity.Course;
 import lk.ijse.studentmanagementsystem.util.CourseTM;
+import lk.ijse.studentmanagementsystem.util.CustomTM;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -14,7 +16,7 @@ import java.util.List;
 public class CourseBOImpl implements CourseBO {
 
     CourseDAO courseDAO = DAOFactroy.getInstance().getDAO(DAOType.COURSE);
-
+    QureyDAO qureyDAO = DAOFactroy.getInstance().getDAO(DAOType.QUREY);
 
 
     @Override
@@ -76,5 +78,16 @@ public class CourseBOImpl implements CourseBO {
             }
             return id;
         }
+    }
+
+    @Override
+    public List<CourseTM> getCourseDetails(String key) throws Exception {
+        List<Course> courses = qureyDAO.getCourseDetails(key);
+
+        List<CourseTM> courseTMS = new ArrayList<>();
+        for (Course course:courses) {
+            courseTMS.add(new CourseTM(course.getCid(),course.getName(),course.getCourseFee().doubleValue(),course.getDescription()));
+        }
+        return courseTMS;
     }
 }

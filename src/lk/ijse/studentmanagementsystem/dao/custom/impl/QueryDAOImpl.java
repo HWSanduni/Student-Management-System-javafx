@@ -2,10 +2,7 @@ package lk.ijse.studentmanagementsystem.dao.custom.impl;
 
 import lk.ijse.studentmanagementsystem.dao.CrudUtil;
 import lk.ijse.studentmanagementsystem.dao.custom.QureyDAO;
-import lk.ijse.studentmanagementsystem.entity.CustomEntity;
-import lk.ijse.studentmanagementsystem.entity.CustomEntity1;
-import lk.ijse.studentmanagementsystem.entity.CustomEntity2;
-import lk.ijse.studentmanagementsystem.entity.Student;
+import lk.ijse.studentmanagementsystem.entity.*;
 import lk.ijse.studentmanagementsystem.util.StudentTM;
 
 import java.sql.ResultSet;
@@ -105,6 +102,34 @@ public class QueryDAOImpl implements QureyDAO {
         }
 
         return customEntity2s;
+    }
+
+    @Override
+    public List<Course> getCourseDetails(String key) throws Exception {
+
+        ResultSet rst = CrudUtil.execute("SELECT c.Cid,c.Name,c.CourseFee,c.Description from batch b inner JOIN course c on b.courseId = c.Cid where b.Bid=?",key);
+        List<Course> courses = new ArrayList<>();
+        while (rst.next()) {
+            courses.add(new Course(rst.getString(1),
+                    rst.getString(2),
+                    rst.getBigDecimal(3),
+                    rst.getString(4)));
+        }
+        return courses;
+
+    }
+
+    @Override
+    public List<Subject> getSubjectDetails(String key) throws Exception {
+        ResultSet rst = CrudUtil.execute("SELECT s.Subid,s.courseId,s.Name,s.Type from course c INNER JOIN subject s on c.Cid = s.courseId where c.Cid=?",key);
+        List<Subject> subjects = new ArrayList<>();
+        while (rst.next()) {
+            subjects.add(new Subject(rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getString(4)));
+        }
+        return subjects;
     }
 
 

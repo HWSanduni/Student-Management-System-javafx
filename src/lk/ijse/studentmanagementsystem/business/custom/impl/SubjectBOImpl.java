@@ -3,6 +3,7 @@ package lk.ijse.studentmanagementsystem.business.custom.impl;
 import lk.ijse.studentmanagementsystem.business.custom.SubjectBO;
 import lk.ijse.studentmanagementsystem.dao.DAOFactroy;
 import lk.ijse.studentmanagementsystem.dao.DAOType;
+import lk.ijse.studentmanagementsystem.dao.custom.QureyDAO;
 import lk.ijse.studentmanagementsystem.dao.custom.SubjectDAO;
 import lk.ijse.studentmanagementsystem.entity.Subject;
 import lk.ijse.studentmanagementsystem.util.SubjectTM;
@@ -13,6 +14,7 @@ import java.util.List;
 public class SubjectBOImpl implements SubjectBO {
 
     SubjectDAO subjectDAO = DAOFactroy.getInstance().getDAO(DAOType.SUBJECT);
+    QureyDAO qureyDAO = DAOFactroy.getInstance().getDAO(DAOType.QUREY);
 
     @Override
     public List<SubjectTM> getAllSubject() throws Exception {
@@ -78,6 +80,18 @@ public class SubjectBOImpl implements SubjectBO {
     @Override
     public List<SubjectTM> getFindAllSubject(String id) throws Exception {
         List<Subject> subjects = subjectDAO.getFindAllSubject(id);
+        List<SubjectTM> subjectTMS = new ArrayList<>();
+
+        for (Subject subject:subjects) {
+            subjectTMS.add(new SubjectTM(subject.getSubId(),subject.getCourseId(),subject.getName(),subject.getType()));
+        }
+
+        return subjectTMS;
+    }
+
+    @Override
+    public List<SubjectTM> getSubjectDetails(String key) throws Exception {
+        List<Subject> subjects = qureyDAO.getSubjectDetails(key);
         List<SubjectTM> subjectTMS = new ArrayList<>();
 
         for (Subject subject:subjects) {
