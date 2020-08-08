@@ -35,8 +35,10 @@ public class ExamResultController {
     public TextField txtExamName;
     public TextField txtSubjectId;
     public TextField txtSubjectName;
+    public TextField txtId;
     public ComboBox<StudentTM> cmbStudentId;
     public Button btnSave;
+    public Button btnAddNewReult;
     public Button btnAdd;
     public Button btnCancel;
     public TableView<ExamResultTM> tblResult;
@@ -134,10 +136,10 @@ public class ExamResultController {
     public void btnSave_OnAction(ActionEvent actionEvent) {
 
         ObservableList<ExamResultTM> examResults = tblResult.getItems();
-        String a="ER001";
+
         for (ExamResultTM examResultTM: examResults) {
             try {
-                examResultBO.saveExamResult(a,examResultTM.getExamId(),examResultTM.getStudentId(),examResultTM.getMarks());
+                examResultBO.saveExamResult(txtId.getText(),examResultTM.getExamId(),examResultTM.getStudentId(),examResultTM.getMarks());
 
                 new Alert(Alert.AlertType.ERROR, "Successfully Added Student Result").show();
                 return;
@@ -149,6 +151,15 @@ public class ExamResultController {
         examResults.add(new ExamResultTM());
 
 
+    }
+
+    public void btnAddNew_OnAction(ActionEvent actionEvent) {
+        try {
+            txtId.clear();
+            txtId.setText(examResultBO.getNewExamResultId());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 

@@ -33,10 +33,9 @@
                             </image>
                         </ImageView>
                     </children></AnchorPane>
-                <TextField fx:id="txtExamId" layoutX="244.0" layoutY="56.0" prefHeight="25.0" prefWidth="219.0" promptText="Exam ID" />
                 <TextField fx:id="txtFirstName" layoutX="242.0" layoutY="309.0" prefHeight="25.0" prefWidth="406.0" promptText="Student Name" />
                 <TextField fx:id="txtMask" layoutX="242.0" layoutY="346.0" prefHeight="25.0" prefWidth="406.0" promptText="Exam Marks" />
-                <Button fx:id="btnSave" onAction="#btnSave_OnAction" layoutX="254.0" layoutY="657.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="135.0" text="Save">
+                <Button fx:id="btnSave" layoutX="254.0" layoutY="657.0" mnemonicParsing="false" onAction="#btnSave_OnAction" prefHeight="35.0" prefWidth="135.0" text="Save">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -50,7 +49,7 @@
                 <TextField fx:id="txtBatchName" layoutX="238.0" layoutY="184.0" prefHeight="25.0" prefWidth="406.0" promptText="Batch Name" />
             <ComboBox fx:id="cmbStudentId" layoutX="242.0" layoutY="260.0" prefHeight="25.0" prefWidth="406.0" promptText="Student ID" />
             <TextField fx:id="txtExamName" layoutX="241.0" layoutY="107.0" prefHeight="25.0" prefWidth="399.0" promptText="Exam Name" />
-            <Button fx:id="btnSearch" layoutX="497.0" layoutY="51.0" mnemonicParsing="false" onAction="#btnSearch_OnAction" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #008080;" text="Search" textFill="#f8f6f6">
+            <Button fx:id="btnSearch" layoutX="244.0" layoutY="58.0" mnemonicParsing="false" onAction="#btnSearch_OnAction" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #008080;" text="Search" textFill="#f8f6f6">
                <font>
                   <Font size="13.0" />
                </font>
@@ -68,6 +67,9 @@
                </font></Button>
             <TextField fx:id="txtSubjectId" layoutX="238.0" layoutY="219.0" prefHeight="25.0" prefWidth="181.0" promptText="Subject ID" />
             <TextField fx:id="txtSubjectName" layoutX="448.0" layoutY="219.0" prefHeight="25.0" prefWidth="196.0" promptText="Subject Name" />
+            <TextField fx:id="txtId" layoutX="419.0" layoutY="21.0" prefHeight="25.0" prefWidth="219.0" promptText="Exam Result ID" />
+            <Button fx:id="btnAddNewReult" layoutX="244.0" layoutY="16.0" mnemonicParsing="false" onAction="#btnAddNew_OnAction" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Result" textFill="#fcf8f8" />
+                <TextField fx:id="txtExamId" layoutX="419.0" layoutY="63.0" prefHeight="25.0" prefWidth="219.0" promptText="Exam ID" />
             </children>
         </AnchorPane>
     </children>

@@ -1239,11 +1239,11 @@ coruseId</ColNames>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="314" parent="274" name="examId">
+    <index id="314" parent="274" name="examresult_ibfk_1">
       <ColNames>examId</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="315" parent="274" name="studentId">
+    <index id="315" parent="274" name="examresult_ibfk_2">
       <ColNames>studentId</ColNames>
       <Type>btree</Type>
     </index>
