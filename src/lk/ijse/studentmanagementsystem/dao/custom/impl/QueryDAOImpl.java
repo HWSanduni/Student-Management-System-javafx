@@ -5,6 +5,7 @@ import lk.ijse.studentmanagementsystem.dao.custom.QureyDAO;
 import lk.ijse.studentmanagementsystem.entity.CustomEntity;
 import lk.ijse.studentmanagementsystem.entity.CustomEntity1;
 import lk.ijse.studentmanagementsystem.entity.Student;
+import lk.ijse.studentmanagementsystem.util.StudentTM;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -49,30 +50,18 @@ public class QueryDAOImpl implements QureyDAO {
     public CustomEntity1 getExamDetails(String key) throws Exception {
 
 
-        List<Student> students = new ArrayList<>();
+        List<StudentTM> students = new ArrayList<>();
 
         ResultSet rst = CrudUtil.execute("SELECT s.Sid,s.FirstName,b.Name,c.Name,s2.Subid,s2.Name,e2.Name from student s INNER JOIN registation r ON s.Sid = r.studentId INNER JOIN batch b on r.batchId = b.Bid\n" +
                 "INNER JOIN course c on b.courseId = c.Cid INNER JOIN subject s2 on c.Cid = s2.courseId  INNER JOIN examdetails e on c.Cid = e.coruseId\n" +
                 "INNER JOIN exam e2 on e.examId = e2.Eid where e2.Eid=?",key);
 
         if (rst.next()){
-            CustomEntity customEntity= new CustomEntity();
-            Student student = new Student();
+
+            StudentTM student = new StudentTM();
             student.setSid(rst.getString(1));
             student.setFirstName(rst.getString(2));
             students.add(student);
-
-            customEntity.setBatchName(rst.getString(3));
-            customEntity.setCourseName(rst.getString(4));
-            customEntity.setSubjectId(rst.getString(5));
-            customEntity.setSubjectName(rst.getString(6));
-            customEntity.setExamName(rst.getString(7));
-            customEntity.setStudentList(students);
-
-
-            System.out.println("-----------------");
-
-            System.out.println(customEntity);
 
             System.out.println("//////////////////////");
             System.out.println(student);

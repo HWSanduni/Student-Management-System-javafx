@@ -1,5 +1,7 @@
 package lk.ijse.studentmanagementsystem.entity;
 
+import lk.ijse.studentmanagementsystem.util.StudentTM;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -11,12 +13,12 @@ public class CustomEntity1 {
     private String subjectId;
     private String subjectName;
     private String examName;
-    private List<Student> studentList;
+    private List<StudentTM> studentList;
 
     public CustomEntity1() {
     }
 
-    public CustomEntity1(String batchName, String courseName, String subjectId, String subjectName, String examName, List<Student> studentList){
+    public CustomEntity1(String batchName, String courseName, String subjectId, String subjectName, String examName, List<StudentTM> studentList){
         this.batchName = batchName;
         this.courseName = courseName;
         this.subjectId = subjectId;
@@ -74,11 +76,11 @@ public class CustomEntity1 {
         this.examName = examName;
     }
 
-    public List<Student> getStudentList() {
+    public List<StudentTM> getStudentList() {
         return studentList;
     }
 
-    public void setStudentList(List<Student> studentList) {
+    public void setStudentList(List<StudentTM> studentList) {
         this.studentList = studentList;
     }
 
