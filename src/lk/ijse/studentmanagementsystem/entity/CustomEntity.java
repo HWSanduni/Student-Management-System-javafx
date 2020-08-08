@@ -2,6 +2,7 @@ package lk.ijse.studentmanagementsystem.entity;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.List;
 
 public class CustomEntity implements SuperEntity {
 
@@ -21,8 +22,23 @@ public class CustomEntity implements SuperEntity {
     private String batchName;
     private String courseName;
     private BigDecimal courseFee;
+    private String subjectId;
+    private String subjectName;
+    private String examName;
+    private List<Student> studentList;
 
     public CustomEntity() {
+    }
+
+
+    public CustomEntity(String batchName,String courseName,String subjectId,String subjectName,String examName,List<Student> studentList){
+        this.batchName = batchName;
+        this.courseName = courseName;
+        this.subjectId = subjectId;
+        this.subjectName = subjectName;
+        this.examName = examName;
+        this.studentList = studentList;
+
     }
 
     public CustomEntity(String sid, String firstName, String lastName, String address, int tel, String nic, Date birthDay, String mail, String gender, int age, String batchId, Date reg_Date, BigDecimal registartionFee, String batchName, String courseName, BigDecimal courseFee) {
@@ -170,6 +186,38 @@ public class CustomEntity implements SuperEntity {
 
     public void setCourseFee(BigDecimal courseFee) {
         this.courseFee = courseFee;
+    }
+
+    public String getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(String subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
+    public String getExamName() {
+        return examName;
+    }
+
+    public void setExamName(String examName) {
+        this.examName = examName;
+    }
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
     }
 
     @Override

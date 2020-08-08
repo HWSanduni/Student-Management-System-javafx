@@ -1,6 +1,8 @@
 package lk.ijse.studentmanagementsystem.business.custom;
 
 import lk.ijse.studentmanagementsystem.business.SuperBO;
+import lk.ijse.studentmanagementsystem.entity.CustomEntity;
+import lk.ijse.studentmanagementsystem.entity.CustomEntity1;
 import lk.ijse.studentmanagementsystem.entity.Exam;
 import lk.ijse.studentmanagementsystem.util.ExamTM;
 
@@ -18,5 +20,6 @@ public interface ExamBO extends SuperBO {
 
     public  boolean save(String id, String courseId,String name , Date date, String time,String subjectId, int passmarks, String status)throws Exception;
 
+    CustomEntity1 getExamDetails (String key)throws Exception;
 
 }
