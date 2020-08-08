@@ -6,8 +6,10 @@ import lk.ijse.studentmanagementsystem.dao.DAOType;
 import lk.ijse.studentmanagementsystem.dao.custom.QureyDAO;
 import lk.ijse.studentmanagementsystem.dao.custom.StudentDAO;
 import lk.ijse.studentmanagementsystem.entity.CustomEntity;
+import lk.ijse.studentmanagementsystem.entity.CustomEntity2;
 import lk.ijse.studentmanagementsystem.entity.Student;
 import lk.ijse.studentmanagementsystem.util.CustomTM;
+import lk.ijse.studentmanagementsystem.util.StudentPaymentTM;
 import lk.ijse.studentmanagementsystem.util.StudentTM;
 
 import java.sql.Date;
@@ -82,5 +84,24 @@ public class StudentBOImpl implements StudentBO {
         System.out.println("BO");
         CustomEntity customEntity=qureyDAO.getStudentDetails(key);
         return customEntity;
+    }
+
+    @Override
+    public List<StudentPaymentTM> getAllRegisterStudent(String status) throws Exception {
+
+        List<CustomEntity2> customEntity2List = qureyDAO.getAllRegisterStudent(status);
+
+        List<StudentPaymentTM> studentPaymentTMS = new ArrayList<>();
+
+        for (CustomEntity2 customEntity2: customEntity2List){
+            studentPaymentTMS.add(new StudentPaymentTM(customEntity2.getStudentId(),
+                    customEntity2.getStudentName(),
+                    customEntity2.getTel(),
+                    customEntity2.getBatchName(),
+                    customEntity2.getCourseName()));
+        }
+
+
+        return studentPaymentTMS;
     }
 }

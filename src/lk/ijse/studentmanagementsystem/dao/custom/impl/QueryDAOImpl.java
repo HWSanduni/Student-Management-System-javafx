@@ -4,6 +4,7 @@ import lk.ijse.studentmanagementsystem.dao.CrudUtil;
 import lk.ijse.studentmanagementsystem.dao.custom.QureyDAO;
 import lk.ijse.studentmanagementsystem.entity.CustomEntity;
 import lk.ijse.studentmanagementsystem.entity.CustomEntity1;
+import lk.ijse.studentmanagementsystem.entity.CustomEntity2;
 import lk.ijse.studentmanagementsystem.entity.Student;
 import lk.ijse.studentmanagementsystem.util.StudentTM;
 
@@ -76,6 +77,34 @@ public class QueryDAOImpl implements QureyDAO {
 
         return customEntity;
 
+    }
+
+    @Override
+    public List<CustomEntity2> getAllRegisterStudent(String status) throws Exception {
+        ResultSet resultSet = null;
+        List<CustomEntity2> customEntity2s = new ArrayList<>();
+
+
+        if(status==""){
+            resultSet = CrudUtil.execute("SELECT s.Sid,s.FirstName,s.Tel,b.Name,c.Name from student s INNER JOIN registation r on s.Sid = r.studentId \n" +
+                    "INNER JOIN batch b on r.batchId = b.Bid INNER JOIN course c on b.courseId = c.Cid");
+        }else if(status.equals("COMPLETE")){
+            resultSet = CrudUtil.execute("SELECT s.Sid,s.FirstName,s.Tel,b.Name,c.Name from student s INNER JOIN registation r on s.Sid = r.studentId\n" +
+                    "INNER JOIN batch b on r.batchId = b.Bid INNER JOIN course c on b.courseId = c.Cid where r.Stastus=?",status);
+        }else {
+            resultSet = CrudUtil.execute("SELECT s.Sid,s.FirstName,s.Tel,b.Name,c.Name from student s INNER JOIN registation r on s.Sid = r.studentId\n" +
+                    "INNER JOIN batch b on r.batchId = b.Bid INNER JOIN course c on b.courseId = c.Cid where r.Stastus=?",status);
+        }
+
+        while (resultSet.next()){
+            customEntity2s.add(new CustomEntity2(resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getInt(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5)));
+        }
+
+        return customEntity2s;
     }
 
 
