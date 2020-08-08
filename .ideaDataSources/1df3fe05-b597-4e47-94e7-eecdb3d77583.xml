@@ -1234,16 +1234,17 @@ coruseId</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="313" parent="274" name="marks">
+    <column id="313" parent="274" name="marsk">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="314" parent="274" name="examresult_ibfk_1">
+    <index id="314" parent="274" name="examId">
       <ColNames>examId</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="315" parent="274" name="examresult_ibfk_2">
+    <index id="315" parent="274" name="studentId">
       <ColNames>studentId</ColNames>
       <Type>btree</Type>
     </index>
@@ -1257,14 +1258,12 @@ coruseId</ColNames>
       <RefSchemaName>studentmanagementsystem</RefSchemaName>
       <RefTableName>exam</RefTableName>
       <RefColNames>Eid</RefColNames>
-      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="318" parent="274" name="examresult_ibfk_2">
       <ColNames>studentId</ColNames>
       <RefSchemaName>studentmanagementsystem</RefSchemaName>
       <RefTableName>student</RefTableName>
       <RefColNames>Sid</RefColNames>
-      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="319" parent="275" name="batchId">
       <Position>1</Position>

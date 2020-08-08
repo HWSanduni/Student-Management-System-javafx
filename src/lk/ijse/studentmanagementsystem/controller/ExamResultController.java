@@ -23,6 +23,7 @@ import lk.ijse.studentmanagementsystem.util.StudentTM;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 public class ExamResultController {
 
@@ -52,7 +53,7 @@ public class ExamResultController {
 
         tblResult.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("examId"));
         tblResult.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("studentId"));
-        tblResult.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("marks"));
+        tblResult.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("marks"));
 
 
         cmbStudentId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<StudentTM>() {
@@ -113,25 +114,20 @@ public class ExamResultController {
         String studentId = cmbStudentId.getValue().getSid();
         int mask = Integer.parseInt(txtMask.getText());
 
-        if(examResults.isEmpty()){
-            examResults.add(new ExamResultTM(txtId.getText(),examId,studentId,mask));
-            txtExamName.clear();
-            txtExamId.clear();
-            txtBatchName.clear();
-            txtCourseName.clear();
-            txtSubjectId.clear();
-            txtSubjectName.clear();
+//        if(examResults.isEmpty()){
+            examResults.add(new ExamResultTM(UUID.randomUUID().toString(),examId,studentId,mask));
+
             txtMask.clear();
             txtFirstName.clear();
             cmbStudentId.getSelectionModel().clearSelection();
-        }else {
-            for (ExamResultTM examResultTM: examResults) {
-                if(examResultTM.getStudentId().equals(studentId)){
-                    new Alert(Alert.AlertType.ERROR, "All Ready Add This Student").show();
-                   return;
-                }
-            }
-        }
+//        }else {
+//            for (ExamResultTM examResultTM: examResults) {
+//                if(examResultTM.getStudentId().equals(studentId)){
+//                    new Alert(Alert.AlertType.ERROR, "All Ready Add This Student").show();
+//                   return;
+//                }
+//            }
+        //}
 
         }
 
@@ -140,29 +136,18 @@ public class ExamResultController {
 
         ObservableList<ExamResultTM> examResults = tblResult.getItems();
 
-//        for (ExamResultTM examResultTM: examResults) {
                 try {
-                examResultBO.saveExamResult(tblResult.getItems());
-
+                    System.out.println(tblResult.getItems());
+                   examResultBO.saveExamResult(tblResult.getItems());
                 new Alert(Alert.AlertType.ERROR, "Successfully Added Student Result").show();
                 return;
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        //}
-        examResults.add(new ExamResultTM());
-
-
+        tblResult.getItems().clear();
     }
 
-    public void btnAddNew_OnAction(ActionEvent actionEvent) {
-        try {
-            txtId.clear();
-            txtId.setText(examResultBO.getNewExamResultId());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 }
 

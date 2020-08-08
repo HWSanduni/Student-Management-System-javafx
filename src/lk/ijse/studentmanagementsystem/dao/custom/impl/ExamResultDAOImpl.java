@@ -7,6 +7,7 @@ import lk.ijse.studentmanagementsystem.entity.ExamResult;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class ExamResultDAOImpl implements ExamResultDAO {
 
@@ -27,7 +28,8 @@ public class ExamResultDAOImpl implements ExamResultDAO {
     public ExamResult find(String key) throws Exception {
         ResultSet rst = CrudUtil.execute("SELECT * FROM examresult WHERE id=?",key);
         if (rst.next()) {
-            return new ExamResult(rst.getString(1),
+            return new ExamResult(
+                    rst.getString(1),
                     rst.getString(2),
                     rst.getString(3),
                     rst.getInt(4));
@@ -37,12 +39,16 @@ public class ExamResultDAOImpl implements ExamResultDAO {
 
     @Override
     public boolean save(ExamResult examResult) throws Exception {
-        return CrudUtil.execute("INSERT INTO examresult VALUES (?,?,?,?)",examResult.getId(),examResult.getExamId(),examResult.getStudentId(),examResult.getMarks());
+
+        System.out.println("DAO");
+        System.out.println(examResult);
+        UUID id = UUID.randomUUID();
+        return CrudUtil.execute("INSERT INTO examresult VALUES (?,?,?,?)", examResult.getId(),examResult.getExamId(),examResult.getStudentId(),examResult.getMarks());
     }
 
     @Override
     public boolean update(ExamResult examResult) throws Exception {
-        return CrudUtil.execute("UPDATE examresult SET examId=?,studentId=?, marks=? WHERE id=?",examResult.getExamId(),examResult.getStudentId(),examResult.getMarks(),examResult.getId());
+        return CrudUtil.execute("UPDATE examresult SET studentId=?, marks=? WHERE examId=?",examResult.getExamId(),examResult.getStudentId(),examResult.getMarks(),examResult.getId());
     }
 
     @Override

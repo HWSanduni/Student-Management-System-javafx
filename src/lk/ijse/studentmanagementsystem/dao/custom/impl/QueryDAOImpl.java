@@ -49,40 +49,33 @@ public class QueryDAOImpl implements QureyDAO {
     @Override
     public CustomEntity1 getExamDetails(String key) throws Exception {
 
-
-        List<StudentTM> students = new ArrayList<>();
-
-        ResultSet rst = CrudUtil.execute("SELECT s.Sid,s.FirstName,b.Name,c.Name,s2.Subid,s2.Name,e2.Name from student s INNER JOIN registation r ON s.Sid = r.studentId INNER JOIN batch b on r.batchId = b.Bid\n" +
-                "INNER JOIN course c on b.courseId = c.Cid INNER JOIN subject s2 on c.Cid = s2.courseId  INNER JOIN examdetails e on c.Cid = e.coruseId\n" +
+        ResultSet rst = CrudUtil.execute("SELECT  s.Sid,s.FirstName,b.Name,c.Name,s2.Subid,s2.Name,e2.Name from student s\n" +
+                "INNER JOIN registation r ON s.Sid = r.studentId\n" +
+                "INNER JOIN batch b on r.batchId = b.Bid\n" +
+                "INNER JOIN course c on b.courseId = c.Cid\n" +
+                "INNER JOIN subject s2 on c.Cid = s2.courseId\n" +
+                "INNER JOIN examdetails e on c.Cid = e.coruseId\n" +
                 "INNER JOIN exam e2 on e.examId = e2.Eid where e2.Eid=?",key);
 
-        if (rst.next()){
 
-            StudentTM student = new StudentTM();
-            student.setSid(rst.getString(1));
-            student.setFirstName(rst.getString(2));
-            students.add(student);
+        List<StudentTM> students = new ArrayList<>();
+        CustomEntity1 customEntity = new CustomEntity1();
+        while (rst.next()) {
+            System.out.println(rst.toString());
+            students.add(new StudentTM(rst.getString(1),rst.getString(2)));
 
-            System.out.println("//////////////////////");
-            System.out.println(student);
-
-           // return customEntity;
-
-            CustomEntity customEntity1 = new CustomEntity();
-
-            return new CustomEntity1(
-                    rst.getString(3),
-                    rst.getString(4),
-                    rst.getString(5),
-                    rst.getString(6),
-                    rst.getString(7),
-                    students);
-
-
+            customEntity.setBatchName(rst.getString(3));
+            customEntity.setCourseName(rst.getString(4));
+            customEntity.setSubjectId(rst.getString(5));
+            customEntity.setSubjectName(rst.getString(6));
+            customEntity.setExamName(rst.getString(7));
+            customEntity.setStudentList(students);
         }
 
+        System.out.println(customEntity);
 
-        return null;
+        return customEntity;
+
     }
 
 

@@ -67,8 +67,6 @@
                </font></Button>
             <TextField fx:id="txtSubjectId" layoutX="238.0" layoutY="219.0" prefHeight="25.0" prefWidth="181.0" promptText="Subject ID" />
             <TextField fx:id="txtSubjectName" layoutX="448.0" layoutY="219.0" prefHeight="25.0" prefWidth="196.0" promptText="Subject Name" />
-            <TextField fx:id="txtId" layoutX="419.0" layoutY="21.0" prefHeight="25.0" prefWidth="219.0" promptText="Exam Result ID" />
-            <Button fx:id="btnAddNewReult" layoutX="244.0" layoutY="16.0" mnemonicParsing="false" onAction="#btnAddNew_OnAction" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #157DEC;" text="+ Add New Result" textFill="#fcf8f8" />
                 <TextField fx:id="txtExamId" layoutX="419.0" layoutY="63.0" prefHeight="25.0" prefWidth="219.0" promptText="Exam ID" />
             </children>
         </AnchorPane>
