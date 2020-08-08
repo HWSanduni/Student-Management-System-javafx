@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ca223b0-3c6d-4f6f-bb7e-728b553d3c9b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.ideaDataSources/c33588e3-8358-49db-b6d4-dfdbfe3b9082.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.ideaDataSources/c33588e3-8358-49db-b6d4-dfdbfe3b9082.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02.iws" beforeDir="false" afterPath="$PROJECT_DIR$/02.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/ExamResultBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/ExamResultBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/ExamResultBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/ExamResultBOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/ExamResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/ExamResultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamResultForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamResultForm.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,7 +85,7 @@
           <entry key="examdetails" value="4" />
           <entry key="examresult" value="2" />
           <entry key="fxml" value="102" />
-          <entry key="java" value="409" />
+          <entry key="java" value="410" />
           <entry key="jpg" value="3" />
           <entry key="png" value="6" />
           <entry key="registation" value="6" />
@@ -100,7 +99,7 @@
           <entry key="CSS" value="10" />
           <entry key="Database Element" value="35" />
           <entry key="Image" value="9" />
-          <entry key="JAVA" value="409" />
+          <entry key="JAVA" value="410" />
           <entry key="Scratch" value="21" />
           <entry key="XML" value="102" />
         </counts>
@@ -111,7 +110,7 @@
           <entry key="css" value="62" />
           <entry key="dummy" value="3" />
           <entry key="fxml" value="480" />
-          <entry key="java" value="12644" />
+          <entry key="java" value="12771" />
           <entry key="sql" value="468" />
           <entry key="txt" value="48" />
         </counts>
@@ -119,7 +118,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="62" />
-          <entry key="JAVA" value="12644" />
+          <entry key="JAVA" value="12771" />
           <entry key="PLAIN_TEXT" value="51" />
           <entry key="SQL" value="36" />
           <entry key="Scratch" value="437" />
@@ -143,11 +142,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/ExamResultController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+            <state relative-caret-position="-439">
+              <caret line="91" column="37" lean-forward="true" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/StudentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
             </state>
           </provider>
         </entry>
@@ -213,17 +221,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/ExamResultBOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c33588e3-8358-49db-b6d4-dfdbfe3b9082/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="218">
+              <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -294,9 +293,9 @@
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/entity/ExamResult.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/util/ExamResultTM.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/ExamResultDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamResultForm.fxml" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/ExamResultBO.java" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/ExamResultBOImpl.java" />
-        <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/ExamResultForm.fxml" />
         <option value="$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/ExamResultController.java" />
       </list>
     </option>
@@ -426,7 +425,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1596874502340" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1596875522723" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Layerd/01/git pos/04/lib/mysql-connector-java-8.0.20.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -531,12 +530,12 @@
       <workItem from="1596784164776" duration="16222000" />
       <workItem from="1596807026661" duration="9966000" />
       <workItem from="1596860802638" duration="1344000" />
-      <workItem from="1596862365849" duration="11836000" />
+      <workItem from="1596862365849" duration="12891000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149854000" />
+    <option name="totallyTimeSpent" value="150909000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -908,13 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/StudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/entity/CustomEntity1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1002,46 +994,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/util/ExamResultTM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/ExamResultDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/ExamResultDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/ExamResultBO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c33588e3-8358-49db-b6d4-dfdbfe3b9082/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/BatchForm.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="47" column="72" lean-forward="true" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -1063,17 +1019,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/view/BatchForm.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="47" column="72" lean-forward="true" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/ExamResultBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/util/ExamResultTM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/ExamResultDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/business/custom/impl/ExamResultBOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        <state relative-caret-position="218">
+          <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/dao/custom/impl/ExamResultDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lk/ijse/studentmanagementsystem/controller/ExamResultController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+        <state relative-caret-position="-439">
+          <caret line="91" column="37" lean-forward="true" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

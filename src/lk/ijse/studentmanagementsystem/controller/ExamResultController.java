@@ -49,9 +49,10 @@ public class ExamResultController {
     ExamResultBO examResultBO = BOFactroy.getInstance().getBO(BOType.EXAMRESULT);
 
     public void initialize() {
+
         tblResult.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("examId"));
         tblResult.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("studentId"));
-        tblResult.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("marks"));
+        tblResult.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("marks"));
 
 
         cmbStudentId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<StudentTM>() {
@@ -106,12 +107,14 @@ public class ExamResultController {
         }
 
         ObservableList<ExamResultTM> examResults = tblResult.getItems();
+
+
         String examId = txtExamId.getText();
         String studentId = cmbStudentId.getValue().getSid();
         int mask = Integer.parseInt(txtMask.getText());
 
         if(examResults.isEmpty()){
-            examResults.add(new ExamResultTM("",examId,studentId,mask));
+            examResults.add(new ExamResultTM(txtId.getText(),examId,studentId,mask));
             txtExamName.clear();
             txtExamId.clear();
             txtBatchName.clear();
@@ -137,9 +140,9 @@ public class ExamResultController {
 
         ObservableList<ExamResultTM> examResults = tblResult.getItems();
 
-        for (ExamResultTM examResultTM: examResults) {
-            try {
-                examResultBO.saveExamResult(txtId.getText(),examResultTM.getExamId(),examResultTM.getStudentId(),examResultTM.getMarks());
+//        for (ExamResultTM examResultTM: examResults) {
+                try {
+                examResultBO.saveExamResult(tblResult.getItems());
 
                 new Alert(Alert.AlertType.ERROR, "Successfully Added Student Result").show();
                 return;
@@ -147,7 +150,7 @@ public class ExamResultController {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
+        //}
         examResults.add(new ExamResultTM());
 
 
