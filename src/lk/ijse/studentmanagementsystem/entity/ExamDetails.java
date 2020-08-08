@@ -3,19 +3,22 @@ package lk.ijse.studentmanagementsystem.entity;
 public class ExamDetails  implements SuperEntity{
 
     private ExamDetailsPK examDetailsPK;
+    private String subjectId;
     private int passMarks;
 
 
     public ExamDetails() {
     }
 
-    public ExamDetails(ExamDetailsPK examDetailsPK, int passMarks) {
+    public ExamDetails(ExamDetailsPK examDetailsPK,String subjectId, int passMarks) {
         this.examDetailsPK = examDetailsPK;
+        this.subjectId = subjectId;
         this.passMarks = passMarks;
     }
 
-    public ExamDetails(String examId,String corseId, int passMarks) {
+    public ExamDetails(String examId,String corseId,String subjectId, int passMarks) {
         this.examDetailsPK = new ExamDetailsPK(examId,corseId);
+        this.subjectId = subjectId;
         this.passMarks = passMarks;
     }
 
@@ -25,6 +28,14 @@ public class ExamDetails  implements SuperEntity{
 
     public void setExamDetailsPK(ExamDetailsPK examDetailsPK) {
         this.examDetailsPK = examDetailsPK;
+    }
+
+    public String getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(String subjectId) {
+        this.subjectId = subjectId;
     }
 
     public int getPassMarks() {
@@ -39,6 +50,7 @@ public class ExamDetails  implements SuperEntity{
     public String toString() {
         return "ExamDetails{" +
                 "examDetailsPK=" + examDetailsPK +
+                ", subjectId='" + subjectId + '\'' +
                 ", passMarks=" + passMarks +
                 '}';
     }

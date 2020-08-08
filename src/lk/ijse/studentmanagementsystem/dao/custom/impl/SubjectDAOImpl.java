@@ -21,6 +21,19 @@ public class SubjectDAOImpl implements SubjectDAO {
     }
 
     @Override
+    public List<Subject> getFindAllSubject(String id) throws Exception {
+        ResultSet rst = CrudUtil.execute("SELECT * FROM subject WHERE courseId=?",id);
+        List<Subject> subjects = new ArrayList<>();
+        while (rst.next()) {
+            subjects.add(new Subject(rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getString(4)));
+        }
+        return subjects;
+    }
+
+    @Override
     public List<Subject> findAll() throws Exception {
         ResultSet rst = CrudUtil.execute("SELECT * FROM subject");
         List<Subject> subjects = new ArrayList<>();

@@ -14,6 +14,8 @@ public interface SubjectBO extends SuperBO {
     public  boolean deleteSubject(String subId)throws Exception;
     public  boolean updateSubject(String courseId, String name, String type,String subid)throws Exception;
     public  String getNewSubjectId()throws Exception;
+    public List<SubjectTM> getFindAllSubject(String id) throws Exception;
+    List<SubjectTM> getSubjectDetails(String key)throws Exception;
 
 
 }

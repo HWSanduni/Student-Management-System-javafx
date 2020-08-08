@@ -1,8 +1,9 @@
 package lk.ijse.studentmanagementsystem.util;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
-public class StudentTM {
+public class CustomTM {
 
     private String Sid;
     private String firstName;
@@ -11,19 +12,20 @@ public class StudentTM {
     private int tel;
     private String nic;
     private Date birthDay;
-    private int age;
     private String mail;
     private String gender;
+    private int age;
+    private String batchId;
+    private Date reg_Date;
+    private BigDecimal registartionFee;
+    private String batchName;
+    private String courseName;
+    private BigDecimal courseFee;
 
-    public StudentTM() {
+    public CustomTM() {
     }
 
-    public StudentTM(String sid, String firstName){
-        Sid = sid;
-        this.firstName = firstName;
-    }
-
-    public StudentTM(String sid, String firstName, String lastName, String address, int tel, String nic, Date birthDay, int age, String mail, String gender) {
+    public CustomTM(String sid, String firstName, String lastName, String address, int tel, String nic, Date birthDay, String mail, String gender, int age, String batchId, Date reg_Date, BigDecimal registartionFee, String batchName, String courseName, BigDecimal courseFee) {
         Sid = sid;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -31,9 +33,15 @@ public class StudentTM {
         this.tel = tel;
         this.nic = nic;
         this.birthDay = birthDay;
-        this.age = age;
         this.mail = mail;
         this.gender = gender;
+        this.age = age;
+        this.batchId = batchId;
+        this.reg_Date = reg_Date;
+        this.registartionFee = registartionFee;
+        this.batchName = batchName;
+        this.courseName = courseName;
+        this.courseFee = courseFee;
     }
 
     public String getSid() {
@@ -92,14 +100,6 @@ public class StudentTM {
         this.birthDay = birthDay;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public String getMail() {
         return mail;
     }
@@ -116,9 +116,65 @@ public class StudentTM {
         this.gender = gender;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getBatchId() {
+        return batchId;
+    }
+
+    public void setBatchId(String batchId) {
+        this.batchId = batchId;
+    }
+
+    public Date getReg_Date() {
+        return reg_Date;
+    }
+
+    public void setReg_Date(Date reg_Date) {
+        this.reg_Date = reg_Date;
+    }
+
+    public BigDecimal getRegistartionFee() {
+        return registartionFee;
+    }
+
+    public void setRegistartionFee(BigDecimal registartionFee) {
+        this.registartionFee = registartionFee;
+    }
+
+    public String getBatchName() {
+        return batchName;
+    }
+
+    public void setBatchName(String batchName) {
+        this.batchName = batchName;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public BigDecimal getCourseFee() {
+        return courseFee;
+    }
+
+    public void setCourseFee(BigDecimal courseFee) {
+        this.courseFee = courseFee;
+    }
+
     @Override
     public String toString() {
-        return "StudentTM{" +
+        return "CustomTM{" +
                 "Sid='" + Sid + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
@@ -126,9 +182,15 @@ public class StudentTM {
                 ", tel=" + tel +
                 ", nic='" + nic + '\'' +
                 ", birthDay=" + birthDay +
-                ", age=" + age +
                 ", mail='" + mail + '\'' +
                 ", gender='" + gender + '\'' +
+                ", age=" + age +
+                ", batchId='" + batchId + '\'' +
+                ", reg_Date=" + reg_Date +
+                ", registartionFee=" + registartionFee +
+                ", batchName='" + batchName + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", courseFee=" + courseFee +
                 '}';
     }
 }

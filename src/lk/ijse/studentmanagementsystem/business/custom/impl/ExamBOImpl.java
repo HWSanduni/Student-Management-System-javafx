@@ -5,7 +5,10 @@ import lk.ijse.studentmanagementsystem.dao.DAOFactroy;
 import lk.ijse.studentmanagementsystem.dao.DAOType;
 import lk.ijse.studentmanagementsystem.dao.custom.ExamDAO;
 import lk.ijse.studentmanagementsystem.dao.custom.ExamDetailsDAO;
+import lk.ijse.studentmanagementsystem.dao.custom.QureyDAO;
 import lk.ijse.studentmanagementsystem.db.DBConnection;
+import lk.ijse.studentmanagementsystem.entity.CustomEntity;
+import lk.ijse.studentmanagementsystem.entity.CustomEntity1;
 import lk.ijse.studentmanagementsystem.entity.Exam;
 import lk.ijse.studentmanagementsystem.entity.ExamDetails;
 import lk.ijse.studentmanagementsystem.util.ExamTM;
@@ -20,6 +23,7 @@ public class ExamBOImpl implements ExamBO {
 
     ExamDAO examDAO = DAOFactroy.getInstance().getDAO(DAOType.EXAM);
     ExamDetailsDAO examDetailsDAO = DAOFactroy.getInstance().getDAO(DAOType.EXAMDETAILS);
+    QureyDAO qureyDAO = DAOFactroy.getInstance().getDAO(DAOType.QUREY);
 
     @Override
     public List<ExamTM> getAllExam() throws Exception {
@@ -76,7 +80,7 @@ public class ExamBOImpl implements ExamBO {
     }
 
     @Override
-    public boolean save(String id, String courseId, String name, Date date, String time, int passmarks, String status) throws Exception {
+    public boolean save(String id, String courseId, String name, Date date, String time,String subjectId, int passmarks, String status) throws Exception {
 
         Connection connection = DBConnection.getInstance().getConnection();
 
@@ -89,7 +93,7 @@ public class ExamBOImpl implements ExamBO {
             return false;
         }
 
-        result = examDetailsDAO.save(new ExamDetails(id,courseId,passmarks));
+        result = examDetailsDAO.save(new ExamDetails(id,courseId,subjectId,passmarks));
 
         if (!result) {
             connection.rollback();
@@ -114,5 +118,15 @@ public class ExamBOImpl implements ExamBO {
                 return false;
             }
         }
+    }
+
+    @Override
+    public CustomEntity1 getExamDetails(String key) throws Exception {
+
+        CustomEntity1 customEntity = qureyDAO.getExamDetails(key);
+        System.out.println("**************************");
+
+        System.out.println(customEntity);
+        return customEntity;
     }
 }

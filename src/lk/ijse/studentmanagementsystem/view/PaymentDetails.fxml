@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="651.0" prefWidth="657.0" stylesheets="@style/batchform.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.StudentController">
+<AnchorPane fx:id="root" prefHeight="651.0" prefWidth="657.0" stylesheets="@style/batchform.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.PaymentDetailsController">
     <children>
         <AnchorPane layoutX="-14.0" prefHeight="658.0" prefWidth="671.0" style="-fx-background-color: white;">
             <children>
@@ -37,11 +38,10 @@
                      </font>
                   </Label>
                     </children></AnchorPane>
-                <TextField id="txtRegStatus" layoutX="247.0" layoutY="76.0" prefHeight="25.0" prefWidth="253.0" promptText="Status" />
-                <TextField id="txtSubjectName" layoutX="244.0" layoutY="195.0" prefHeight="25.0" prefWidth="259.0" promptText="Status" />
-                <TextField id="txtDescription" layoutX="244.0" layoutY="312.0" prefHeight="25.0" prefWidth="259.0" promptText="Status" />
-                <Separator layoutX="221.0" layoutY="253.0" prefHeight="4.0" prefWidth="452.0" />
-                <TableView layoutX="236.0" layoutY="429.0" prefHeight="200.0" prefWidth="428.0">
+                <TextField fx:id="txtComplete" layoutX="251.0" layoutY="92.0" prefHeight="25.0" prefWidth="259.0" promptText="COMPLETE" />
+                <TextField fx:id="txtReg" layoutX="236.0" layoutY="270.0" prefHeight="25.0" prefWidth="259.0" promptText="REGESTER" />
+                <Separator layoutX="224.0" layoutY="176.0" prefHeight="4.0" prefWidth="452.0" />
+                <TableView fx:id="tblStudent" layoutX="236.0" layoutY="429.0" prefHeight="200.0" prefWidth="428.0">
                     <columns>
                         <TableColumn prefWidth="71.0" text="Student ID" />
                         <TableColumn prefWidth="109.0" text="Student Name" />
@@ -55,39 +55,28 @@
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label id="lblCourseId" layoutX="427.0" layoutY="402.0" prefHeight="17.0" prefWidth="200.0" />
-            <Separator layoutX="219.0" layoutY="142.0" prefHeight="4.0" prefWidth="452.0" />
-            <ImageView id="imAllPaymentSearch" fitHeight="35.0" fitWidth="48.0" layoutX="562.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../asset/search4.png" />
-               </image>
-            </ImageView>
-            <ImageView id="imRegSearch" fitHeight="35.0" fitWidth="48.0" layoutX="562.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../asset/search4.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="569.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../asset/search4.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="251.0" layoutY="25.0" prefHeight="17.0" prefWidth="171.0" text="All Registar Student" textFill="#0916c9">
+                <Label fx:id="lblCourseId" layoutX="427.0" layoutY="402.0" prefHeight="17.0" prefWidth="200.0" />
+            <Label layoutX="246.0" layoutY="42.0" prefHeight="25.0" prefWidth="256.0" text="Already Payment Complete Student" textFill="#0916c9">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="244.0" layoutY="153.0" prefHeight="25.0" prefWidth="256.0" text="Already Payment Complete Student" textFill="#0916c9">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="244.0" layoutY="270.0" prefHeight="25.0" prefWidth="354.0" text="Registered Student But Not Complete Payment" textFill="#0916c9">
+            <Label layoutX="236.0" layoutY="206.0" prefHeight="25.0" prefWidth="354.0" text="Registered Student But Not Complete Payment" textFill="#0916c9">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
             <Separator layoutX="219.0" layoutY="358.0" prefHeight="4.0" prefWidth="452.0" />
+            <Button fx:id="bttReg" layoutX="529.0" layoutY="265.0" mnemonicParsing="false" onAction="#btnSearchCopmpleteNot_OnAction" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #008080;" text="Search" textFill="#f8f6f6">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnComplete" layoutX="535.0" layoutY="85.0" mnemonicParsing="false" onAction="#btnSearchCopmplete_OnAction" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #008080;" text="Search" textFill="#f8f6f6">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
     </children>

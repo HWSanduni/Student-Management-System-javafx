@@ -35,6 +35,15 @@ public class Registation implements SuperEntity {
         this.courseFeeGi_Date = courseFeeGi_Date;
     }
 
+    public Registation(BigDecimal registartionFee, BigDecimal courseFee, String status, Date reg_Date, Date courseFeeGi_Date,String batchId, String studentId) {
+        this.registartionFee = registartionFee;
+        this.courseFee = courseFee;
+        this.status = status;
+        this.reg_Date = reg_Date;
+        this.courseFeeGi_Date = courseFeeGi_Date;
+        this.registationPK = new RegistationPK(batchId,studentId);
+    }
+
 
     public RegistationPK getRegistationPK() {
         return registationPK;

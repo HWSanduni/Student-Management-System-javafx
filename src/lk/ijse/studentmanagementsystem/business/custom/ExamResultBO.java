@@ -10,7 +10,7 @@ public interface ExamResultBO extends SuperBO {
 
     public List<ExamResultTM> getAllExamResult() throws Exception;
     public ExamResult findExamResult (String id) throws Exception;
-    public  boolean saveExamResult(String id, String examId,String studentId,int marks)throws Exception;
+    public  boolean saveExamResult(List<ExamResultTM> examResults)throws Exception;
     public  boolean deleteExamResult(String courseId)throws Exception;
     public  boolean updateExamResult(String id, String examId,String studentId,int marks)throws Exception;
     public  String getNewExamResultId()throws Exception;

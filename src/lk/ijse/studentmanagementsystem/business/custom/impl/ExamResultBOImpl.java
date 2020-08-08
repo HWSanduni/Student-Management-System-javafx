@@ -35,8 +35,32 @@ public class ExamResultBOImpl implements ExamResultBO {
     }
 
     @Override
-    public boolean saveExamResult(String id, String examId, String studentId, int marks) throws Exception {
-        return examResultDAO.save(new ExamResult(id,examId,studentId,marks));
+    public boolean saveExamResult(List<ExamResultTM> examResultTMS) throws Exception {
+        System.out.println("11111111111111");
+        System.out.println(examResultTMS.toString());
+
+        ExamResult examResult = new ExamResult();
+
+        boolean result;
+
+
+        for (ExamResultTM examResultTM: examResultTMS){
+
+           result = examResultDAO.save(new ExamResult(
+                   examResultTM.getId(),
+                    examResultTM.getExamId(),
+                    examResultTM.getStudentId(),
+                    examResultTM.getMarks()
+
+            ));
+           if(!result){
+               return  false;
+           }
+
+        }
+
+
+       return true;
     }
 
     @Override

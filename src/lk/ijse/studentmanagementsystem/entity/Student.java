@@ -18,6 +18,11 @@ public class Student implements SuperEntity {
     public Student() {
     }
 
+    public Student(String sid, String firstName) {
+        Sid = sid;
+        this.firstName = firstName;
+    }
+
     public Student(String sid, String firstName, String lastName, String address, int tel, String nic, Date birthDay, int age, String mail, String gender) {
         Sid = sid;
         this.firstName = firstName;

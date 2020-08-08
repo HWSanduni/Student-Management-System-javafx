@@ -1,6 +1,7 @@
 package lk.ijse.studentmanagementsystem.business;
 
 import lk.ijse.studentmanagementsystem.business.custom.impl.*;
+import lk.ijse.studentmanagementsystem.dao.custom.impl.QueryDAOImpl;
 
 public class BOFactroy {
 
@@ -31,6 +32,8 @@ public class BOFactroy {
                 return (T) new ExamResultBOImpl();
             case REGISTATION:
                 return (T) new RegistationBOImpl();
+            case QUREY:
+                return (T) new QueryDAOImpl();
                 default:
                     return null;
         }

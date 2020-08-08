@@ -101,7 +101,12 @@
                   <TableColumn prefWidth="106.0" text="Course Name" />
                </columns>
             </TableView>
-            <Button id="btnAddExamResult" layoutX="334.0" layoutY="52.0" mnemonicParsing="false" onAction="#AddExamREsultOnActionCliced" prefHeight="25.0" prefWidth="243.0" style="-fx-background-color: #8467D7;" text="Add Exam Result" textFill="#fcf8f8">
+            <Button id="btnAddExamResult" layoutX="252.0" layoutY="53.0" mnemonicParsing="false" onAction="#AddExamREsultOnActionCliced" prefHeight="31.0" prefWidth="156.0" style="-fx-background-color: #8467D7;" text="Add Exam Result" textFill="#fcf8f8">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button id="btnAddExamStudentDetails" layoutX="443.0" layoutY="53.0" mnemonicParsing="false" onAction="#AddExamREsultOnActionCliced" prefHeight="31.0" prefWidth="177.0" style="-fx-background-color: #8467D7;" text="Student Exam Details" textFill="#fcf8f8">
                <font>
                   <Font size="15.0" />
                </font>

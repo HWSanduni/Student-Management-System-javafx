@@ -77,4 +77,21 @@ public class RegistationBOImpl implements RegistationBO {
             }
         }
     }
+
+    @Override
+    public boolean registationUpdate(RegistraionTM registraionTM) throws Exception {
+
+        System.out.println("---bnb-"+registraionTM);
+
+        BigDecimal courseFee = BigDecimal.valueOf(registraionTM.getCourseFee());
+        BigDecimal regFee = BigDecimal.valueOf(registraionTM.getRegistartionFee());
+        return registationDAO.update(new Registation(regFee,
+                courseFee,
+                registraionTM.getStatus(),
+                registraionTM.getReg_Date(),
+                registraionTM.getCourseFeeGi_Date(),
+                registraionTM.getBatchId(),
+                registraionTM.getStudentId()));
+
+    }
 }
