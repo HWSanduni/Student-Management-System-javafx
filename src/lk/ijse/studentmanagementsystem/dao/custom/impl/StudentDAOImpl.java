@@ -72,6 +72,19 @@ public class StudentDAOImpl implements StudentDAO {
             return rst.getString(1);
         }
     }
+
+    @Override
+    public int getStudentCount() throws Exception {
+
+        int count=0;
+        ResultSet rst = CrudUtil.execute("SELECT COUNT(*) from student");
+
+        if (rst.next()) {
+            count=rst.getInt(1);
+        }
+        return count;
+    }
+
     @Override
     public CustomEntity get(String key) throws Exception {
 

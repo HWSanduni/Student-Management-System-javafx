@@ -8,4 +8,5 @@ public interface StudentDAO extends CrudDAO<Student,String> {
 
     CustomEntity get(String key)throws Exception;
     String getLastStudntId()throws Exception;
+    int getStudentCount() throws Exception;
 }

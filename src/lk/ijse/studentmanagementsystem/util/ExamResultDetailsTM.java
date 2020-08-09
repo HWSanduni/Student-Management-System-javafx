@@ -1,32 +1,31 @@
 package lk.ijse.studentmanagementsystem.util;
 
-public class StudentPaymentTM {
+public class ExamResultDetailsTM {
 
-    private String studentId;
+    private int marsk;
     private String studentName;
     private int tel;
     private String batchName;
     private String courseName;
 
 
-    public StudentPaymentTM() {
+    public ExamResultDetailsTM() {
     }
 
-    public StudentPaymentTM(String studentId, String studentName, int tel, String batchName, String courseName) {
-        this.studentId = studentId;
+    public ExamResultDetailsTM(int marsk, String studentName, int tel, String batchName, String courseName) {
+        this.marsk = marsk;
         this.studentName = studentName;
         this.tel = tel;
         this.batchName = batchName;
         this.courseName = courseName;
     }
 
-
-    public String getStudentId() {
-        return studentId;
+    public int getMarsk() {
+        return marsk;
     }
 
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
+    public void setMarsk(int marsk) {
+        this.marsk = marsk;
     }
 
     public String getStudentName() {
@@ -63,13 +62,12 @@ public class StudentPaymentTM {
 
     @Override
     public String toString() {
-        return "CustomEntity2{" +
-                "studentId='" + studentId + '\'' +
+        return "ExamResultDetailsTM{" +
+                "marsk=" + marsk +
                 ", studentName='" + studentName + '\'' +
                 ", tel=" + tel +
                 ", batchName='" + batchName + '\'' +
                 ", courseName='" + courseName + '\'' +
                 '}';
     }
-
 }

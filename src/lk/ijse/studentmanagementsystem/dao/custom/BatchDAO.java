@@ -8,4 +8,6 @@ import lk.ijse.studentmanagementsystem.entity.Batch;
 public interface BatchDAO extends CrudDAO<Batch,String> {
     String getLastBatchId()throws Exception;
 
+    int getBatchCount ()throws Exception;
+
 }

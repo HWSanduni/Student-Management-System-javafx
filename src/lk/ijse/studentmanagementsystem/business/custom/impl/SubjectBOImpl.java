@@ -100,4 +100,11 @@ public class SubjectBOImpl implements SubjectBO {
 
         return subjectTMS;
     }
+
+    @Override
+    public int getSubjectCount() throws Exception {
+
+        int count = subjectDAO.getSubjectCount();
+        return count;
+    }
 }

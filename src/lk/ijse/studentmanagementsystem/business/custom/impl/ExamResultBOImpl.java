@@ -4,7 +4,10 @@ import lk.ijse.studentmanagementsystem.business.custom.ExamResultBO;
 import lk.ijse.studentmanagementsystem.dao.DAOFactroy;
 import lk.ijse.studentmanagementsystem.dao.DAOType;
 import lk.ijse.studentmanagementsystem.dao.custom.ExamResultDAO;
+import lk.ijse.studentmanagementsystem.dao.custom.QureyDAO;
+import lk.ijse.studentmanagementsystem.entity.CustomEntity2;
 import lk.ijse.studentmanagementsystem.entity.ExamResult;
+import lk.ijse.studentmanagementsystem.util.ExamResultDetailsTM;
 import lk.ijse.studentmanagementsystem.util.ExamResultTM;
 
 import java.util.ArrayList;
@@ -13,6 +16,7 @@ import java.util.List;
 public class ExamResultBOImpl implements ExamResultBO {
 
     ExamResultDAO examResultDAO = DAOFactroy.getInstance().getDAO(DAOType.EXAMRESULT);
+    QureyDAO qureyDAO = DAOFactroy.getInstance().getDAO(DAOType.QUREY);
 
     @Override
     public List<ExamResultTM> getAllExamResult() throws Exception {
@@ -94,5 +98,23 @@ public class ExamResultBOImpl implements ExamResultBO {
             }
             return id;
         }
+    }
+
+    @Override
+    public List<ExamResultDetailsTM> getExamResult(String status, String key) throws Exception {
+
+        List<CustomEntity2> customEntity2s = qureyDAO.getExamResult(status,key);
+        List<ExamResultDetailsTM> examResultDetailsTMS = new ArrayList<>();
+
+        System.out.println("-------------------------");
+        System.out.println(customEntity2s.toString());
+
+        for (CustomEntity2 customEntity2:customEntity2s){
+            examResultDetailsTMS.add(new ExamResultDetailsTM(customEntity2.getMarsk(),
+                    customEntity2.getStudentName(),customEntity2.getTel(),customEntity2.getBatchName(),customEntity2.getCourseName()));
+        }
+
+
+        return examResultDetailsTMS;
     }
 }

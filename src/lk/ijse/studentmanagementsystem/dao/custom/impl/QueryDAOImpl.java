@@ -132,5 +132,83 @@ public class QueryDAOImpl implements QureyDAO {
         return subjects;
     }
 
+    @Override
+    public List<Batch> getBatcDetails(String key) throws Exception {
+
+        ResultSet rest= CrudUtil.execute("SELECT b.Bid,b.courseId,b.Name,b.Type,b.Year,b.StartDate,b.EndDate from course c INNER JOIN batch b on c.Cid = b.courseId where c.Cid=?",key);
+        List<Batch> batches = new ArrayList<>();
+        while (rest.next()){
+            batches.add(new Batch(rest.getString(1),
+                    rest.getString(2),
+                    rest.getString(3),
+                    rest.getString(4),
+                    rest.getInt(5),
+                    rest.getDate(6),
+                    rest.getDate(7)));
+        }
+        return batches;
+    }
+
+    @Override
+    public List<CustomEntity2> getAllBatchStudent(String status) throws Exception {
+
+        List<CustomEntity2> customEntity2s = new ArrayList<>();
+        ResultSet resultSet = CrudUtil.execute("SELECT s.Sid,s.FirstName,s.Tel,c.Name from student s INNER JOIN registation r on s.Sid = r.studentId\n" +
+                "INNER JOIN batch b on r.batchId = b.Bid INNER JOIN course c on b.courseId = c.Cid where b.Bid=?",status);
+
+        while (resultSet.next()){
+            customEntity2s.add(new CustomEntity2(resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getInt(3),
+                    resultSet.getString(4)));
+        }
+
+        return customEntity2s;
+    }
+
+    @Override
+    public List<CustomEntity2> getExamResult(String status,String key) throws Exception {
+
+        List<CustomEntity2> passList = new ArrayList<>();
+        List<CustomEntity2> failList = new ArrayList<>();
+
+        ResultSet resultSet = CrudUtil.execute("SELECT e2.PassMarks,e.marsk,s.FirstName,s.Tel,b.Name,c.Name from student s INNER JOIN registation r on s.Sid = r.studentId\n" +
+                "INNER JOIN batch b on r.batchId = b.Bid INNER JOIN course c on b.courseId = c.Cid\n" +
+                "INNER JOIN examresult e on s.Sid = e.studentId INNER JOIN exam e2 on e.examId = e2.Eid where e2.Eid=?", key);
+
+
+        if (status.equals("pass")) {
+            System.out.println("---++++++++++++++++++-------");
+            System.out.println(resultSet.toString());
+            while (resultSet.next()) {
+                if (resultSet.getInt(1) <= resultSet.getInt(2)) {
+                    passList.add(new CustomEntity2(resultSet.getInt(2),
+                            resultSet.getString(3),
+                            resultSet.getInt(4),
+                            resultSet.getString(5),
+                            resultSet.getString(6)));
+                }
+
+            }
+            return passList;
+        } else if (status.equals("fail")) {
+            System.out.println("---++++++++++++++++++----************---");
+            while (resultSet.next()) {
+                if (resultSet.getInt(1) >resultSet.getInt(2)) {
+                    failList.add(new CustomEntity2(resultSet.getInt(2),
+                            resultSet.getString(3),
+                            resultSet.getInt(4),
+                            resultSet.getString(5),
+                            resultSet.getString(6)));
+                }
+
+            }
+
+
+            return failList;
+        }
+        return null;
+    }
+
 
 }

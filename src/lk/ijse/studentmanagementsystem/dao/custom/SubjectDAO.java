@@ -9,4 +9,5 @@ public interface SubjectDAO extends CrudDAO<Subject,String> {
 
     String getLastSubjectId()throws Exception;
     List<Subject> getFindAllSubject (String id)throws Exception;
+    int getSubjectCount()throws Exception;
 }
