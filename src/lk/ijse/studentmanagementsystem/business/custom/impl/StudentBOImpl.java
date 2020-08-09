@@ -9,6 +9,7 @@ import lk.ijse.studentmanagementsystem.entity.CustomEntity;
 import lk.ijse.studentmanagementsystem.entity.CustomEntity2;
 import lk.ijse.studentmanagementsystem.entity.Student;
 import lk.ijse.studentmanagementsystem.util.CustomTM;
+import lk.ijse.studentmanagementsystem.util.StudentDetailsTM;
 import lk.ijse.studentmanagementsystem.util.StudentPaymentTM;
 import lk.ijse.studentmanagementsystem.util.StudentTM;
 
@@ -103,5 +104,22 @@ public class StudentBOImpl implements StudentBO {
 
 
         return studentPaymentTMS;
+    }
+
+    @Override
+    public List<StudentDetailsTM> getAllBatchStudent(String status) throws Exception {
+
+        List<CustomEntity2> customEntity2List = qureyDAO.getAllBatchStudent(status);
+        List<StudentDetailsTM> studentDetailsTMS = new ArrayList<>();
+
+        for (CustomEntity2 customEntity2: customEntity2List){
+            studentDetailsTMS.add(new StudentDetailsTM(customEntity2.getStudentId(),
+                    customEntity2.getStudentName(),
+                    customEntity2.getTel(),
+                    customEntity2.getCourseName()));
+        }
+
+
+        return studentDetailsTMS;
     }
 }

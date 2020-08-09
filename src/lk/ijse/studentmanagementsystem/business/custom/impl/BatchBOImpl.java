@@ -4,16 +4,19 @@ import lk.ijse.studentmanagementsystem.business.custom.BatchBO;
 import lk.ijse.studentmanagementsystem.dao.DAOFactroy;
 import lk.ijse.studentmanagementsystem.dao.DAOType;
 import lk.ijse.studentmanagementsystem.dao.custom.BatchDAO;
+import lk.ijse.studentmanagementsystem.dao.custom.QureyDAO;
 import lk.ijse.studentmanagementsystem.entity.Batch;
 import lk.ijse.studentmanagementsystem.util.BatchTM;
 
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 public class BatchBOImpl implements BatchBO {
 
     BatchDAO batchDAO = DAOFactroy.getInstance().getDAO(DAOType.BATCH);
+    QureyDAO qureyDAO = DAOFactroy.getInstance().getDAO(DAOType.QUREY);
 
 
     @Override
@@ -75,5 +78,21 @@ public class BatchBOImpl implements BatchBO {
             }
             return id;
         }
+    }
+
+    @Override
+    public List<BatchTM> getBatcDetails(String key) throws Exception{
+
+
+        List<Batch> batches = qureyDAO.getBatcDetails(key);
+        List<BatchTM> batchTMS = new ArrayList<>();
+
+        for (Batch batch: batches) {
+            batchTMS.add(new BatchTM(batch.getBid(),batch.getCourseId(),batch.getName(),batch.getType(),batch.getYear(),batch.getStartDate(),batch.getEndDate()));
+        }
+
+
+        return batchTMS;
+
     }
 }

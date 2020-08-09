@@ -12,4 +12,6 @@ public interface QureyDAO extends SuperDAO {
     List<CustomEntity2> getAllRegisterStudent (String status)throws Exception;
     List<Course> getCourseDetails (String key)throws Exception;
     List<Subject> getSubjectDetails (String key)throws Exception;
+    List<Batch> getBatcDetails (String key)throws Exception;
+    List<CustomEntity2> getAllBatchStudent (String status)throws Exception;
 }

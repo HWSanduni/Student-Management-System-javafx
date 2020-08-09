@@ -12,6 +12,14 @@ public class CustomEntity2 {
     public CustomEntity2() {
     }
 
+    public CustomEntity2(String studentId, String studentName, int tel,String courseName) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.tel = tel;
+        this.courseName = courseName;
+    }
+
+
     public CustomEntity2(String studentId, String studentName, int tel, String batchName, String courseName) {
         this.studentId = studentId;
         this.studentName = studentName;

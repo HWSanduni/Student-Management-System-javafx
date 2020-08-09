@@ -16,4 +16,6 @@ public interface BatchBO extends SuperBO {
     public  boolean updateBatch(String courseId , String name, String type, int year, Date startDate,Date endDate,String id)throws Exception;
     public  String getNewBatchId()throws Exception;
 
+    List<BatchTM> getBatcDetails(String key) throws Exception;
+
 }

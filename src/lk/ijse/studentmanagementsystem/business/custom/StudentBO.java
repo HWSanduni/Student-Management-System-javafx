@@ -5,10 +5,7 @@ import lk.ijse.studentmanagementsystem.entity.Batch;
 import lk.ijse.studentmanagementsystem.entity.CustomEntity;
 import lk.ijse.studentmanagementsystem.entity.CustomEntity2;
 import lk.ijse.studentmanagementsystem.entity.Student;
-import lk.ijse.studentmanagementsystem.util.BatchTM;
-import lk.ijse.studentmanagementsystem.util.CustomTM;
-import lk.ijse.studentmanagementsystem.util.StudentPaymentTM;
-import lk.ijse.studentmanagementsystem.util.StudentTM;
+import lk.ijse.studentmanagementsystem.util.*;
 
 import java.sql.Date;
 import java.util.List;
@@ -25,4 +22,6 @@ public interface StudentBO extends SuperBO {
     public CustomEntity getAllStudentDetails(String key)throws Exception;
 
     public List<StudentPaymentTM> getAllRegisterStudent (String status)throws Exception;
+
+    public List<StudentDetailsTM> getAllBatchStudent(String status) throws Exception;
 }
