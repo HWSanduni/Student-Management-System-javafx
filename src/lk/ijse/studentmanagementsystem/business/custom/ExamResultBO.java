@@ -2,6 +2,7 @@ package lk.ijse.studentmanagementsystem.business.custom;
 
 import lk.ijse.studentmanagementsystem.business.SuperBO;
 import lk.ijse.studentmanagementsystem.entity.ExamResult;
+import lk.ijse.studentmanagementsystem.util.ExamResultDetailsTM;
 import lk.ijse.studentmanagementsystem.util.ExamResultTM;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public interface ExamResultBO extends SuperBO {
     public  boolean deleteExamResult(String courseId)throws Exception;
     public  boolean updateExamResult(String id, String examId,String studentId,int marks)throws Exception;
     public  String getNewExamResultId()throws Exception;
+
+    List<ExamResultDetailsTM> getExamResult(String status, String key) throws Exception;
 }

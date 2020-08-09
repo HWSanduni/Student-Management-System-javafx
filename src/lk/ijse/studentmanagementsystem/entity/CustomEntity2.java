@@ -7,12 +7,24 @@ public class CustomEntity2 {
     private int tel;
     private String batchName;
     private String courseName;
+    private int marsk;
+    private int passMasks;
 
 
     public CustomEntity2() {
     }
 
-    public CustomEntity2(String studentId, String studentName, int tel,String courseName) {
+    public CustomEntity2(int marsk,String studentName, int tel, String batchName, String courseName) {
+        this.marsk = marsk;
+        this.studentName = studentName;
+        this.tel = tel;
+        this.batchName = batchName;
+        this.courseName = courseName;
+
+
+    }
+
+    public CustomEntity2(String studentId, String studentName, int tel, String courseName) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.tel = tel;
@@ -68,6 +80,22 @@ public class CustomEntity2 {
         this.courseName = courseName;
     }
 
+    public int getMarsk() {
+        return marsk;
+    }
+
+    public void setMarsk(int marsk) {
+        this.marsk = marsk;
+    }
+
+    public int getPassMasks() {
+        return passMasks;
+    }
+
+    public void setPassMasks(int passMasks) {
+        this.passMasks = passMasks;
+    }
+
     @Override
     public String toString() {
         return "CustomEntity2{" +
@@ -76,6 +104,8 @@ public class CustomEntity2 {
                 ", tel=" + tel +
                 ", batchName='" + batchName + '\'' +
                 ", courseName='" + courseName + '\'' +
+                ", marsk=" + marsk +
+                ", passMasks=" + passMasks +
                 '}';
     }
 }

@@ -34,7 +34,7 @@
                         </ImageView>
                     </children></AnchorPane>
                 <TextField id="txtSubjectName" fx:id="txtExamId" layoutX="250.0" layoutY="163.0" prefHeight="25.0" prefWidth="256.0" promptText="Exam ID " />
-                <TextField id="txtDescription" fx:id="txtExamId1" layoutX="248.0" layoutY="316.0" prefHeight="25.0" prefWidth="266.0" promptText="Exam ID " />
+                <TextField fx:id="txtExamId1" layoutX="248.0" layoutY="316.0" prefHeight="25.0" prefWidth="266.0" promptText="Exam ID " />
                 <Separator layoutX="215.0" layoutY="235.0" prefHeight="4.0" prefWidth="452.0" />
                 <Label layoutX="252.0" layoutY="407.0" prefHeight="17.0" prefWidth="171.0" text="Exam Attendance" textFill="#0916c9">
                     <font>
@@ -60,10 +60,10 @@
                 <Separator layoutX="218.0" layoutY="385.0" prefHeight="4.0" prefWidth="471.0" />
                 <TableView fx:id="tblStudent" layoutX="238.0" layoutY="506.0" prefHeight="217.0" prefWidth="432.0">
                     <columns>
-                        <TableColumn prefWidth="66.0" text="Student ID" />
-                        <TableColumn prefWidth="99.0" text="Student Name" />
+                        <TableColumn prefWidth="102.0" text="Student Marks" />
+                        <TableColumn prefWidth="83.0" text="Student Name" />
                         <TableColumn prefWidth="82.0" text="Student Tel" />
-                  <TableColumn prefWidth="96.0" text="Batch Name" />
+                  <TableColumn prefWidth="76.0" text="Batch Name" />
                   <TableColumn prefWidth="88.0" text="Course Name" />
                     </columns>
                 </TableView>

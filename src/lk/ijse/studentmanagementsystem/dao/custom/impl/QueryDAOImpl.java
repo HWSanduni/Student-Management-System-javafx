@@ -166,5 +166,49 @@ public class QueryDAOImpl implements QureyDAO {
         return customEntity2s;
     }
 
+    @Override
+    public List<CustomEntity2> getExamResult(String status,String key) throws Exception {
+
+        List<CustomEntity2> passList = new ArrayList<>();
+        List<CustomEntity2> failList = new ArrayList<>();
+
+        ResultSet resultSet = CrudUtil.execute("SELECT e2.PassMarks,e.marsk,s.FirstName,s.Tel,b.Name,c.Name from student s INNER JOIN registation r on s.Sid = r.studentId\n" +
+                "INNER JOIN batch b on r.batchId = b.Bid INNER JOIN course c on b.courseId = c.Cid\n" +
+                "INNER JOIN examresult e on s.Sid = e.studentId INNER JOIN exam e2 on e.examId = e2.Eid where e2.Eid=?", key);
+
+
+        if (status.equals("pass")) {
+            System.out.println("---++++++++++++++++++-------");
+            System.out.println(resultSet.toString());
+            while (resultSet.next()) {
+                if (resultSet.getInt(1) <= resultSet.getInt(2)) {
+                    passList.add(new CustomEntity2(resultSet.getInt(2),
+                            resultSet.getString(3),
+                            resultSet.getInt(4),
+                            resultSet.getString(5),
+                            resultSet.getString(6)));
+                }
+
+            }
+            return passList;
+        } else if (status.equals("fail")) {
+            System.out.println("---++++++++++++++++++----************---");
+            while (resultSet.next()) {
+                if (resultSet.getInt(1) >resultSet.getInt(2)) {
+                    failList.add(new CustomEntity2(resultSet.getInt(2),
+                            resultSet.getString(3),
+                            resultSet.getInt(4),
+                            resultSet.getString(5),
+                            resultSet.getString(6)));
+                }
+
+            }
+
+
+            return failList;
+        }
+        return null;
+    }
+
 
 }
