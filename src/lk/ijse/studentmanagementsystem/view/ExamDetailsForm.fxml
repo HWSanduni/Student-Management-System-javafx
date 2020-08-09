@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="736.0" prefWidth="669.0" stylesheets="@style/batchform.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.StudentController">
+<AnchorPane fx:id="root" prefHeight="736.0" prefWidth="669.0" stylesheets="@style/batchform.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.studentmanagementsystem.controller.ExamDetailsController">
     <children>
         <AnchorPane layoutX="-14.0" prefHeight="658.0" prefWidth="671.0" style="-fx-background-color: white;">
             <children>
@@ -33,34 +33,15 @@
                             </image>
                         </ImageView>
                     </children></AnchorPane>
-                <TextField id="txtSubjectName" layoutX="250.0" layoutY="168.0" prefHeight="25.0" prefWidth="256.0" promptText="Exam ID Or Exam Name" />
-                <TextField id="txtDescription" layoutX="245.0" layoutY="390.0" prefHeight="25.0" prefWidth="259.0" promptText="Exam ID Or Exam Name" />
-                <Separator layoutX="227.0" layoutY="335.0" prefHeight="4.0" prefWidth="452.0" />
-                <TableView layoutX="234.0" layoutY="640.0" prefHeight="83.0" prefWidth="432.0">
-                    <columns>
-                        <TableColumn prefWidth="87.0" text="Student ID" />
-                        <TableColumn prefWidth="109.0" text="Student Name" />
-                        <TableColumn prefWidth="122.0" text="Batch Name" />
-                        <TableColumn prefWidth="113.0" text="Course Name" />
-                    </columns>
-                </TableView>
-                <Label layoutX="234.0" layoutY="565.0" prefHeight="17.0" prefWidth="171.0" text="Exam Attendance" textFill="#0916c9">
+                <TextField id="txtSubjectName" fx:id="txtExamId" layoutX="250.0" layoutY="163.0" prefHeight="25.0" prefWidth="256.0" promptText="Exam ID " />
+                <TextField id="txtDescription" fx:id="txtExamId1" layoutX="248.0" layoutY="316.0" prefHeight="25.0" prefWidth="266.0" promptText="Exam ID " />
+                <Separator layoutX="215.0" layoutY="235.0" prefHeight="4.0" prefWidth="452.0" />
+                <Label layoutX="252.0" layoutY="407.0" prefHeight="17.0" prefWidth="171.0" text="Exam Attendance" textFill="#0916c9">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label id="lblCourseId" layoutX="427.0" layoutY="402.0" prefHeight="17.0" prefWidth="200.0" />
                 <Separator layoutX="223.0" layoutY="99.0" prefHeight="4.0" prefWidth="460.0" />
-                <ImageView id="imAllPaymentSearch" fitHeight="35.0" fitWidth="48.0" layoutX="564.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../asset/search4.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="582.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../asset/search4.png" />
-                    </image>
-                </ImageView>
                 <Label layoutX="244.0" layoutY="14.0" prefHeight="17.0" prefWidth="171.0" text="Exam Result" textFill="#0916c9">
                     <font>
                         <Font size="16.0" />
@@ -71,46 +52,43 @@
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="245.0" layoutY="356.0" prefHeight="25.0" prefWidth="223.0" text="Exam Fail Student" textFill="#0916c9">
+                <Label layoutX="244.0" layoutY="270.0" prefHeight="25.0" prefWidth="223.0" text="Exam Fail Student" textFill="#0916c9">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Separator layoutX="219.0" layoutY="552.0" prefHeight="4.0" prefWidth="471.0" />
-                <TableView layoutX="234.0" layoutY="249.0" prefHeight="73.0" prefWidth="432.0">
+                <Separator layoutX="218.0" layoutY="385.0" prefHeight="4.0" prefWidth="471.0" />
+                <TableView fx:id="tblStudent" layoutX="238.0" layoutY="506.0" prefHeight="217.0" prefWidth="432.0">
                     <columns>
-                        <TableColumn prefWidth="83.0" text="Student ID" />
-                        <TableColumn prefWidth="105.0" text="Student Name" />
-                        <TableColumn prefWidth="148.0" text="Batch Name" />
-                  <TableColumn prefWidth="106.0" text="Course Name" />
+                        <TableColumn prefWidth="66.0" text="Student ID" />
+                        <TableColumn prefWidth="99.0" text="Student Name" />
+                        <TableColumn prefWidth="82.0" text="Student Tel" />
+                  <TableColumn prefWidth="96.0" text="Batch Name" />
+                  <TableColumn prefWidth="88.0" text="Course Name" />
                     </columns>
                 </TableView>
-                <TextField id="txtDescription" layoutX="237.0" layoutY="597.0" prefHeight="25.0" prefWidth="312.0" promptText="Exam ID Or Name" />
-                <ImageView fitHeight="35.0" fitWidth="48.0" layoutX="600.0" layoutY="592.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../asset/search4.png" />
-                    </image>
-                </ImageView>
-            <TextField id="txtSubjectName" layoutX="250.0" layoutY="213.0" prefHeight="25.0" prefWidth="256.0" promptText="Pass Average" />
-            <TextField id="txtDescription" layoutX="242.0" layoutY="429.0" prefHeight="25.0" prefWidth="262.0" promptText="Faile Average" />
-            <TableView layoutX="237.0" layoutY="462.0" prefHeight="73.0" prefWidth="436.0">
-               <columns>
-                  <TableColumn prefWidth="83.0" text="Student ID" />
-                  <TableColumn prefWidth="105.0" text="Student Name" />
-                  <TableColumn prefWidth="148.0" text="Batch Name" />
-                  <TableColumn prefWidth="106.0" text="Course Name" />
-               </columns>
-            </TableView>
+                <TextField fx:id="txtExamId2" layoutX="244.0" layoutY="450.0" prefHeight="25.0" prefWidth="137.0" promptText="Exam ID " />
             <Button id="btnAddExamResult" layoutX="252.0" layoutY="53.0" mnemonicParsing="false" onAction="#AddExamREsultOnActionCliced" prefHeight="31.0" prefWidth="156.0" style="-fx-background-color: #8467D7;" text="Add Exam Result" textFill="#fcf8f8">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button id="btnAddExamStudentDetails" layoutX="443.0" layoutY="53.0" mnemonicParsing="false" onAction="#AddExamREsultOnActionCliced" prefHeight="31.0" prefWidth="177.0" style="-fx-background-color: #8467D7;" text="Student Exam Details" textFill="#fcf8f8">
+            <Button fx:id="btnSearchPass" layoutX="549.0" layoutY="153.0" mnemonicParsing="false" onAction="#btnSearchPass_OnAction" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #008080;" text="Search" textFill="#f8f6f6">
                <font>
-                  <Font size="15.0" />
+                  <Font size="13.0" />
                </font>
             </Button>
+            <Button fx:id="btnSearchFail" layoutX="549.0" layoutY="311.0" mnemonicParsing="false" onAction="#btnSearchFail_OnAction" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #008080;" text="Search" textFill="#f8f6f6">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSearchAttendance" layoutX="549.0" layoutY="445.0" mnemonicParsing="false" onAction="#btnSearchAttendance_OnAction" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #008080;" text="Search" textFill="#f8f6f6">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <TextField fx:id="txtStatus" layoutX="400.0" layoutY="450.0" prefHeight="25.0" prefWidth="116.0" promptText="Status" />
             </children>
         </AnchorPane>
     </children>
