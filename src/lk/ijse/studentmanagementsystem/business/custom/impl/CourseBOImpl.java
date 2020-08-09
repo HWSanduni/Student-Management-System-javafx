@@ -90,4 +90,11 @@ public class CourseBOImpl implements CourseBO {
         }
         return courseTMS;
     }
+
+    @Override
+    public int getCourseCount() throws Exception {
+
+        int count = courseDAO.getCourseCount();
+        return count;
+    }
 }

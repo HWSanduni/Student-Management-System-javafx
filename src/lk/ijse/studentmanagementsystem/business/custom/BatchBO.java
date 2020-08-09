@@ -18,4 +18,6 @@ public interface BatchBO extends SuperBO {
 
     List<BatchTM> getBatcDetails(String key) throws Exception;
 
+    int getBatchCount ()throws Exception;
+
 }

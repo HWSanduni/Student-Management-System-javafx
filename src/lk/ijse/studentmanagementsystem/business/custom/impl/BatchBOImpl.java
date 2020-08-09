@@ -95,4 +95,11 @@ public class BatchBOImpl implements BatchBO {
         return batchTMS;
 
     }
+
+    @Override
+    public int getBatchCount() throws Exception {
+        int count = batchDAO.getBatchCount();
+
+        return count;
+    }
 }

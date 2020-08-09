@@ -17,5 +17,7 @@ public interface SubjectBO extends SuperBO {
     public List<SubjectTM> getFindAllSubject(String id) throws Exception;
     List<SubjectTM> getSubjectDetails(String key)throws Exception;
 
+    int getSubjectCount()throws Exception;
+
 
 }

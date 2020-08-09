@@ -24,7 +24,7 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Label layoutX="158.0" layoutY="22.0" prefHeight="65.0" prefWidth="84.0" text="77" textFill="#fffefe">
+                <Label fx:id="lblStudent" layoutX="158.0" layoutY="22.0" prefHeight="65.0" prefWidth="84.0" textFill="#fffefe">
                     <font>
                         <Font size="39.0" />
                     </font>
@@ -37,7 +37,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="158.0" layoutY="22.0" prefHeight="65.0" prefWidth="84.0" text="10" textFill="#fffefe">
+            <Label fx:id="lblBatch" layoutX="158.0" layoutY="22.0" prefHeight="65.0" prefWidth="84.0" textFill="#fffefe">
                <font>
                   <Font size="39.0" />
                </font>
@@ -51,7 +51,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="158.0" layoutY="22.0" prefHeight="65.0" prefWidth="84.0" text="8" textFill="#fffefe">
+            <Label fx:id="lblCourses" layoutX="158.0" layoutY="22.0" prefHeight="65.0" prefWidth="84.0" textFill="#fffefe">
                <font>
                   <Font size="39.0" />
                </font>
@@ -65,7 +65,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="158.0" layoutY="22.0" prefHeight="65.0" prefWidth="84.0" text="15" textFill="#fffefe">
+            <Label fx:id="lblSubject" layoutX="158.0" layoutY="22.0" prefHeight="65.0" prefWidth="84.0" textFill="#fffefe">
                <font>
                   <Font size="39.0" />
                </font>

@@ -1,6 +1,7 @@
 package lk.ijse.studentmanagementsystem.business.custom.impl;
 
 import lk.ijse.studentmanagementsystem.business.custom.StudentBO;
+import lk.ijse.studentmanagementsystem.dao.CrudUtil;
 import lk.ijse.studentmanagementsystem.dao.DAOFactroy;
 import lk.ijse.studentmanagementsystem.dao.DAOType;
 import lk.ijse.studentmanagementsystem.dao.custom.QureyDAO;
@@ -121,5 +122,11 @@ public class StudentBOImpl implements StudentBO {
 
 
         return studentDetailsTMS;
+    }
+
+    @Override
+    public int getStudentCount() throws Exception {
+        int count =studentDAO.getStudentCount();
+        return count;
     }
 }

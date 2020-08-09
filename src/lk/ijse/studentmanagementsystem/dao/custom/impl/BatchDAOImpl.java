@@ -66,4 +66,16 @@ public class BatchDAOImpl implements BatchDAO {
             return rst.getString(1);
         }
     }
+
+    @Override
+    public int getBatchCount() throws Exception {
+
+        int count=0;
+        ResultSet rst = CrudUtil.execute("SELECT COUNT(*) from batch");
+
+        if (rst.next()) {
+            count=rst.getInt(1);
+        }
+        return count;
+    }
 }

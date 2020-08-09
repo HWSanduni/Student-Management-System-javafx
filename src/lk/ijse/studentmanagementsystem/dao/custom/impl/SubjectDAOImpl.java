@@ -34,6 +34,18 @@ public class SubjectDAOImpl implements SubjectDAO {
     }
 
     @Override
+    public int getSubjectCount() throws Exception {
+
+        int count=0;
+        ResultSet rst = CrudUtil.execute("SELECT COUNT(*) from subject");
+
+        if (rst.next()) {
+            count=rst.getInt(1);
+        }
+        return count;
+    }
+
+    @Override
     public List<Subject> findAll() throws Exception {
         ResultSet rst = CrudUtil.execute("SELECT * FROM subject");
         List<Subject> subjects = new ArrayList<>();

@@ -24,4 +24,6 @@ public interface StudentBO extends SuperBO {
     public List<StudentPaymentTM> getAllRegisterStudent (String status)throws Exception;
 
     public List<StudentDetailsTM> getAllBatchStudent(String status) throws Exception;
+
+    int getStudentCount() throws Exception;
 }

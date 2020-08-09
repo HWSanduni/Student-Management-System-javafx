@@ -18,6 +18,6 @@ public interface CourseBO extends SuperBO {
     public  String getNewCourseId()throws Exception;
 
     List<CourseTM> getCourseDetails (String key)throws Exception;
-
+    int getCourseCount() throws Exception;
 
 }
