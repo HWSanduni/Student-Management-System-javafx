@@ -17,6 +17,7 @@ import lk.ijse.studentmanagementsystem.business.BOFactroy;
 import lk.ijse.studentmanagementsystem.business.BOType;
 import lk.ijse.studentmanagementsystem.business.custom.BatchBO;
 import lk.ijse.studentmanagementsystem.business.custom.CourseBO;
+import lk.ijse.studentmanagementsystem.entity.Course;
 import lk.ijse.studentmanagementsystem.util.BatchTM;
 import lk.ijse.studentmanagementsystem.util.CourseTM;
 
@@ -40,7 +41,7 @@ public class BatchController {
     public DatePicker picStartDate;
     public DatePicker picEndDate;
     public TableView<BatchTM> tblBatch;
-    public ComboBox<CourseTM> cmbCourseId;
+    public ComboBox<String> cmbCourseId;
     private boolean readOnly;
 
     BatchBO batchBO = BOFactroy.getInstance().getBO(BOType.BATCH);
@@ -58,16 +59,16 @@ public class BatchController {
         loadAllBatch();
         loadAllCourse();
 
-        cmbCourseId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<CourseTM>() {
-            @Override
-            public void changed(ObservableValue<? extends CourseTM> observable, CourseTM oldValue, CourseTM newValue) {
-                if (newValue == null) {
-                    txtCourseName.clear();
-                    return;
-                }
-                txtCourseName.setText(newValue.getName());
-            }
-        });
+//        cmbCourseId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<CourseTM>() {
+//            @Override
+//            public void changed(ObservableValue<? extends CourseTM> observable, CourseTM oldValue, CourseTM newValue) {
+//                if (newValue == null) {
+//                    txtCourseName.clear();
+//                    return;
+//                }
+//                txtCourseName.setText(newValue.getName());
+//            }
+//        });
 
 
         tblBatch.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<BatchTM>() {
@@ -80,11 +81,12 @@ public class BatchController {
                 }
 
                 String selectedCourseId = selectedBatch.getCourseId();
-                ObservableList<CourseTM> courseTMS = cmbCourseId.getItems();
-                for (CourseTM courseTM: courseTMS) {
-                    if(courseTM.getCid().equals(selectedCourseId)){
+                ObservableList<String> courseTMS = cmbCourseId.getItems();
+                for (String courseTM: courseTMS) {
+                    if(courseTM.equals(selectedCourseId)){
                         cmbCourseId.getSelectionModel().select(courseTM);
-                        txtCourseName.setText(courseTM.getName());
+                        Course course =loadCourse(courseTM);
+                        txtCourseName.setText(course.getName());
                         txtBatchId.setText(selectedBatch.getBid());
                         txtBatchName.setText(selectedBatch.getName());
                         txtBatchType.setText(selectedBatch.getType());
@@ -111,13 +113,31 @@ public class BatchController {
     }
 
     private void loadAllCourse() {
-
         cmbCourseId.getItems().clear();
         try {
-            cmbCourseId.setItems(FXCollections.observableArrayList(courseBO.getAllCourse()));
+            List<CourseTM> courseTMS = courseBO.getAllCourse();
+            if(courseTMS != null){
+                ObservableList observableList = FXCollections.observableArrayList();
+                for (CourseTM courseTM: courseTMS){
+                    observableList.add(courseTM.getCid());
+                    cmbCourseId.setItems(observableList);
+                }
+            }
+
+            //  cmbCourseId.setItems(FXCollections.observableArrayList(courseBO.getAllCourse()));
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+    }
+    private Course loadCourse(String courseTM) {
+        try {
+            Course course = courseBO.findSubject(courseTM);
+            return course;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     private void loadAllBatch() {
@@ -152,6 +172,14 @@ public class BatchController {
     public void btnAddNew_OnAction(ActionEvent actionEvent) {
         try {
             txtBatchId.clear();
+            txtBatchName.clear();
+            txtBatchType.clear();
+            txtCourseName.clear();
+            txtYear.clear();
+            picEndDate.getEditor().clear();
+            picStartDate.getEditor().clear();
+            cmbCourseId.getSelectionModel().clearSelection();
+            btnSave.setText("Save");
             txtBatchId.setText(batchBO.getNewBatchId());
         } catch (Exception e) {
             e.printStackTrace();
@@ -171,7 +199,7 @@ public class BatchController {
 
         if (txtBatchId.getText().trim().isEmpty() || txtBatchName.getText().trim().isEmpty() || txtBatchType.getText().trim().isEmpty()
                 || txtYear.getText().trim().isEmpty() || txtCourseName.getText().trim().isEmpty()) {
-            new Alert(Alert.AlertType.ERROR, "Name, Description or Course Fee can't be empty").show();
+            new Alert(Alert.AlertType.ERROR, "Name, Description or Course Name can't be empty").show();
             return;
         }
 
@@ -192,7 +220,7 @@ public class BatchController {
         if (btnSave.getText().equals("Save")) {
             try {
                 batchBO.saveBatch(txtBatchId.getText(),
-                        cmbCourseId.getValue().getCid(),
+                        cmbCourseId.getSelectionModel().getSelectedItem(),
                         txtBatchName.getText(),
                         txtBatchType.getText(),
                         year,
@@ -217,7 +245,7 @@ public class BatchController {
             boolean result = false;
 
             try {
-                result = batchBO.updateBatch(cmbCourseId.getValue().getCid(),
+                result = batchBO.updateBatch(cmbCourseId.getSelectionModel().getSelectedItem(),
                         txtBatchName.getText(),
                         txtBatchType.getText(),
                         year,
@@ -248,6 +276,12 @@ public class BatchController {
     }
 
     public void btnDelete_OnAction(ActionEvent actionEvent) {
+        if(txtBatchId.getText().trim().length() == 0 || txtCourseName.getText().trim().length()==0) {
+            new Alert(Alert.AlertType.ERROR, "If You want Delete you scud select table row").show();
+            return;
+        }
+
+
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
                 "Are you sure whether you want to delete this Batch?",
                 ButtonType.YES, ButtonType.NO);
@@ -270,5 +304,24 @@ public class BatchController {
                 tblBatch.getSelectionModel().clearSelection();
             }
         }
+    }
+
+    public void SelectionChange_OnAction(ActionEvent actionEvent) {
+
+        String courseId = cmbCourseId.getSelectionModel().getSelectedItem();
+        try {
+
+            if(courseId != null){
+                Course course = courseBO.findSubject(courseId);
+                // System.out.println(course.getName());
+                txtCourseName.setText(course.getName());
+
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

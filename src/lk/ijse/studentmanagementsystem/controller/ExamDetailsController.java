@@ -45,7 +45,14 @@ public class ExamDetailsController {
 
     }
 
-    public void AddExamREsultOnActionCliced(ActionEvent actionEvent) {
+    public void AddExamREsultOnActionCliced(ActionEvent actionEvent) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource("/lk/ijse/studentmanagementsystem/view/ExamResultForm.fxml"));
+        Scene scene = new Scene(root);
+        Stage mainStage = (Stage) (this.root.getScene().getWindow());
+        mainStage.setScene(scene);
+        mainStage.centerOnScreen();
+
     }
 
     public void btnSearchPass_OnAction(ActionEvent actionEvent) {

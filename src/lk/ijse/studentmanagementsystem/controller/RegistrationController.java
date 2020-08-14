@@ -168,7 +168,7 @@ public class RegistrationController {
             registraionTM.setStudentId(txtStudentId.getText());
             registraionTM.setRegistartionFee(regFee);
             registraionTM.setCourseFee(courseFee);
-            registraionTM.setStatus("");
+            registraionTM.setStatus("REGESTER");
             registraionTM.setReg_Date(Date.valueOf(LocalDate.now()));
 //            registraionTM.setCourseFeeGi_Date(Date.valueOf(""));
 

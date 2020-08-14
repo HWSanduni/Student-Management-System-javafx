@@ -1,21 +1,22 @@
 create table course
 (
-  Cid       varchar(255) not null
+  Cid         varchar(255) not null
     primary key,
-  Name      varchar(255) null,
-  StartDate date         null,
-  EndDate   date         null,
-  CourseFee decimal      null
+  Name        varchar(255) null,
+  CourseFee   decimal      null,
+  Description varchar(255) null
 );
 
 create table batch
 (
-  Bid      varchar(255) not null
+  Bid       varchar(255) not null
     primary key,
-  courseId varchar(255) not null,
-  Name     varchar(255) null,
-  Type     varchar(255) null,
-  Year     int          null,
+  courseId  varchar(255) not null,
+  Name      varchar(255) null,
+  Type      varchar(255) null,
+  Year      int          null,
+  StartDate date         null,
+  EndDate   date         null,
   constraint batch_ibfk_1
   foreign key (courseId) references course (Cid)
     on delete cascade
@@ -44,10 +45,30 @@ create table student
   Address   varchar(255) null,
   Tel       int          null,
   Nic       varchar(255) null,
-  Age       int          null,
+  BirthDay  date         null,
   Mail      varchar(255) null,
-  Marsks    int          null
+  Gender    varchar(255) null,
+  Age       int          null
 );
+
+create table examresult
+(
+  id        varchar(255) not null
+    primary key,
+  examId    varchar(255) not null,
+  studentId varchar(255) not null,
+  marsk     int          not null,
+  constraint examresult_ibfk_1
+  foreign key (examId) references exam (Eid),
+  constraint examresult_ibfk_2
+  foreign key (studentId) references student (Sid)
+);
+
+create index examId
+  on examresult (examId);
+
+create index studentId
+  on examresult (studentId);
 
 create table registation
 (
@@ -82,13 +103,13 @@ create table subject
     on delete cascade
 );
 
-create table exam_details
+create table examdetails
 (
   examId    varchar(255) not null,
   coruseId  varchar(255) not null,
   subjectId varchar(255) not null,
   passMarks int          null,
-  primary key (examId, coruseId, subjectId),
+  primary key (examId, coruseId),
   constraint exam_details_ibfk_1
   foreign key (examId) references exam (Eid)
     on delete cascade,
@@ -100,12 +121,7 @@ create table exam_details
     on delete cascade
 );
 
-create index coruseId
-  on exam_details (coruseId);
-
-create index subjectId
-  on exam_details (subjectId);
-
 create index courseId
   on subject (courseId);
+
 
