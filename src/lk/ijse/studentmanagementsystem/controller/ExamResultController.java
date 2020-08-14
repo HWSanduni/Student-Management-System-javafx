@@ -17,7 +17,10 @@ import lk.ijse.studentmanagementsystem.business.BOFactroy;
 import lk.ijse.studentmanagementsystem.business.BOType;
 import lk.ijse.studentmanagementsystem.business.custom.ExamBO;
 import lk.ijse.studentmanagementsystem.business.custom.ExamResultBO;
+import lk.ijse.studentmanagementsystem.business.custom.StudentBO;
+import lk.ijse.studentmanagementsystem.entity.Course;
 import lk.ijse.studentmanagementsystem.entity.CustomEntity1;
+import lk.ijse.studentmanagementsystem.entity.Student;
 import lk.ijse.studentmanagementsystem.util.ExamResultTM;
 import lk.ijse.studentmanagementsystem.util.StudentTM;
 
@@ -37,7 +40,7 @@ public class ExamResultController {
     public TextField txtSubjectId;
     public TextField txtSubjectName;
     public TextField txtId;
-    public ComboBox<StudentTM> cmbStudentId;
+    public ComboBox<String> cmbStudentId;
     public Button btnSave;
     public Button btnAddNewReult;
     public Button btnAdd;
@@ -48,6 +51,7 @@ public class ExamResultController {
 
     ExamBO examBO = BOFactroy.getInstance().getBO(BOType.EXAM);
     ExamResultBO examResultBO = BOFactroy.getInstance().getBO(BOType.EXAMRESULT);
+    StudentBO studentBO = BOFactroy.getInstance().getBO(BOType.STUDENT);
 
     public void initialize() {
 
@@ -56,16 +60,16 @@ public class ExamResultController {
         tblResult.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("marks"));
 
 
-        cmbStudentId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<StudentTM>() {
-            @Override
-            public void changed(ObservableValue<? extends StudentTM> observable, StudentTM oldValue, StudentTM newValue) {
-                if (newValue == null) {
-                    txtFirstName.clear();
-                    return;
-                }
-               txtFirstName.setText(newValue.getFirstName());
-            }
-        });
+//        cmbStudentId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<StudentTM>() {
+//            @Override
+//            public void changed(ObservableValue<? extends StudentTM> observable, StudentTM oldValue, StudentTM newValue) {
+//                if (newValue == null) {
+//                    txtFirstName.clear();
+//                    return;
+//                }
+//               txtFirstName.setText(newValue.getFirstName());
+//            }
+//        });
 
     }
 
@@ -81,8 +85,36 @@ public class ExamResultController {
             txtSubjectName.setText(customEntity.getSubjectName());
 
             List<StudentTM> studentList = customEntity.getStudentList();
+            ObservableList observableList = FXCollections.observableArrayList();
+            for (StudentTM studentTM: studentList){
+                observableList.add(studentTM.getSid());
+                cmbStudentId.setItems(observableList);
+            }
 
-            cmbStudentId.setItems(FXCollections.observableArrayList(studentList));
+
+          //  cmbStudentId.setItems(FXCollections.observableArrayList(studentList));
+
+
+
+//            try {
+//                List<CourseTM> courseTMS = courseBO.getAllCourse();
+//                if(courseTMS != null){
+//                    ObservableList observableList = FXCollections.observableArrayList();
+//                    for (CourseTM courseTM: courseTMS){
+//                        observableList.add(courseTM.getCid());
+//                        cmbCourseId.setItems(observableList);
+//                    }
+//                }
+//
+//                //  cmbCourseId.setItems(FXCollections.observableArrayList(courseBO.getAllCourse()));
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+
+
+
+
+
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -111,7 +143,7 @@ public class ExamResultController {
 
 
         String examId = txtExamId.getText();
-        String studentId = cmbStudentId.getValue().getSid();
+        String studentId = cmbStudentId.getSelectionModel().getSelectedItem();
         int mask = Integer.parseInt(txtMask.getText());
 
 //        if(examResults.isEmpty()){
@@ -146,6 +178,25 @@ public class ExamResultController {
                 e.printStackTrace();
             }
         tblResult.getItems().clear();
+    }
+
+    public void SelectionChange_OnAction(ActionEvent actionEvent) {
+
+        String id = cmbStudentId.getSelectionModel().getSelectedItem();
+        try {
+
+            if(id != null){
+                Student student = studentBO.findStudent(id);
+                txtFirstName.setText(student.getFirstName());
+
+
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 

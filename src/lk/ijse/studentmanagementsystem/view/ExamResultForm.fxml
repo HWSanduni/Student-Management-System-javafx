@@ -47,7 +47,7 @@
                 </Button>
                 <TextField fx:id="txtCourseName" layoutX="238.0" layoutY="146.0" prefHeight="25.0" prefWidth="406.0" promptText="Course Name" />
                 <TextField fx:id="txtBatchName" layoutX="238.0" layoutY="184.0" prefHeight="25.0" prefWidth="406.0" promptText="Batch Name" />
-            <ComboBox fx:id="cmbStudentId" layoutX="242.0" layoutY="260.0" prefHeight="25.0" prefWidth="406.0" promptText="Student ID" />
+            <ComboBox fx:id="cmbStudentId" layoutX="242.0" layoutY="260.0" onAction="#SelectionChange_OnAction" prefHeight="25.0" prefWidth="406.0" promptText="Student ID" />
             <TextField fx:id="txtExamName" layoutX="241.0" layoutY="107.0" prefHeight="25.0" prefWidth="399.0" promptText="Exam Name" />
             <Button fx:id="btnSearch" layoutX="244.0" layoutY="58.0" mnemonicParsing="false" onAction="#btnSearch_OnAction" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #008080;" text="Search" textFill="#f8f6f6">
                <font>

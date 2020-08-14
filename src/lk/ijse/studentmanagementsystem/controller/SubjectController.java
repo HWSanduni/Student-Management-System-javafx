@@ -17,6 +17,7 @@ import lk.ijse.studentmanagementsystem.business.BOFactroy;
 import lk.ijse.studentmanagementsystem.business.BOType;
 import lk.ijse.studentmanagementsystem.business.custom.CourseBO;
 import lk.ijse.studentmanagementsystem.business.custom.SubjectBO;
+import lk.ijse.studentmanagementsystem.entity.Course;
 import lk.ijse.studentmanagementsystem.util.CourseTM;
 import lk.ijse.studentmanagementsystem.util.SubjectTM;
 
@@ -30,7 +31,7 @@ public class SubjectController {
     public TextField txtSubjectId;
     public TextField txtSubjectName;
     public TextField txtType;
-    public ComboBox<CourseTM> cmbCourseId;
+    public ComboBox<String> cmbCourseId;
     public TextField txtCourseName;
     public TextField txtCourseDescription;
     public Button btnSave;
@@ -56,18 +57,18 @@ public class SubjectController {
 
         loadAllSubjects();
         loadAllCourse();
-        cmbCourseId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<CourseTM>() {
-            @Override
-            public void changed(ObservableValue<? extends CourseTM> observable, CourseTM oldValue, CourseTM newValue) {
-                if (newValue == null) {
-                    txtCourseName.clear();
-                    txtCourseDescription.clear();
-                    return;
-                }
-                txtCourseName.setText(newValue.getName());
-                txtCourseDescription.setText(newValue.getDescription());
-            }
-        });
+//        cmbCourseId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<CourseTM>() {
+//            @Override
+//            public void changed(ObservableValue<? extends CourseTM> observable, CourseTM oldValue, CourseTM newValue) {
+//                if (newValue == null) {
+//                    txtCourseName.clear();
+//                    txtCourseDescription.clear();
+//                    return;
+//                }
+//                txtCourseName.setText(newValue.getName());
+//                txtCourseDescription.setText(newValue.getDescription());
+//            }
+//        });
         tblSubject.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<SubjectTM>() {
 
             @Override
@@ -77,12 +78,13 @@ public class SubjectController {
                     return;
                 }
                 String selectedCourseId = selectedSubject.getCourseId();
-                ObservableList<CourseTM> courseTMS = cmbCourseId.getItems();
-                for (CourseTM courseTM: courseTMS) {
-                    if(courseTM.getCid().equals(selectedCourseId)){
-                        cmbCourseId.getSelectionModel().select(courseTM);
-                        txtCourseName.setText(courseTM.getName());
-                        txtCourseDescription.setText(courseTM.getDescription());
+               ObservableList<String> courseTMS = cmbCourseId.getItems();
+                for (String courseTM: courseTMS) {
+                    if(courseTM.equals(selectedCourseId)){
+                       cmbCourseId.getSelectionModel().select(courseTM);
+                        Course course =loadCourse(courseTM);
+                        txtCourseName.setText(course.getName());
+                        txtCourseDescription.setText(course.getDescription());
                         txtSubjectId.setText(selectedSubject.getSubId());
                         txtSubjectName.setText(selectedSubject.getName());
                         txtType.setText(selectedSubject.getType());
@@ -98,15 +100,34 @@ public class SubjectController {
                     }
 
 
-                }
+               }
             }
         });
+    }
+
+    private Course loadCourse(String courseTM) {
+        try {
+           Course course = courseBO.findSubject(courseTM);
+            return course;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     private void loadAllCourse() {
         cmbCourseId.getItems().clear();
         try {
-            cmbCourseId.setItems(FXCollections.observableArrayList(courseBO.getAllCourse()));
+            List<CourseTM> courseTMS = courseBO.getAllCourse();
+            if(courseTMS != null){
+                ObservableList observableList = FXCollections.observableArrayList();
+                for (CourseTM courseTM: courseTMS){
+                    observableList.add(courseTM.getCid());
+                    cmbCourseId.setItems(observableList);
+                }
+            }
+
+          //  cmbCourseId.setItems(FXCollections.observableArrayList(courseBO.getAllCourse()));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -146,6 +167,12 @@ public class SubjectController {
     public void btnAddNew_OnAction(ActionEvent actionEvent) {
         try {
             txtSubjectId.clear();
+            btnSave.setText("Save");
+            txtSubjectName.clear();
+            txtType.clear();
+            txtCourseName.clear();
+            cmbCourseId.getSelectionModel().clearSelection();
+            txtCourseDescription.clear();
             txtSubjectId.setText(subjectBO.getNewSubjectId());
         } catch (Exception e) {
             e.printStackTrace();
@@ -169,7 +196,7 @@ public class SubjectController {
         if(btnSave.getText().equals("Save")){
             try {
                 subjectBO.saveSubject(txtSubjectId.getText(),
-                        cmbCourseId.getValue().getCid(),
+                        cmbCourseId.getSelectionModel().getSelectedItem(),
                         txtSubjectName.getText(),
                         txtType.getText());
 
@@ -192,7 +219,7 @@ public class SubjectController {
 
             try {
                 System.out.println("upadte");
-                result = subjectBO.updateSubject(cmbCourseId.getValue().getCid(),txtSubjectName.getText(),txtType.getText(),subjectTM.getSubId());
+                result = subjectBO.updateSubject(cmbCourseId.getSelectionModel().getSelectedItem(),txtSubjectName.getText(),txtType.getText(),subjectTM.getSubId());
 
                // System.out.println(cmbCourseId);
 
@@ -222,6 +249,11 @@ public class SubjectController {
 
 
     public void btnDelete_OnAction(ActionEvent actionEvent) {
+        if(txtSubjectId.getText().trim().length() == 0 || txtCourseName.getText().trim().length()==0) {
+            new Alert(Alert.AlertType.ERROR, "If You want Delete you scud select table row").show();
+            return;
+        }
+
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
                 "Are you sure whether you want to delete this Subject?",
                 ButtonType.YES, ButtonType.NO);
@@ -243,6 +275,24 @@ public class SubjectController {
                 tblSubject.getItems().remove(subjectTM);
                 tblSubject.getSelectionModel().clearSelection();
             }
+        }
+
+    }
+
+    public void SelectionChange_OnAction(ActionEvent actionEvent) {
+
+        String courseId = cmbCourseId.getSelectionModel().getSelectedItem();
+        try {
+
+            if(courseId != null){
+                Course course = courseBO.findSubject(courseId);
+                txtCourseName.setText(course.getName());
+                txtCourseDescription.setText(course.getDescription());
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }

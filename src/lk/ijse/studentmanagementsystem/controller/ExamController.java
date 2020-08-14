@@ -17,6 +17,8 @@ import lk.ijse.studentmanagementsystem.business.BOType;
 import lk.ijse.studentmanagementsystem.business.custom.CourseBO;
 import lk.ijse.studentmanagementsystem.business.custom.ExamBO;
 import lk.ijse.studentmanagementsystem.business.custom.SubjectBO;
+import lk.ijse.studentmanagementsystem.entity.Course;
+import lk.ijse.studentmanagementsystem.entity.Subject;
 import lk.ijse.studentmanagementsystem.util.CourseTM;
 import lk.ijse.studentmanagementsystem.util.SubjectTM;
 
@@ -35,8 +37,8 @@ public class ExamController {
     public TextField txtCourseName;
     public TextField txtPassMarks;
     public DatePicker picExamDate;
-    public ComboBox<CourseTM> cmbCourseId;
-    public ComboBox<SubjectTM> cmbSubjectID;
+    public ComboBox<String> cmbCourseId;
+    public ComboBox<String> cmbSubjectID;
     public Button btnAddNewStudent;
     public Button btnSave;
     public Button btnCancel;
@@ -49,40 +51,48 @@ public class ExamController {
 
     public void initialize() {
         loadAllCourse();
-        cmbCourseId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<CourseTM>() {
-            @Override
-            public void changed(ObservableValue<? extends CourseTM> observable, CourseTM oldValue, CourseTM selectCourse) {
-                if (selectCourse == null) {
-                    txtCourseName.clear();
-                    return;
-                }
-                txtCourseName.setText(selectCourse.getName());
-                laodAllSubject(selectCourse.getCid());
+//        cmbCourseId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<CourseTM>() {
+//            @Override
+//            public void changed(ObservableValue<? extends CourseTM> observable, CourseTM oldValue, CourseTM selectCourse) {
+//                if (selectCourse == null) {
+//                    txtCourseName.clear();
+//                    return;
+//                }
+//                txtCourseName.setText(selectCourse.getName());
+//                laodAllSubject(selectCourse.getCid());
+//
+//            }
+//        });
 
-            }
-        });
-
-        cmbSubjectID.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<SubjectTM>() {
-
-            @Override
-            public void changed(ObservableValue<? extends SubjectTM> observable, SubjectTM oldValue, SubjectTM selectSubject) {
-                if (selectSubject == null) {
-                    txtSubjectName.clear();
-                    return;
-                }
-                txtSubjectName.setText(selectSubject.getName());
-            }
-        });
+//        cmbSubjectID.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<SubjectTM>() {
+//
+//            @Override
+//            public void changed(ObservableValue<? extends SubjectTM> observable, SubjectTM oldValue, SubjectTM selectSubject) {
+//                if (selectSubject == null) {
+//                    txtSubjectName.clear();
+//                    return;
+//                }
+//                txtSubjectName.setText(selectSubject.getName());
+//            }
+//        });
 
     }
 
     private void laodAllSubject(String cid) {
 
+        cmbSubjectID.getItems().clear();
         try {
+            List<SubjectTM> subjectTMS = subjectBO.getFindAllSubject(cid);
+            System.out.println("///////////");
+            System.out.println(subjectTMS.toString());
+            if(subjectTMS != null){
+                ObservableList observableList = FXCollections.observableArrayList();
+                for (SubjectTM subjectTM: subjectTMS){
+                    observableList.add(subjectTM.getSubId());
+                    cmbSubjectID.setItems(observableList);
+                }
+            }
 
-            ObservableList<SubjectTM> subjectTMS = FXCollections.observableArrayList(subjectBO.getFindAllSubject(cid));
-            System.out.println(subjectTMS);
-            cmbSubjectID.setItems(subjectTMS);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -91,7 +101,16 @@ public class ExamController {
 
         cmbCourseId.getItems().clear();
         try {
-            cmbCourseId.setItems(FXCollections.observableArrayList(courseBO.getAllCourse()));
+            List<CourseTM> courseTMS = courseBO.getAllCourse();
+            if(courseTMS != null){
+                ObservableList observableList = FXCollections.observableArrayList();
+                for (CourseTM courseTM: courseTMS){
+                    observableList.add(courseTM.getCid());
+                    cmbCourseId.setItems(observableList);
+                }
+            }
+
+            //  cmbCourseId.setItems(FXCollections.observableArrayList(courseBO.getAllCourse()));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -110,6 +129,13 @@ public class ExamController {
 
         try {
             txtExamId.clear();
+            txtExamName.clear();
+            txtTime.clear();
+            txtCourseName.clear();
+            txtPassMarks.clear();;
+            txtSubjectName.clear();
+            cmbCourseId.getSelectionModel().clearSelection();
+            cmbSubjectID.getSelectionModel().clearSelection();
             txtExamId.setText(examBO.getNewExamId());
         } catch (Exception e) {
             e.printStackTrace();
@@ -138,11 +164,11 @@ public class ExamController {
         if (btnSave.getText().equals("Save")) {
             try {
                 examBO.save(txtExamId.getText(),
-                        cmbCourseId.getValue().getCid(),
+                        cmbCourseId.getSelectionModel().getSelectedItem(),
                         txtExamName.getText(),
                         examDate,
                         txtTime.getText(),
-                        cmbSubjectID.getValue().getSubId(),passmarks,"ACTIVE");
+                        cmbSubjectID.getSelectionModel().getSelectedItem(),passmarks,"ACTIVE");
 
 
                 txtExamId.clear();
@@ -160,5 +186,39 @@ public class ExamController {
             }
         }
 
+    }
+
+    public void SelectionChange_OnAction(ActionEvent actionEvent) {
+
+        String courseId = cmbCourseId.getSelectionModel().getSelectedItem();
+        try {
+
+            if(courseId != null){
+                Course course = courseBO.findSubject(courseId);
+                txtCourseName.setText(course.getName());
+                laodAllSubject(courseId);
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void SelectionChangeSubject_OnAction(ActionEvent actionEvent) {
+
+       String id = cmbSubjectID.getSelectionModel().getSelectedItem();
+
+       if(id != null){
+           Subject subject = null;
+           try {
+               subject = subjectBO.findSubject(id);
+           } catch (Exception e) {
+               e.printStackTrace();
+           }
+           txtSubjectName.setText(subject.getName());
+
+       }
     }
 }
