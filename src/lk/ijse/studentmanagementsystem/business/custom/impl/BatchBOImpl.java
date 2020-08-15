@@ -6,6 +6,8 @@ import lk.ijse.studentmanagementsystem.dao.DAOType;
 import lk.ijse.studentmanagementsystem.dao.custom.BatchDAO;
 import lk.ijse.studentmanagementsystem.dao.custom.QureyDAO;
 import lk.ijse.studentmanagementsystem.entity.Batch;
+import lk.ijse.studentmanagementsystem.entity.CustomEntity4;
+import lk.ijse.studentmanagementsystem.util.BatchCourseTM;
 import lk.ijse.studentmanagementsystem.util.BatchTM;
 
 import java.sql.Date;
@@ -101,5 +103,19 @@ public class BatchBOImpl implements BatchBO {
         int count = batchDAO.getBatchCount();
 
         return count;
+    }
+
+    @Override
+    public BatchCourseTM getBatchCourseDeatils(String id) throws Exception {
+
+        CustomEntity4 customEntity = qureyDAO.getBatchCourseDeatils(id);
+
+        BatchCourseTM batchCourseTM = new BatchCourseTM();
+        batchCourseTM.setBid(customEntity.getBid());
+        batchCourseTM.setName(customEntity.getName());
+        batchCourseTM.setCoursName(customEntity.getCoursName());
+        batchCourseTM.setCourseFee(customEntity.getCourseFee());
+
+        return batchCourseTM;
     }
 }

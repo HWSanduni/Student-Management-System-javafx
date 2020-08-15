@@ -36,7 +36,7 @@
                 <TextField id="txtSubjectName" fx:id="txtExamId" layoutX="250.0" layoutY="163.0" prefHeight="25.0" prefWidth="256.0" promptText="Exam ID " />
                 <TextField fx:id="txtExamId1" layoutX="248.0" layoutY="316.0" prefHeight="25.0" prefWidth="266.0" promptText="Exam ID " />
                 <Separator layoutX="215.0" layoutY="235.0" prefHeight="4.0" prefWidth="452.0" />
-                <Label layoutX="252.0" layoutY="407.0" prefHeight="17.0" prefWidth="171.0" text="Exam Attendance" textFill="#0916c9">
+                <Label layoutX="252.0" layoutY="407.0" prefHeight="17.0" prefWidth="171.0" text="Student Details" textFill="#0916c9">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -58,7 +58,7 @@
                     </font>
                 </Label>
                 <Separator layoutX="218.0" layoutY="385.0" prefHeight="4.0" prefWidth="471.0" />
-                <TableView fx:id="tblStudent" layoutX="238.0" layoutY="506.0" prefHeight="217.0" prefWidth="432.0">
+                <TableView fx:id="tblStudent" layoutX="238.0" layoutY="453.0" prefHeight="271.0" prefWidth="432.0">
                     <columns>
                         <TableColumn prefWidth="102.0" text="Student Marks" />
                         <TableColumn prefWidth="83.0" text="Student Name" />
@@ -67,7 +67,6 @@
                   <TableColumn prefWidth="88.0" text="Course Name" />
                     </columns>
                 </TableView>
-                <TextField fx:id="txtExamId2" layoutX="244.0" layoutY="450.0" prefHeight="25.0" prefWidth="137.0" promptText="Exam ID " />
             <Button id="btnAddExamResult" layoutX="252.0" layoutY="53.0" mnemonicParsing="false" onAction="#AddExamREsultOnActionCliced" prefHeight="31.0" prefWidth="156.0" style="-fx-background-color: #8467D7;" text="Add Exam Result" textFill="#fcf8f8">
                <font>
                   <Font size="15.0" />
@@ -83,12 +82,6 @@
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="btnSearchAttendance" layoutX="549.0" layoutY="445.0" mnemonicParsing="false" onAction="#btnSearchAttendance_OnAction" prefHeight="35.0" prefWidth="123.0" style="-fx-background-color: #008080;" text="Search" textFill="#f8f6f6">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Button>
-            <TextField fx:id="txtStatus" layoutX="400.0" layoutY="450.0" prefHeight="25.0" prefWidth="116.0" promptText="Status" />
             </children>
         </AnchorPane>
     </children>

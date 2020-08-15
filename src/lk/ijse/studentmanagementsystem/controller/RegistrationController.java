@@ -3,6 +3,7 @@ package lk.ijse.studentmanagementsystem.controller;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,6 +19,7 @@ import lk.ijse.studentmanagementsystem.business.custom.CourseBO;
 import lk.ijse.studentmanagementsystem.business.custom.RegistationBO;
 import lk.ijse.studentmanagementsystem.business.custom.StudentBO;
 import lk.ijse.studentmanagementsystem.entity.Course;
+import lk.ijse.studentmanagementsystem.util.BatchCourseTM;
 import lk.ijse.studentmanagementsystem.util.BatchTM;
 import lk.ijse.studentmanagementsystem.util.RegistraionTM;
 import lk.ijse.studentmanagementsystem.util.StudentTM;
@@ -26,6 +28,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 public class RegistrationController {
 
@@ -48,7 +51,7 @@ public class RegistrationController {
     public RadioButton rdFemale;
     public RadioButton rdMale;
     public DatePicker picDateOfBirth;
-    public ComboBox<BatchTM> cmbBatchId;
+    public ComboBox<String> cmbBatchId;
     public ToggleGroup group;
 
     private String gender;
@@ -66,20 +69,20 @@ public class RegistrationController {
 
         loadAllBatch();
 
-        cmbBatchId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<BatchTM>() {
-            @Override
-            public void changed(ObservableValue<? extends BatchTM> observable, BatchTM oldValue, BatchTM newValue) {
-                if (newValue == null) {
-                    txtBatchName.clear();
-                    return;
-                }
-                Course course=findCourse(newValue.getCourseId());
-                txtBatchName.setText(newValue.getName());
-                txtCourseName.setText(course.getName());
-                txtCourseFee.setText(course.getCourseFee()+"");
-
-            }
-        });
+//        cmbBatchId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<BatchTM>() {
+//            @Override
+//            public void changed(ObservableValue<? extends BatchTM> observable, BatchTM oldValue, BatchTM newValue) {
+//                if (newValue == null) {
+//                    txtBatchName.clear();
+//                    return;
+//                }
+//                Course course=findCourse(newValue.getCourseId());
+//                txtBatchName.setText(newValue.getName());
+//                txtCourseName.setText(course.getName());
+//                txtCourseFee.setText(course.getCourseFee()+"");
+//
+//            }
+//        });
 
     }
 
@@ -94,9 +97,17 @@ public class RegistrationController {
     }
 
     private void loadAllBatch() {
+
         cmbBatchId.getItems().clear();
         try {
-            cmbBatchId.setItems(FXCollections.observableArrayList(batchBO.getAllBatch()));
+            List<BatchTM> batchTMList = batchBO.getAllBatch();
+            if(batchTMList != null){
+                ObservableList observableList = FXCollections.observableArrayList();
+                for (BatchTM batchTM: batchTMList){
+                    observableList.add(batchTM.getBid());
+                    cmbBatchId.setItems(observableList);
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -164,7 +175,7 @@ public class RegistrationController {
             studentTM.setGender(gender);
 
             RegistraionTM registraionTM = new RegistraionTM();
-            registraionTM.setBatchId(cmbBatchId.getValue().getBid());
+            registraionTM.setBatchId(cmbBatchId.getSelectionModel().getSelectedItem());
             registraionTM.setStudentId(txtStudentId.getText());
             registraionTM.setRegistartionFee(regFee);
             registraionTM.setCourseFee(courseFee);
@@ -202,4 +213,17 @@ public class RegistrationController {
     }
 
 
+    public void SelectionChange_OnAction(ActionEvent actionEvent) {
+        String id = cmbBatchId.getSelectionModel().getSelectedItem();
+        try {
+            BatchCourseTM batchCourseTM =batchBO.getBatchCourseDeatils(id);
+            txtBatchName.setText(batchCourseTM.getName());
+            txtCourseName.setText(batchCourseTM.getCoursName());
+            txtCourseFee.setText(batchCourseTM.getCourseFee()+"");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
 }

@@ -2,6 +2,8 @@ package lk.ijse.studentmanagementsystem.business.custom;
 
 import lk.ijse.studentmanagementsystem.business.SuperBO;
 import lk.ijse.studentmanagementsystem.entity.Batch;
+import lk.ijse.studentmanagementsystem.entity.CustomEntity4;
+import lk.ijse.studentmanagementsystem.util.BatchCourseTM;
 import lk.ijse.studentmanagementsystem.util.BatchTM;
 
 import java.sql.Date;
@@ -19,5 +21,7 @@ public interface BatchBO extends SuperBO {
     List<BatchTM> getBatcDetails(String key) throws Exception;
 
     int getBatchCount ()throws Exception;
+
+    BatchCourseTM getBatchCourseDeatils(String id)throws Exception;
 
 }

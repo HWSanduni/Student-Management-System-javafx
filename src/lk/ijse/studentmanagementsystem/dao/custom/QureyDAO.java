@@ -17,4 +17,6 @@ public interface QureyDAO extends SuperDAO {
 
     List<CustomEntity2> getExamResult (String status,String key)throws Exception;
 
+    CustomEntity4 getBatchCourseDeatils (String  id)throws Exception;
+
 }

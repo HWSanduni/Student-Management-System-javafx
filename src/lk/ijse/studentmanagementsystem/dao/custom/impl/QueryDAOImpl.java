@@ -210,5 +210,18 @@ public class QueryDAOImpl implements QureyDAO {
         return null;
     }
 
+    @Override
+    public CustomEntity4 getBatchCourseDeatils(String id) throws Exception {
+
+        ResultSet rst = CrudUtil.execute("SELECT b.Bid,b.Name,c.Name,c.CourseFee from batch b INNER JOIN course c on b.courseId = c.Cid where b.Bid=?",id);
+        if (rst.next()){
+            return new CustomEntity4(rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getBigDecimal(4));
+        }
+        return null;
+    }
+
 
 }
