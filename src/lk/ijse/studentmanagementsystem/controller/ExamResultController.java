@@ -76,6 +76,13 @@ public class ExamResultController {
 
     public void btnSearch_OnAction(ActionEvent actionEvent) {
 
+        if(txtExamId.getText().trim().length() ==0){
+            new Alert(Alert.AlertType.ERROR, "Please Give a Exam ID", ButtonType.OK).show();
+            txtExamId.requestFocus();
+            return;
+        }
+
+
         try {
             CustomEntity1 customEntity = examBO.getExamDetails(txtExamId.getText());
             txtExamName.setText(customEntity.getExamName());
@@ -87,34 +94,10 @@ public class ExamResultController {
             List<StudentTM> studentList = customEntity.getStudentList();
             ObservableList observableList = FXCollections.observableArrayList();
             for (StudentTM studentTM: studentList){
+                System.out.println("/////////////"+studentTM);
                 observableList.add(studentTM.getSid());
                 cmbStudentId.setItems(observableList);
             }
-
-
-          //  cmbStudentId.setItems(FXCollections.observableArrayList(studentList));
-
-
-
-//            try {
-//                List<CourseTM> courseTMS = courseBO.getAllCourse();
-//                if(courseTMS != null){
-//                    ObservableList observableList = FXCollections.observableArrayList();
-//                    for (CourseTM courseTM: courseTMS){
-//                        observableList.add(courseTM.getCid());
-//                        cmbCourseId.setItems(observableList);
-//                    }
-//                }
-//
-//                //  cmbCourseId.setItems(FXCollections.observableArrayList(courseBO.getAllCourse()));
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-
-
-
-
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -139,6 +122,12 @@ public class ExamResultController {
             return;
         }
 
+        if (txtMask.getText().trim().length() == 0){
+            new Alert(Alert.AlertType.ERROR, "Pleas give Marks", ButtonType.OK).show();
+            txtMask.requestFocus();
+            return;
+        }
+
         ObservableList<ExamResultTM> examResults = tblResult.getItems();
 
 
@@ -146,20 +135,28 @@ public class ExamResultController {
         String studentId = cmbStudentId.getSelectionModel().getSelectedItem();
         int mask = Integer.parseInt(txtMask.getText());
 
-//        if(examResults.isEmpty()){
-            examResults.add(new ExamResultTM(UUID.randomUUID().toString(),examId,studentId,mask));
+        if(examResults.isEmpty()) {
+            examResults.add(new ExamResultTM(UUID.randomUUID().toString(), examId, studentId, mask));
 
             txtMask.clear();
             txtFirstName.clear();
             cmbStudentId.getSelectionModel().clearSelection();
-//        }else {
-//            for (ExamResultTM examResultTM: examResults) {
-//                if(examResultTM.getStudentId().equals(studentId)){
-//                    new Alert(Alert.AlertType.ERROR, "All Ready Add This Student").show();
-//                   return;
-//                }
-//            }
-        //}
+
+        }else {
+            for (ExamResultTM examResultTM: examResults) {
+                if(examResultTM.getStudentId()!= studentId){
+                    examResults.add(new ExamResultTM(UUID.randomUUID().toString(), examId, studentId, mask));
+
+                    txtMask.clear();
+                    txtFirstName.clear();
+                    cmbStudentId.getSelectionModel().clearSelection();
+                }else{
+                    new Alert(Alert.AlertType.ERROR, "All Ready Add This Student").show();
+                   return;
+                }
+            }
+        }
+
 
         }
 
@@ -178,6 +175,16 @@ public class ExamResultController {
                 e.printStackTrace();
             }
         tblResult.getItems().clear();
+        txtMask.clear();
+        txtFirstName.clear();
+        cmbStudentId.getSelectionModel().clearSelection();
+        txtExamId.clear();
+        txtExamName.clear();
+        txtSubjectName.clear();
+        txtSubjectId.clear();
+        txtCourseName.clear();
+        txtBatchName.clear();
+
     }
 
     public void SelectionChange_OnAction(ActionEvent actionEvent) {
@@ -187,11 +194,10 @@ public class ExamResultController {
 
             if(id != null){
                 Student student = studentBO.findStudent(id);
+                System.out.println("/////////////////////////**************");
+                System.out.println(student);
                 txtFirstName.setText(student.getFirstName());
-
-
             }
-
 
         } catch (Exception e) {
             e.printStackTrace();

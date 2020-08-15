@@ -34,6 +34,21 @@ public class StudentDAOImpl implements StudentDAO {
     public Student find(String key) throws Exception {
         ResultSet rst = CrudUtil.execute("SELECT * FROM student WHERE Sid=?",key);
         if (rst.next()) {
+
+//            private String Sid;
+//            private String firstName;
+//            private String lastName;
+//            private String address;
+//            private int tel;
+//            private String nic;
+//            private Date birthDay;
+//            private int age;
+//            private String mail;
+//            private String gender;
+
+            System.out.println("DAO");
+            System.out.println(rst.getString(8));
+            System.out.println(rst.getString(9));
             return new Student(rst.getString(1),
                     rst.getString(2),
                     rst.getString(3),
@@ -41,10 +56,14 @@ public class StudentDAOImpl implements StudentDAO {
                     rst.getInt(5),
                     rst.getString(6),
                     rst.getDate(7),
-                    rst.getInt(8),
-                    rst.getString(9),
-                    rst.getString(10));
+                    rst.getInt(10),
+                    rst.getString(8),
+                    rst.getString(9));
         }
+
+
+
+
         return null;
     }
 
